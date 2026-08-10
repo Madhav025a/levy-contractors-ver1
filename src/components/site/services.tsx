@@ -27,7 +27,7 @@ export function TrustStats() {
                 {stat.value !== undefined ? (
                   <>
                     {stat.unit === "Since" && <span className="text-white/40">Since </span>}
-                    <CountUp to={stat.value} suffix={stat.suffix} />
+                    <CountUp to={stat.value} suffix={stat.suffix ?? ""} />
                     {stat.unit === "Years" && <span className="text-white/40"> Years</span>}
                   </>
                 ) : (
