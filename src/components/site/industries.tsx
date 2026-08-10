@@ -361,7 +361,7 @@ export function ServiceArea() {
           <div className="overflow-hidden border border-border">
             <iframe
               title="Levy Industrial Contractors service area — Nashville, Tennessee"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-87.05%2C35.98%2C-86.55%2C36.36&layer=mapnik"
+              src="https://www.google.com/maps?q=Nashville,+Tennessee&z=10&output=embed"
               loading="lazy"
               className="h-[420px] w-full grayscale-[0.85] contrast-110"
             />
