@@ -83,8 +83,9 @@ export function Hero() {
           height={1280}
           className="anim-slow-zoom h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/70 to-ink/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-ink/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/60 to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/50" />
+
 
         <div className="hairline-grid absolute inset-0 opacity-40" />
       </div>
