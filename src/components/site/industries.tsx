@@ -13,6 +13,15 @@ import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
 import nwbocCert from "@/assets/nwboc-certifications.png.asset.json";
+import review1 from "@/assets/review-1.jpg";
+import review2 from "@/assets/review-2.jpg";
+import review3 from "@/assets/review-3.jpg";
+
+const REVIEWS = [
+  { image: review1, alt: "Headshot of a facility manager in a hard hat", name: "Facility Manager", company: "Industrial Client" },
+  { image: review2, alt: "Headshot of a construction project manager in a safety vest", name: "Project Manager", company: "General Contractor" },
+  { image: review3, alt: "Headshot of a general contractor executive", name: "Owner's Representative", company: "Commercial Property" },
+];
 
 const INDUSTRIES = [
   { title: "Industrial Facilities", image: industrialImg, alt: "Industrial plant with steel silos and piping" },
