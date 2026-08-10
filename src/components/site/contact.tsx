@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./reveal";
 import { LeadForm } from "./hero";
+import levyLogo from "@/assets/levy-logo.png.asset.json";
 
 export function ContactSection() {
   return (
@@ -82,17 +83,11 @@ export function Footer() {
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center bg-safety font-display text-xl font-bold text-accent-foreground">
-                L
-              </span>
-              <span className="font-display text-lg text-white">
-                Levy Industrial
-                <span className="block text-[10px] tracking-[0.2em] text-white/45 uppercase">
-                  Contractors, Inc.
-                </span>
-              </span>
-            </div>
+            <img
+              src={levyLogo.url}
+              alt="Levy Industrial Contractors, Inc. logo"
+              className="h-14 w-auto bg-white px-3 py-2"
+            />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
               Commercial and industrial environmental construction in the Nashville area since 1987.
             </p>
@@ -101,7 +96,7 @@ export function Footer() {
           <div>
             <p className="eyebrow text-white/40">Services</p>
             <ul className="mt-4 grid gap-2.5 text-sm text-white/65">
-              {["Asbestos Removal", "Demolition", "Site Assessment", "Asbestos Testing", "Mold Remediation"].map(
+              {["Asbestos Removal", "Demolition", "Site Assessment"].map(
                 (item) => (
                   <li key={item}>
                     <a href="#services" className="transition-colors hover:text-safety">

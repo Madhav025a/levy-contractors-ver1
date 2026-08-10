@@ -12,7 +12,7 @@ import industrialProjImg from "@/assets/proj-industrial.jpg";
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
-import moldImg from "@/assets/svc-mold.jpg";
+import nwbocCert from "@/assets/nwboc-certifications.png.asset.json";
 
 const INDUSTRIES = [
   { title: "Industrial Facilities", image: industrialImg, alt: "Industrial plant with steel silos and piping" },
@@ -108,15 +108,6 @@ const PROJECTS: Project[] = [
     copy: "Debris handling and haul-off at an industrial site.",
     image: industrialProjImg,
     alt: "Excavator loading concrete debris into a dump truck",
-  },
-  {
-    title: "Sample Project E",
-    category: "Commercial",
-    service: "Mold Remediation",
-    location: "Nashville, TN",
-    copy: "Containment and removal of impacted materials in a commercial building.",
-    image: moldImg,
-    alt: "Worker removing damaged drywall with HEPA equipment",
   },
   {
     title: "Sample Project F",
@@ -269,9 +260,27 @@ export function Credentials() {
         <Reveal>
           <p className="eyebrow text-steel">Credentials</p>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Placeholders for this mockup — to be replaced with verified certification, licensing,
-            and insurance documentation.
+            NWBOC-certified as a Women's Business Enterprise (WBE) and Women-Owned Small Business
+            (WOSB).
           </p>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-8 flex flex-col items-center gap-8 border border-border bg-ink px-6 py-8 sm:flex-row sm:justify-center sm:gap-12">
+            <img
+              src={nwbocCert.url}
+              alt="NWBOC WBE Certified and WOSB Certified certification marks"
+              className="h-48 w-auto"
+              loading="lazy"
+            />
+            <div className="max-w-sm text-center sm:text-left">
+              <p className="font-display text-2xl text-white">NWBOC Certified</p>
+              <p className="mt-2 text-sm leading-relaxed text-white/60">
+                National Women Business Owners Corporation certification — WBE and WOSB — supporting
+                supplier diversity requirements on commercial and industrial projects.
+              </p>
+            </div>
+          </div>
         </Reveal>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {CREDENTIALS.map((credential, index) => (

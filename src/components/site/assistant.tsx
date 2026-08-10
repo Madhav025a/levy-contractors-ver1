@@ -7,8 +7,6 @@ const QUICK_ACTIONS = [
   "Asbestos Removal",
   "Demolition",
   "Site Assessment",
-  "Asbestos Testing",
-  "Mold Remediation",
   "Request a Quote",
   "Talk to Our Team",
 ];
@@ -22,10 +20,6 @@ const SERVICE_NOTES: Record<string, string> = {
     "We handle structural, selective, commercial, and industrial demolition using specialized equipment to keep projects efficient.",
   "Site Assessment":
     "Our assessments cover engineering surveys, utility locations, fire prevention, and safety and health risks before work begins.",
-  "Asbestos Testing":
-    "We can sample suspect materials so you know what you're dealing with before renovation or demolition.",
-  "Mold Remediation":
-    "We set up containment and remove mold-impacted materials in commercial and industrial buildings.",
   "Request a Quote": "Happy to get this in front of our project team.",
   "Talk to Our Team": "You can reach our office directly at 615.227.1645 during business hours.",
   Other: "Tell me a little more and I'll route it to the right person.",
