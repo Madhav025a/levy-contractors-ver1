@@ -3,8 +3,6 @@ import { CountUp, Reveal } from "./reveal";
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
-import testingImg from "@/assets/svc-testing.jpg";
-import moldImg from "@/assets/svc-mold.jpg";
 
 type Stat = { value?: number; suffix?: string; unit?: string; label?: string; copy: string };
 
@@ -73,26 +71,6 @@ const SERVICES = [
     ],
     cta: "Explore Demolition",
     wide: true,
-  },
-  {
-    number: "04",
-    title: "Asbestos Testing",
-    image: testingImg,
-    alt: "Technician collecting a material sample into a labeled specimen bag in a boiler room",
-    copy: "Material sampling to identify suspect asbestos-containing materials before renovation or demolition begins.",
-    bullets: ["Pre-demolition sampling", "Suspect material review"],
-    cta: "Learn More",
-    wide: false,
-  },
-  {
-    number: "05",
-    title: "Mold Remediation",
-    image: moldImg,
-    alt: "Remediation worker in protective suit removing damaged drywall with HEPA air scrubber equipment",
-    copy: "Containment and removal of mold-impacted materials in commercial and industrial buildings.",
-    bullets: ["Containment setup", "Impacted material removal"],
-    cta: "Learn More",
-    wide: false,
   },
 ];
 

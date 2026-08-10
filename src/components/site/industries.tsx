@@ -12,7 +12,6 @@ import industrialProjImg from "@/assets/proj-industrial.jpg";
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
-import moldImg from "@/assets/svc-mold.jpg";
 
 const INDUSTRIES = [
   { title: "Industrial Facilities", image: industrialImg, alt: "Industrial plant with steel silos and piping" },
@@ -108,15 +107,6 @@ const PROJECTS: Project[] = [
     copy: "Debris handling and haul-off at an industrial site.",
     image: industrialProjImg,
     alt: "Excavator loading concrete debris into a dump truck",
-  },
-  {
-    title: "Sample Project E",
-    category: "Commercial",
-    service: "Mold Remediation",
-    location: "Nashville, TN",
-    copy: "Containment and removal of impacted materials in a commercial building.",
-    image: moldImg,
-    alt: "Worker removing damaged drywall with HEPA equipment",
   },
   {
     title: "Sample Project F",
