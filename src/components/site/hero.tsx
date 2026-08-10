@@ -74,7 +74,7 @@ export function LeadForm({ id = "quote" }: { id?: string }) {
 
 export function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-screen overflow-hidden bg-ink">
+    <section id="top" className="relative isolate min-h-[46rem] overflow-hidden bg-ink lg:min-h-[52rem]">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img
           src={heroImage}
@@ -83,8 +83,9 @@ export function Hero() {
           height={1280}
           className="anim-slow-zoom h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/45" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/70 to-ink/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-ink/55" />
+
         <div className="hairline-grid absolute inset-0 opacity-40" />
       </div>
 
