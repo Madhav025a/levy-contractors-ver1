@@ -26,13 +26,13 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       {/* Trust bar */}
-      <div className="hidden bg-ink text-[11px] tracking-[0.14em] text-white/60 md:block">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-8 py-2 uppercase">
+      <div className="hidden bg-safety text-[11.5px] font-bold italic tracking-[0.16em] text-white md:block">
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-8 py-2.5 uppercase">
           <span>Commercial &amp; Industrial Environmental Construction</span>
-          <span className="text-white/75">Serving Nashville Since 1987</span>
+          <span>Serving Nashville Since 1987</span>
           <span>
-            Safety <span className="text-safety">•</span> Quality{" "}
-            <span className="text-safety">•</span> Compliance
+            Safety <span className="text-white/80">•</span> Quality{" "}
+            <span className="text-white/80">•</span> Compliance
           </span>
         </div>
       </div>

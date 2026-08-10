@@ -13,6 +13,15 @@ import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
 import nwbocCert from "@/assets/nwboc-certifications.png.asset.json";
+import review1 from "@/assets/review-1.jpg";
+import review2 from "@/assets/review-2.jpg";
+import review3 from "@/assets/review-3.jpg";
+
+const REVIEWS = [
+  { image: review1, alt: "Headshot of a facility manager in a hard hat", name: "Facility Manager", company: "Industrial Client" },
+  { image: review2, alt: "Headshot of a construction project manager in a safety vest", name: "Project Manager", company: "General Contractor" },
+  { image: review3, alt: "Headshot of a general contractor executive", name: "Owner's Representative", company: "Commercial Property" },
+];
 
 const INDUSTRIES = [
   { title: "Industrial Facilities", image: industrialImg, alt: "Industrial plant with steel silos and piping" },
@@ -311,8 +320,8 @@ export function Testimonials() {
         </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {[0, 1, 2].map((index) => (
-            <Reveal key={index} delay={index * 100}>
+          {REVIEWS.map((review, index) => (
+            <Reveal key={review.name} delay={index * 100}>
               <figure className="h-full border border-dashed border-input bg-white p-8">
                 <div className="flex items-center gap-1 text-steel" aria-label="Rating placeholder">
                   {[0, 1, 2, 3, 4].map((star) => (
@@ -323,8 +332,21 @@ export function Testimonials() {
                   Verified client review placeholder. Google review content will be displayed here
                   once confirmed.
                 </blockquote>
-                <figcaption className="mt-6 border-t border-border pt-4 text-[12px] font-semibold tracking-[0.1em] text-ink uppercase">
-                  Client Name — Company
+                <figcaption className="mt-6 flex items-center gap-4 border-t border-border pt-4">
+                  <img
+                    src={review.image}
+                    alt={review.alt}
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="h-12 w-12 shrink-0 rounded-full object-cover object-top grayscale"
+                  />
+                  <span className="text-[12px] font-semibold tracking-[0.1em] text-ink uppercase">
+                    {review.name}
+                    <span className="block text-[11px] font-normal tracking-[0.08em] text-muted-foreground">
+                      {review.company}
+                    </span>
+                  </span>
                 </figcaption>
               </figure>
             </Reveal>
@@ -361,7 +383,7 @@ export function ServiceArea() {
           <div className="overflow-hidden border border-border">
             <iframe
               title="Levy Industrial Contractors service area — Nashville, Tennessee"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-87.05%2C35.98%2C-86.55%2C36.36&layer=mapnik"
+              src="https://www.google.com/maps?q=Nashville,+Tennessee&z=10&output=embed"
               loading="lazy"
               className="h-[420px] w-full grayscale-[0.85] contrast-110"
             />
