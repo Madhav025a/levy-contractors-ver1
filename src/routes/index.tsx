@@ -1,24 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header, MobileStickyBar } from "@/components/site/header";
+import { Hero } from "@/components/site/hero";
+import { Services, TrustStats } from "@/components/site/services";
+import { Process, Safety, WhyLevy } from "@/components/site/why-safety";
+import {
+  B2BSection,
+  Credentials,
+  Industries,
+  Projects,
+  ServiceArea,
+  Testimonials,
+} from "@/components/site/industries";
+import { ContactSection, Footer } from "@/components/site/contact";
+import { ProjectAssistant } from "@/components/site/assistant";
+import { ConsultPopup } from "@/components/site/consult-popup";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Levy Industrial Contractors | Nashville Asbestos & Demolition" },
+      {
+        name: "description",
+        content:
+          "Commercial and industrial asbestos abatement, demolition, and site assessment in Nashville since 1987. Safety, quality, and compliance-focused. Call 615.227.1645.",
+      },
+      { property: "og:title", content: "Levy Industrial Contractors | Nashville Since 1987" },
+      {
+        property: "og:description",
+        content:
+          "Nashville commercial and industrial environmental construction: asbestos abatement, demolition, and site assessment. Request a free quote.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <TrustStats />
+        <Services />
+        <WhyLevy />
+        <Process />
+        <Safety />
+        <Industries />
+        <Projects />
+        <B2BSection />
+        <Credentials />
+        <Testimonials />
+        <ServiceArea />
+        <ContactSection />
+      </main>
+      <Footer />
+      <MobileStickyBar />
+      <ProjectAssistant />
+      <ConsultPopup />
     </div>
   );
 }

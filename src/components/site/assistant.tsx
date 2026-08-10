@@ -81,8 +81,9 @@ export function ProjectAssistant() {
     setShowQuick(false);
 
     if (stage === "service") {
-      const note = SERVICE_NOTES[value] ?? SERVICE_NOTES.Other;
+      const note = SERVICE_NOTES[value] ?? "Tell me a little more and I'll route it to the right person.";
       botReply([note, "Is this a commercial or an industrial project?"]);
+
       setStage("type");
       return;
     }
