@@ -45,17 +45,11 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-5 py-3 md:px-8">
           <a href="#top" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center bg-safety font-display text-xl font-bold text-accent-foreground">
-              L
-            </span>
-            <span className="leading-none">
-              <span className="block font-display text-lg font-bold tracking-wide text-white md:text-xl">
-                Levy Industrial
-              </span>
-              <span className="block text-[10px] tracking-[0.22em] text-white/50 uppercase">
-                Contractors, Inc.
-              </span>
-            </span>
+            <img
+              src={levyLogo.url}
+              alt="Levy Industrial Contractors, Inc. logo"
+              className="h-10 w-auto bg-white px-2 py-1 md:h-12"
+            />
           </a>
 
           <ul className="hidden items-center gap-7 xl:flex">
