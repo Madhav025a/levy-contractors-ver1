@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
+import levyLogo from "@/assets/levy-logo.png.asset.json";
 
 const NAV = [
   { label: "Home", href: "#top" },
