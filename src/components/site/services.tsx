@@ -6,12 +6,15 @@ import assessmentImg from "@/assets/svc-assessment.jpg";
 import testingImg from "@/assets/svc-testing.jpg";
 import moldImg from "@/assets/svc-mold.jpg";
 
-const STATS = [
+type Stat = { value?: number; suffix?: string; unit?: string; label?: string; copy: string };
+
+const STATS: Stat[] = [
   { value: 30, suffix: "+", unit: "Years", copy: "Commercial & industrial asbestos experience" },
   { value: 1987, suffix: "", unit: "Since", copy: "Serving the Nashville area" },
   { label: "Safety First", copy: "Compliance-focused operations" },
   { label: "Commercial & Industrial", copy: "Specialized project experience" },
 ];
+
 
 export function TrustStats() {
   return (
