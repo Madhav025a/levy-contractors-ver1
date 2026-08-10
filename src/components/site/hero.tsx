@@ -6,8 +6,6 @@ const SERVICES = [
   "Asbestos Removal",
   "Demolition",
   "Site Assessment",
-  "Asbestos Testing",
-  "Mold Remediation",
   "Other",
 ];
 
@@ -83,11 +81,11 @@ export function Hero() {
           height={1280}
           className="anim-slow-zoom h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/60 to-ink/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-ink/25" />
 
 
-        <div className="hairline-grid absolute inset-0 opacity-40" />
+        <div className="hairline-grid absolute inset-0 opacity-20" />
       </div>
 
       <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 pt-40 pb-24 md:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:pt-48">

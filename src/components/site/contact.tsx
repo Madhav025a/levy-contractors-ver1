@@ -101,7 +101,7 @@ export function Footer() {
           <div>
             <p className="eyebrow text-white/40">Services</p>
             <ul className="mt-4 grid gap-2.5 text-sm text-white/65">
-              {["Asbestos Removal", "Demolition", "Site Assessment", "Asbestos Testing", "Mold Remediation"].map(
+              {["Asbestos Removal", "Demolition", "Site Assessment"].map(
                 (item) => (
                   <li key={item}>
                     <a href="#services" className="transition-colors hover:text-safety">
