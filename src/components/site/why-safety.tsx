@@ -6,7 +6,7 @@ import {
   Radio,
   ScrollText,
   ShieldCheck,
-  Truck,
+
   Users,
   Wrench,
 } from "lucide-react";
@@ -210,4 +210,3 @@ export function Safety() {
   );
 }
 
-export { Truck };
