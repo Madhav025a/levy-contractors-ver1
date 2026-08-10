@@ -320,8 +320,8 @@ export function Testimonials() {
         </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {[0, 1, 2].map((index) => (
-            <Reveal key={index} delay={index * 100}>
+          {REVIEWS.map((review, index) => (
+            <Reveal key={review.name} delay={index * 100}>
               <figure className="h-full border border-dashed border-input bg-white p-8">
                 <div className="flex items-center gap-1 text-steel" aria-label="Rating placeholder">
                   {[0, 1, 2, 3, 4].map((star) => (
@@ -332,8 +332,21 @@ export function Testimonials() {
                   Verified client review placeholder. Google review content will be displayed here
                   once confirmed.
                 </blockquote>
-                <figcaption className="mt-6 border-t border-border pt-4 text-[12px] font-semibold tracking-[0.1em] text-ink uppercase">
-                  Client Name — Company
+                <figcaption className="mt-6 flex items-center gap-4 border-t border-border pt-4">
+                  <img
+                    src={review.image}
+                    alt={review.alt}
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="h-12 w-12 shrink-0 rounded-full object-cover object-top grayscale"
+                  />
+                  <span className="text-[12px] font-semibold tracking-[0.1em] text-ink uppercase">
+                    {review.name}
+                    <span className="block text-[11px] font-normal tracking-[0.08em] text-muted-foreground">
+                      {review.company}
+                    </span>
+                  </span>
                 </figcaption>
               </figure>
             </Reveal>
