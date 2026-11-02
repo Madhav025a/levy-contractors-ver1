@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle2, Phone, ShieldCheck, Building2, CalendarClock } from "lucide-react";
 import heroImage from "@/assets/hero-abatement.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 const SERVICES = [
   "Asbestos Removal",
