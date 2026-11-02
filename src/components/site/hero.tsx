@@ -96,7 +96,7 @@ export function Hero() {
         <div className="hairline-grid absolute inset-0 opacity-20" />
       </div>
 
-      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 pt-40 pb-24 md:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:pt-48">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 pt-40 pb-24 md:px-8 lg:pt-48">
         <div>
           <p
             className="eyebrow anim-rise text-safety"
@@ -149,10 +149,6 @@ export function Hero() {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className="anim-slide-up" style={{ animationDelay: "500ms" }}>
-          <LeadForm />
         </div>
       </div>
     </section>
