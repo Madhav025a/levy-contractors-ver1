@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import demolitionImg from "@/assets/svc-demolition.jpg";
+import { LeadForm } from "@/components/site/hero";
 
 export function ConsultPopup() {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ export function ConsultPopup() {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/70 p-4 backdrop-blur-sm sm:items-center">
-      <div className="anim-slide-up relative grid w-full max-w-3xl overflow-hidden bg-white shadow-[var(--shadow-hard)] sm:grid-cols-[0.85fr_1.15fr]">
+      <div className="anim-slide-up relative grid max-h-[92vh] w-full max-w-4xl overflow-y-auto bg-white shadow-[var(--shadow-hard)] sm:grid-cols-[0.85fr_1.15fr]">
         <button
           type="button"
           onClick={close}
@@ -42,15 +43,15 @@ export function ConsultPopup() {
             Planning A Commercial Demolition Project?
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
-            Request a project consultation with the Levy Industrial team.
+            Tell us about your project and the Levy Industrial team will follow up. Prefer to talk
+            now? Call{" "}
+            <a href="tel:6152271645" className="font-semibold text-ink underline">
+              615.227.1645
+            </a>
+            .
           </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <a href="#quote" onClick={close} className="btn-base btn-safety">
-              Discuss My Project
-            </a>
-            <a href="tel:6152271645" onClick={close} className="btn-base btn-outline-dark">
-              Call 615.227.1645
-            </a>
+          <div className="mt-7">
+            <LeadForm id="popup-quote" />
           </div>
         </div>
       </div>
