@@ -18,7 +18,7 @@ export function ContactSection() {
               for your demolition, asbestos abatement, or environmental construction needs.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/#quote-contact" className="btn-base btn-safety">
+              <a href="#quote-contact" className="btn-base btn-safety">
                 Request A Free Quote
               </a>
               <a href="tel:6152271645" className="btn-base btn-outline-light">
@@ -96,10 +96,10 @@ export function Footer() {
           <div>
             <p className="eyebrow text-white/40">Services</p>
             <ul className="mt-4 grid gap-2.5 text-sm text-white/65">
-              {["Asbestos Removal", "Demolition", "Site Assessment"].map(
-                (item) => (
+              {[["Asbestos Removal", "asbestos-removal"], ["Demolition", "demolition"], ["Site Assessment", "site-assessment"]].map(
+                ([item, slug]) => (
                   <li key={item}>
-                    <a href="/#services" className="transition-colors hover:text-safety">
+                    <a href={`/services/${slug}`} className="transition-colors hover:text-safety">
                       {item}
                     </a>
                   </li>
@@ -112,11 +112,11 @@ export function Footer() {
             <p className="eyebrow text-white/40">Company</p>
             <ul className="mt-4 grid gap-2.5 text-sm text-white/65">
               {[
-                { label: "About", href: "#about" },
-                { label: "Safety", href: "#safety" },
-                { label: "Projects", href: "#projects" },
-                { label: "Contact", href: "#contact" },
-                { label: "Request Quote", href: "#quote" },
+                { label: "About", href: "/about" },
+                { label: "Safety", href: "/safety" },
+                { label: "Projects", href: "/projects" },
+                { label: "Contact", href: "/contact" },
+                { label: "Request Quote", href: "/contact#quote-contact" },
               ].map((item) => (
                 <li key={item.label}>
                   <a href={item.href} className="transition-colors hover:text-safety">
@@ -138,7 +138,7 @@ export function Footer() {
               <li>P.O. Box 70039</li>
               <li>Nashville, TN</li>
             </ul>
-            <a href="/#quote" className="btn-base btn-safety mt-6 w-full">
+            <a href="/contact#quote-contact" className="btn-base btn-safety mt-6 w-full">
               Request Quote
             </a>
           </div>
