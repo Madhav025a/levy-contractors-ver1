@@ -10,7 +10,7 @@ const SERVICES = [
   "Other",
 ];
 
-export function LeadForm({ id = "quote" }: { id?: string }) {
+export function LeadForm({ id = "quote", compact = false }: { id?: string; compact?: boolean }) {
   const [sent, setSent] = useState(false);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
