@@ -18,7 +18,7 @@ export function ContactSection() {
               for your demolition, asbestos abatement, or environmental construction needs.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#quote-contact" className="btn-base btn-safety">
+              <a href="/#quote-contact" className="btn-base btn-safety">
                 Request A Free Quote
               </a>
               <a href="tel:6152271645" className="btn-base btn-outline-light">
@@ -99,7 +99,7 @@ export function Footer() {
               {["Asbestos Removal", "Demolition", "Site Assessment"].map(
                 (item) => (
                   <li key={item}>
-                    <a href="#services" className="transition-colors hover:text-safety">
+                    <a href="/#services" className="transition-colors hover:text-safety">
                       {item}
                     </a>
                   </li>
@@ -138,7 +138,7 @@ export function Footer() {
               <li>P.O. Box 70039</li>
               <li>Nashville, TN</li>
             </ul>
-            <a href="#quote" className="btn-base btn-safety mt-6 w-full">
+            <a href="/#quote" className="btn-base btn-safety mt-6 w-full">
               Request Quote
             </a>
           </div>
@@ -147,10 +147,10 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Levy Industrial Contractors, Inc. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#top" className="hover:text-safety">
+            <a href="/#top" className="hover:text-safety">
               Privacy Policy
             </a>
-            <a href="#top" className="hover:text-safety">
+            <a href="/#top" className="hover:text-safety">
               Terms &amp; Conditions
             </a>
           </div>

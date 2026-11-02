@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { CountUp, Reveal } from "./reveal";
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
@@ -45,6 +46,7 @@ const SERVICES = [
   {
     number: "01",
     title: "Asbestos Removal",
+    slug: "asbestos-removal",
     image: asbestosImg,
     alt: "Workers in protective suits sealing a containment barrier inside a commercial building",
     copy: "Commercial and industrial asbestos abatement performed with a strong focus on safety, quality, and regulatory compliance.",
@@ -60,6 +62,7 @@ const SERVICES = [
   {
     number: "02",
     title: "Demolition",
+    slug: "demolition",
     image: demolitionImg,
     alt: "Excavator with demolition attachment taking down a concrete commercial building",
     copy: "Safe, efficient demolition solutions for both small and large-scale commercial and industrial projects.",
@@ -130,13 +133,14 @@ export function Services() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="#quote"
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
                     className="mt-7 inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.1em] text-ink uppercase transition-colors hover:text-safety-deep"
                   >
                     {service.cta}
                     <ArrowRight className="h-4 w-4" aria-hidden />
-                  </a>
+                  </Link>
                 </div>
               </article>
             </Reveal>
@@ -179,6 +183,9 @@ export function Services() {
                   </li>
                 ))}
               </ol>
+              <Link to="/services/$slug" params={{ slug: "site-assessment" }} className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold tracking-[0.1em] text-white uppercase transition-colors hover:text-safety">
+                Explore Site Assessment <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
             </div>
           </article>
         </Reveal>

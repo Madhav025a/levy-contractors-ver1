@@ -3,13 +3,13 @@ import { Menu, Phone, X } from "lucide-react";
 import levyLogo from "@/assets/levy-logo.png.asset.json";
 
 const NAV = [
-  { label: "Home", href: "#top" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Safety", href: "#safety" },
-  { label: "Projects", href: "#projects" },
-  { label: "Service Area", href: "#service-area" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#top" },
+  { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
+  { label: "Safety", href: "/#safety" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Service Area", href: "/#service-area" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -45,7 +45,7 @@ export function Header() {
         }`}
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-5 py-3 md:px-8">
-          <a href="#top" className="flex items-center gap-3">
+          <a href="/#top" className="flex items-center gap-3">
             <img
               src={levyLogo.url}
               alt="Levy Industrial Contractors, Inc. logo"
@@ -74,7 +74,7 @@ export function Header() {
               <Phone className="h-4 w-4 text-safety" aria-hidden />
               615.227.1645
             </a>
-            <a href="#quote" className="btn-base btn-safety">
+            <a href="/#quote" className="btn-base btn-safety">
               Request a Free Quote
             </a>
           </div>
@@ -108,7 +108,7 @@ export function Header() {
               <a href="tel:6152271645" className="btn-base btn-outline-light">
                 Call Now
               </a>
-              <a href="#quote" className="btn-base btn-safety" onClick={() => setOpen(false)}>
+              <a href="/#quote" className="btn-base btn-safety" onClick={() => setOpen(false)}>
                 Request Quote
               </a>
             </div>
@@ -130,7 +130,7 @@ export function MobileStickyBar() {
         Call 615.227.1645
       </a>
       <a
-        href="#quote"
+        href="/#quote"
         className="flex items-center justify-center bg-safety py-3.5 text-[13px] font-bold tracking-[0.08em] text-accent-foreground uppercase"
       >
         Request Quote
