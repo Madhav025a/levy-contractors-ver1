@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { PageHero, PageShell, PhotoStrip, pageMeta } from "@/components/site/page-shell";
+import { PageHero, PageShell, pageMeta } from "@/components/site/page-shell";
 import { Reveal } from "@/components/site/reveal";
 import { Industries } from "@/components/site/industries";
 import { SERVICE_PAGES } from "@/lib/services-data";
@@ -54,12 +54,6 @@ function ServicesPage() {
           ))}
         </div>
       </section>
-      <PhotoStrip images={[
-        { src: gear, alt: "Respirators, HEPA filters and protective suits" },
-        { src: selective, alt: "Selective demolition project" },
-        { src: industrial, alt: "Industrial abatement project" },
-        { src: safetyWide, alt: "Crew working in containment" },
-      ]} />
       <Industries />
     </PageShell>
   );

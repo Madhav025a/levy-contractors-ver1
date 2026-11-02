@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, PageShell, PhotoStrip, pageMeta } from "@/components/site/page-shell";
+import { PageHero, PageShell, pageMeta } from "@/components/site/page-shell";
 import { B2BSection, Industries, Projects, Testimonials } from "@/components/site/industries";
 import industrial from "@/assets/proj-industrial.jpg";
 import university from "@/assets/ind-university.jpg";
@@ -21,12 +21,6 @@ function ProjectsPage() {
         copy="Industrial plants, campuses, commercial buildings, and managed properties — completed safely and properly."
         image={industrial} alt="Industrial facility abatement project" />
       <Projects />
-      <PhotoStrip images={[
-        { src: university, alt: "University campus building" },
-        { src: commercial, alt: "Commercial office building" },
-        { src: institutional, alt: "Institutional facility" },
-        { src: property, alt: "Managed commercial property" },
-      ]} />
       <Industries />
       <B2BSection />
       <Testimonials />
