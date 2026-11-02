@@ -51,7 +51,7 @@ export function ConsultPopup() {
             .
           </p>
           <div className="mt-7">
-            <LeadForm id="popup-quote" />
+            <LeadForm id="popup-quote" compact />
           </div>
         </div>
       </div>
