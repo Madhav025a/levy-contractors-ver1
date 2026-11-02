@@ -1,0 +1,4 @@
+- [ ] Add dedicated Services, About, Safety, Projects, Service Area, and Contact pages.
+- [ ] Update the homepage hero to loop the supplied YouTube video.
+- [ ] Route site navigation and contact actions to the new pages and add page-specific metadata.
+- [ ] Verify preview build and the homepage video/page navigation.
