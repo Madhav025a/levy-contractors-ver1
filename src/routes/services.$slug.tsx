@@ -103,6 +103,30 @@ function ServiceDetail() {
           </div>
         </section>
 
+        <section className="bg-concrete py-20 md:py-24">
+          <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+            <Reveal>
+              <p className="eyebrow text-steel">Trusted By</p>
+              <h2 className="mt-3 font-display text-4xl text-ink md:text-5xl">Our {s.title} Clients</h2>
+            </Reveal>
+            <div className="mt-10 border border-border bg-card p-6 md:p-10">
+              <ul className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+                {s.clientList.map((c, i) => (
+                  <li key={c.name} className="flex items-center gap-4 bg-card p-5">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-ink font-display text-sm text-safety">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <p className="font-semibold text-ink">{c.name}</p>
+                      <p className="text-[12px] font-semibold tracking-[0.12em] text-muted-foreground uppercase">{c.sector}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 md:py-28">
           <div className="mx-auto grid max-w-[1400px] gap-12 px-5 md:px-8 lg:grid-cols-2">
             <div>
