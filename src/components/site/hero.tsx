@@ -10,7 +10,7 @@ const SERVICES = [
   "Other",
 ];
 
-export function LeadForm({ id = "quote" }: { id?: string }) {
+export function LeadForm({ id = "quote", compact = false }: { id?: string; compact?: boolean }) {
   const [sent, setSent] = useState(false);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -39,29 +39,41 @@ export function LeadForm({ id = "quote" }: { id?: string }) {
         </div>
       ) : (
         <form className="mt-5 grid gap-3" onSubmit={onSubmit}>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <input className="field-industrial" placeholder="First Name" required aria-label="First Name" />
-            <input className="field-industrial" placeholder="Last Name" required aria-label="Last Name" />
-          </div>
-          <input className="field-industrial" placeholder="Company" aria-label="Company" />
-          <div className="grid gap-3 sm:grid-cols-2">
-            <input type="email" className="field-industrial" placeholder="Email" required aria-label="Email" />
-            <input type="tel" className="field-industrial" placeholder="Phone" required aria-label="Phone" />
-          </div>
-          <input className="field-industrial" placeholder="Project Location" aria-label="Project Location" />
-          <select className="field-industrial" defaultValue="" aria-label="Service Needed" required>
-            <option value="" disabled>
-              Service Needed
-            </option>
-            {SERVICES.map((service) => (
-              <option key={service}>{service}</option>
-            ))}
-          </select>
-          <textarea
-            className="field-industrial min-h-24"
-            placeholder="Project Details"
-            aria-label="Project Details"
-          />
+          {compact ? (
+            <>
+              <input className="field-industrial" placeholder="Full Name" required aria-label="Full Name" />
+              <div className="grid gap-3 sm:grid-cols-2">
+                <input type="email" className="field-industrial" placeholder="Email" required aria-label="Email" />
+                <input type="tel" className="field-industrial" placeholder="Phone" required aria-label="Phone" />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <input className="field-industrial" placeholder="First Name" required aria-label="First Name" />
+                <input className="field-industrial" placeholder="Last Name" required aria-label="Last Name" />
+              </div>
+              <input className="field-industrial" placeholder="Company" aria-label="Company" />
+              <div className="grid gap-3 sm:grid-cols-2">
+                <input type="email" className="field-industrial" placeholder="Email" required aria-label="Email" />
+                <input type="tel" className="field-industrial" placeholder="Phone" required aria-label="Phone" />
+              </div>
+              <input className="field-industrial" placeholder="Project Location" aria-label="Project Location" />
+              <select className="field-industrial" defaultValue="" aria-label="Service Needed" required>
+                <option value="" disabled>
+                  Service Needed
+                </option>
+                {SERVICES.map((service) => (
+                  <option key={service}>{service}</option>
+                ))}
+              </select>
+              <textarea
+                className="field-industrial min-h-24"
+                placeholder="Project Details"
+                aria-label="Project Details"
+              />
+            </>
+          )}
           <button type="submit" className="btn-base btn-safety w-full">
             Request a Quote
           </button>
