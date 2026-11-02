@@ -75,20 +75,17 @@ export function Hero() {
   return (
     <section id="top" className="relative isolate min-h-[46rem] overflow-hidden bg-ink lg:min-h-[52rem]">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <img
-          src={heroImage}
-          alt="Asbestos abatement crew in protective suits and respirators working inside an industrial facility"
-          width={1920}
-          height={1280}
-          className="h-full w-full object-cover"
-        />
-        <iframe
-          title="Levy Industrial Contractors at work"
-          src="https://www.youtube-nocookie.com/embed/an9ZlCYob0s?autoplay=1&mute=1&loop=1&playlist=an9ZlCYob0s&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3"
-          allow="autoplay; encrypted-media; picture-in-picture"
+        <video
+          src={heroVideo.url}
+          poster={heroImage}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
           tabIndex={-1}
           aria-hidden
-          className="pointer-events-none absolute top-1/2 left-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 border-0"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/35 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-ink/25" />
