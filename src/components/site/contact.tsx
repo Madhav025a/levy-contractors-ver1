@@ -113,7 +113,6 @@ export function Footer() {
             <ul className="mt-4 grid gap-2.5 text-sm text-white/65">
               {[
                 { label: "About", href: "/about" },
-                { label: "Safety", href: "/safety" },
                 { label: "Projects", href: "/projects" },
                 { label: "Contact", href: "/contact" },
                 { label: "Request Quote", href: "/contact#quote-contact" },
