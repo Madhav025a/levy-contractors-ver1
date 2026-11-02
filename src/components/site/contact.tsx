@@ -18,7 +18,7 @@ export function ContactSection() {
               for your demolition, asbestos abatement, or environmental construction needs.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/#quote-contact" className="btn-base btn-safety">
+              <a href="#quote-contact" className="btn-base btn-safety">
                 Request A Free Quote
               </a>
               <a href="tel:6152271645" className="btn-base btn-outline-light">
