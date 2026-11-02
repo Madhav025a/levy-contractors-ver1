@@ -3,6 +3,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { Header, MobileStickyBar } from "@/components/site/header";
 import { ContactSection, Footer } from "@/components/site/contact";
 import { Reveal } from "@/components/site/reveal";
+import { LeadForm } from "@/components/site/hero";
 import { getService, SERVICE_PAGES } from "@/lib/services-data";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -40,10 +41,11 @@ function ServiceDetail() {
     <div className="bg-background">
       <Header />
       <main>
-        <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-ink pt-40 pb-16">
+        <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-ink pt-44 pb-20">
           <img src={s.image} alt={s.alt} className="absolute inset-0 h-full w-full object-cover" width={1280} height={960} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
-          <div className="relative mx-auto w-full max-w-[1400px] px-5 md:px-8">
+          <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[1fr_400px]">
+            <div>
             <Link to="/" hash="services" className="eyebrow text-white/70 hover:text-safety">
               ← All Services
             </Link>
@@ -56,6 +58,8 @@ function ServiceDetail() {
                 <Phone className="h-4 w-4" aria-hidden /> 615.227.1645
               </a>
             </div>
+            </div>
+            <div className="anim-slide-up"><LeadForm id="hero-quote" compact /></div>
           </div>
         </section>
 

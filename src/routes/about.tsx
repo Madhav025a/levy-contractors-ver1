@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, PageShell, PhotoStrip, SplitFeature, pageMeta } from "@/components/site/page-shell";
+import { PageHero, PageShell, SplitFeature, pageMeta } from "@/components/site/page-shell";
 import { Process, WhyLevy } from "@/components/site/why-safety";
 import { Credentials, Testimonials } from "@/components/site/industries";
 import aboutCrew from "@/assets/about-crew.jpg";
@@ -26,12 +26,6 @@ function AboutPage() {
         copy="Since 1987, Levy Industrial Contractors, Inc. has helped industrial corporations, universities, property management companies, and general contractors across Middle Tennessee complete complex environmental construction projects safely and on schedule."
         image={contactMeeting} alt="Levy project manager reviewing plans with a facility manager"
         points={["Founded 1987", "Nashville based", "Commercial & industrial", "NWBOC certified"]} />
-      <PhotoStrip images={[
-        { src: asbestos, alt: "Abatement crew sealing containment" },
-        { src: demolition, alt: "Excavator demolishing a commercial building" },
-        { src: industrial, alt: "Industrial facility project" },
-        { src: crew, alt: "Levy crew on a jobsite" },
-      ]} />
       <WhyLevy />
       <Process />
       <Credentials />

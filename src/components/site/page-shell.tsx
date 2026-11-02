@@ -3,6 +3,7 @@ import { Phone } from "lucide-react";
 import { Header, MobileStickyBar } from "./header";
 import { ContactSection, Footer } from "./contact";
 import { Reveal } from "./reveal";
+import { LeadForm } from "./hero";
 
 export function PageShell({ children, contact = true }: { children: ReactNode; contact?: boolean }) {
   return (
@@ -32,10 +33,11 @@ export function PageHero({
   alt: string;
 }) {
   return (
-    <section className="relative flex min-h-[62vh] items-end overflow-hidden bg-ink pt-40 pb-16">
+    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-ink pt-44 pb-20">
       <img src={image} alt={alt} width={1600} height={1000} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10" />
-      <div className="relative mx-auto w-full max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[1fr_400px]">
+        <div>
         <p className="eyebrow anim-rise text-safety">{eyebrow}</p>
         <h1 className="anim-rise mt-3 max-w-4xl font-display text-5xl leading-[0.95] text-white md:text-7xl">{title}</h1>
         <p className="anim-rise mt-5 max-w-2xl text-lg text-white/80">{copy}</p>
@@ -45,6 +47,8 @@ export function PageHero({
             <Phone className="h-4 w-4" aria-hidden /> 615.227.1645
           </a>
         </div>
+        </div>
+        <div className="anim-slide-up"><LeadForm id="hero-quote" compact /></div>
       </div>
     </section>
   );

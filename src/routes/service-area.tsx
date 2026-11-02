@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, PageShell, PhotoStrip, SplitFeature, pageMeta } from "@/components/site/page-shell";
+import { PageHero, PageShell, SplitFeature, pageMeta } from "@/components/site/page-shell";
 import { ServiceArea } from "@/components/site/industries";
 import skyline from "@/assets/nashville-skyline.jpg";
 import aboutCrew from "@/assets/about-crew.jpg";
@@ -26,12 +26,6 @@ function ServiceAreaPage() {
         copy="Being based in Nashville means faster mobilization, local knowledge, and long-standing relationships with the region's contractors, facilities, and institutions."
         image={aboutCrew} alt="Levy crew with the Nashville skyline behind them"
         points={["Nashville", "Davidson County", "Middle Tennessee", "Surrounding regions"]} />
-      <PhotoStrip images={[
-        { src: industrialInd, alt: "Industrial plant" },
-        { src: university, alt: "University campus" },
-        { src: commercial, alt: "Commercial building" },
-        { src: gc, alt: "General contractor jobsite" },
-      ]} />
     </PageShell>
   );
 }
