@@ -125,7 +125,7 @@ export function Process() {
                     loading="lazy"
                     width={1280}
                     height={960}
-                    className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <span className="absolute top-0 left-0 bg-safety px-3 py-1.5 font-display text-sm text-accent-foreground">
                     {step.n}
