@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { describe, expect, mock, test } from "bun:test";
 
 for (const name of ["asbestos", "demolition", "assessment", "mold"]) {
