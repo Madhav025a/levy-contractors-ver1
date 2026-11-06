@@ -1,17 +1,14 @@
 import { useState } from "react";
 import { Award, BadgeCheck, FileCheck2, MapPin, ShieldCheck, Star } from "lucide-react";
 import { Reveal } from "./reveal";
+import { ProjectCard } from "./project-card";
+import { PROJECTS, PROJECT_CATEGORIES } from "@/lib/projects-data";
 import industrialImg from "@/assets/ind-industrial.jpg";
 import universityImg from "@/assets/ind-university.jpg";
 import commercialImg from "@/assets/ind-commercial.jpg";
 import propertyImg from "@/assets/ind-property.jpg";
 import gcImg from "@/assets/ind-gc.jpg";
 import institutionalImg from "@/assets/ind-institutional.jpg";
-import selectiveImg from "@/assets/proj-selective.jpg";
-import industrialProjImg from "@/assets/proj-industrial.jpg";
-import asbestosImg from "@/assets/svc-asbestos.jpg";
-import demolitionImg from "@/assets/svc-demolition.jpg";
-import assessmentImg from "@/assets/svc-assessment.jpg";
 import nwbocCert from "@/assets/nwboc-certifications.png.asset.json";
 import review1 from "@/assets/review-1.jpg";
 import review2 from "@/assets/review-2.jpg";
@@ -71,74 +68,6 @@ export function Industries() {
   );
 }
 
-type Project = {
-  title: string;
-  category: string;
-  service: string;
-  location: string;
-  copy: string;
-  image: string;
-  alt: string;
-};
-
-const PROJECTS: Project[] = [
-  {
-    title: "Sample Project A",
-    category: "Asbestos Abatement",
-    service: "Asbestos Removal",
-    location: "Nashville, TN",
-    copy: "Containment and abatement within an occupied commercial facility.",
-    image: asbestosImg,
-    alt: "Workers sealing containment barriers inside a commercial building",
-  },
-  {
-    title: "Sample Project B",
-    category: "Demolition",
-    service: "Structural Demolition",
-    location: "Middle Tennessee",
-    copy: "Structural demolition of a concrete commercial building.",
-    image: demolitionImg,
-    alt: "Excavator demolishing a concrete commercial structure",
-  },
-  {
-    title: "Sample Project C",
-    category: "Selective Demolition",
-    service: "Interior Demolition",
-    location: "Nashville, TN",
-    copy: "Interior strip-out ahead of a tenant renovation.",
-    image: selectiveImg,
-    alt: "Interior selective demolition of a commercial office floor",
-  },
-  {
-    title: "Sample Project D",
-    category: "Industrial",
-    service: "Industrial Demolition",
-    location: "Middle Tennessee",
-    copy: "Debris handling and haul-off at an industrial site.",
-    image: industrialProjImg,
-    alt: "Excavator loading concrete debris into a dump truck",
-  },
-  {
-    title: "Sample Project F",
-    category: "Site Assessment",
-    service: "Pre-Demolition Survey",
-    location: "Nashville, TN",
-    copy: "Engineering survey, utility location, and safety risk review.",
-    image: assessmentImg,
-    alt: "Supervisor reviewing plans on a tablet in an industrial plant",
-  },
-];
-
-const CATEGORIES = [
-  "All",
-  "Asbestos Abatement",
-  "Demolition",
-  "Selective Demolition",
-  "Industrial",
-  "Commercial",
-  "Site Assessment",
-];
-
 export function Projects() {
   const [active, setActive] = useState("All");
   const visible = active === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === active);
@@ -148,61 +77,23 @@ export function Projects() {
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <Reveal>
           <p className="eyebrow text-steel">Portfolio</p>
-          <h2 className="mt-3 font-display text-4xl text-ink md:text-5xl">Project Types</h2>
+          <h2 className="mt-3 font-display text-4xl text-ink md:text-5xl">Featured Projects</h2>
           <p className="mt-4 max-w-2xl text-[15px] text-muted-foreground">
-            Representative placeholder projects for this mockup — to be replaced with verified Levy
-            project data.
+            Landmark, industrial, and institutional work across Middle Tennessee and beyond.
           </p>
         </Reveal>
-
-        <Reveal delay={100}>
-          <div className="mt-10 flex flex-wrap gap-2">
-            {CATEGORIES.map((category) => (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActive(category)}
-                className={`border px-4 py-2 text-[12px] font-bold tracking-[0.1em] uppercase transition-colors ${
-                  active === category
-                    ? "border-ink bg-ink text-white"
-                    : "border-border text-steel hover:border-ink hover:text-ink"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </Reveal>
-
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((project, index) => (
-            <Reveal key={project.title} delay={index * 70}>
-              <article className="card-lift group h-full overflow-hidden border border-border bg-white">
-                <div className="relative aspect-[16/11] overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.alt}
-                    loading="lazy"
-                    width={1200}
-                    height={912}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-107"
-                  />
-                  <div className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/35" />
-                  <span className="absolute top-4 left-4 bg-safety px-2.5 py-1 text-[11px] font-bold tracking-[0.1em] text-accent-foreground uppercase">
-                    {project.category}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-xl text-ink">{project.title}</h3>
-                  <p className="mt-1 flex items-center gap-1.5 text-[12px] font-semibold tracking-[0.08em] text-steel uppercase">
-                    <MapPin className="h-3.5 w-3.5" aria-hidden />
-                    {project.location} — {project.service}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.copy}</p>
-                </div>
-              </article>
-            </Reveal>
+        <div className="mt-10 flex flex-wrap gap-2">
+          {PROJECT_CATEGORIES.map((category) => (
+            <button key={category} type="button" onClick={() => setActive(category)}
+              className={`border px-4 py-2 text-[12px] font-bold tracking-[0.1em] uppercase transition-colors ${
+                active === category ? "border-ink bg-ink text-white" : "border-border text-steel hover:border-ink hover:text-ink"
+              }`}>
+              {category}
+            </button>
           ))}
+        </div>
+        <div className="mt-10 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {visible.map((project) => <ProjectCard key={project.slug} project={project} />)}
         </div>
       </div>
     </section>
