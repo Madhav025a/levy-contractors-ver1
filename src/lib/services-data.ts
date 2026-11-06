@@ -282,3 +282,51 @@ export const CLIENT_LIST: { name: string; sector: string }[] = [
   { name: "Trousdale Medical Center", sector: "Healthcare" },
   { name: "Portland Medical Center", sector: "Healthcare" },
 ];
+
+// Display grouping for the client list on service pages.
+export const CLIENT_GROUPS: { title: string; blurb: string; sectors: string[] }[] = [
+  {
+    title: "Industrial & Manufacturing",
+    blurb: "Plants, mills, and manufacturing facilities across the region.",
+    sectors: ["Industrial"],
+  },
+  {
+    title: "Healthcare",
+    blurb: "Hospitals, medical centers, and research facilities.",
+    sectors: ["Healthcare"],
+  },
+  {
+    title: "Colleges & Universities",
+    blurb: "Campuses and university facilities throughout the Southeast.",
+    sectors: ["Higher Education"],
+  },
+  {
+    title: "Schools & School Districts",
+    blurb: "Public and private schools at every level.",
+    sectors: ["K-12 Education"],
+  },
+  {
+    title: "Government & Public Safety",
+    blurb: "Municipal, state, and federal facilities and utilities.",
+    sectors: ["Government", "Public Safety", "Utilities"],
+  },
+  {
+    title: "Hospitality & Entertainment",
+    blurb: "Hotels, venues, and landmark attractions.",
+    sectors: ["Hospitality", "Entertainment"],
+  },
+  {
+    title: "Retail, Commercial & Financial",
+    blurb: "Retail centers, office buildings, and financial institutions.",
+    sectors: ["Retail", "Commercial", "Financial"],
+  },
+  {
+    title: "Media, Faith & Community",
+    blurb: "Media facilities, churches, and community properties.",
+    sectors: ["Media", "Religious", "Institutional", "Residential"],
+  },
+];
+
+export function clientsForGroup(group: { sectors: string[] }) {
+  return CLIENT_LIST.filter((c) => group.sectors.includes(c.sector));
+}
