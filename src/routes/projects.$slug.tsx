@@ -68,6 +68,26 @@ function ProjectDetail() {
         </div>
       </section>
 
+      <section className="bg-ink py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+          <Reveal>
+            <p className="eyebrow text-safety">What We Did</p>
+            <h2 className="mt-3 font-display text-4xl text-white md:text-5xl">Services We Performed</h2>
+          </Reveal>
+          <div className="mt-10 grid gap-px bg-white/10 md:grid-cols-2 lg:grid-cols-3">
+            {p.services.map((svc, i) => (
+              <Reveal key={svc.title} delay={i * 80}>
+                <div className="h-full bg-ink p-8">
+                  <span className="font-display text-4xl text-safety">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-3 font-display text-2xl text-white">{svc.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-white/65">{svc.copy}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-concrete py-20 md:py-28">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
