@@ -135,6 +135,22 @@ export function Header() {
                   >
                     {item.label}
                   </a>
+                  {item.label === "Services" && (
+                    <ul className="grid gap-1 border-b border-white/5 pb-3">
+                      {SERVICE_PAGES.map((service) => (
+                        <li key={service.slug}>
+                          <a
+                            href={`/services/${service.slug}`}
+                            onClick={() => setOpen(false)}
+                            className="flex items-center gap-3 py-2 pl-4 text-[12px] font-semibold tracking-[0.08em] text-white/60 uppercase"
+                          >
+                            <span className="h-1.5 w-1.5 shrink-0 bg-safety" aria-hidden />
+                            {service.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
