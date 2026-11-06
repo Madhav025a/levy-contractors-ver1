@@ -14,7 +14,6 @@ export type ServicePage = {
   scope: { title: string; copy: string }[];
   steps: string[];
   clients: string[];
-  clientList: { name: string; sector: string }[];
   faqs: { q: string; a: string }[];
 };
 
@@ -35,14 +34,6 @@ export const SERVICE_PAGES: ServicePage[] = [
       { title: "Waste Handling & Documentation", copy: "Proper packaging, transport, disposal, and project closeout documentation." },
     ],
     steps: ["Project Review", "Work Plan & Notifications", "Containment Setup", "Abatement", "Clearance & Closeout"],
-    clientList: [
-      { name: "Industrial Manufacturing Client", sector: "Industrial" },
-      { name: "University Campus Client", sector: "Higher Education" },
-      { name: "Property Management Client", sector: "Property Management" },
-      { name: "General Contractor Client", sector: "Construction" },
-      { name: "Healthcare Facility Client", sector: "Institutional" },
-      { name: "Commercial Office Client", sector: "Commercial" },
-    ],
     clients: ["Industrial corporations", "Universities", "Management companies", "General contractors"],
     faqs: [
       { q: "Do you work in occupied buildings?", a: "Yes. We regularly phase work in active facilities, campuses, and managed properties to keep operations running." },
@@ -66,14 +57,6 @@ export const SERVICE_PAGES: ServicePage[] = [
       { title: "Industrial Demolition", copy: "Plants, equipment, and process areas with utility isolation and hazard controls." },
     ],
     steps: ["Site Walk", "Utility Isolation", "Abatement Coordination", "Demolition", "Debris Removal & Cleanup"],
-    clientList: [
-      { name: "General Contractor Client", sector: "Construction" },
-      { name: "Industrial Plant Client", sector: "Industrial" },
-      { name: "Commercial Developer Client", sector: "Development" },
-      { name: "Property Management Client", sector: "Property Management" },
-      { name: "Retail Property Client", sector: "Commercial" },
-      { name: "Municipal Facility Client", sector: "Public Sector" },
-    ],
     clients: ["General contractors", "Industrial facilities", "Property managers", "Developers"],
     faqs: [
       { q: "Can you handle abatement and demolition together?", a: "Yes. Combining both under one contractor simplifies scheduling and accountability." },
@@ -100,14 +83,6 @@ export const SERVICE_PAGES: ServicePage[] = [
       { title: "Findings & Project Planning", copy: "Bring site observations and asbestos testing results together in a clear summary of findings and recommended next steps. Discuss how those findings affect the scope, schedule, and coordination of assessment, abatement, or demolition work." },
     ],
     steps: ["Project & Records Review", "Site Assessment & Inspection", "Survey & Material Sampling", "Testing & Findings", "Recommendations & Planning"],
-    clientList: [
-      { name: "Facility Management Client", sector: "Facility Management" },
-      { name: "University Campus Client", sector: "Higher Education" },
-      { name: "Industrial Owner Client", sector: "Industrial" },
-      { name: "General Contractor Client", sector: "Construction" },
-      { name: "Institutional Facility Client", sector: "Institutional" },
-      { name: "Commercial Property Client", sector: "Commercial" },
-    ],
     clients: ["Facility managers", "Universities", "Industrial owners", "General contractors"],
     faqs: [
       { q: "When should an assessment happen?", a: "Ideally during early planning, before bids are finalized, so scope and budget are accurate." },
@@ -134,14 +109,6 @@ export const SERVICE_PAGES: ServicePage[] = [
       { title: "Disposal & Closeout", copy: "Proper disposal of contaminated materials and project closeout." },
     ],
     steps: ["Site Review", "Containment Setup", "Removal & Treatment", "Cleaning", "Closeout"],
-    clientList: [
-      { name: "Property Management Client", sector: "Property Management" },
-      { name: "Commercial Building Client", sector: "Commercial" },
-      { name: "Industrial Facility Client", sector: "Industrial" },
-      { name: "Institutional Facility Client", sector: "Institutional" },
-      { name: "General Contractor Client", sector: "Construction" },
-      { name: "University Campus Client", sector: "Higher Education" },
-    ],
     clients: ["Property managers", "Commercial owners", "Industrial facilities", "Institutions"],
     faqs: [
       { q: "Do you work in occupied buildings?", a: "Yes. We use containment to isolate work areas and minimize disruption to building operations." },
