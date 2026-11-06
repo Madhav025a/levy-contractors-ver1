@@ -36,7 +36,7 @@ export function PageHero({
     <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-ink pt-44 pb-20">
       <img src={image} alt={alt} width={1600} height={1000} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10" />
-      <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[1fr_400px]">
+      <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[1fr_480px]">
         <div>
         <p className="eyebrow anim-rise text-safety">{eyebrow}</p>
         <h1 className="anim-rise mt-3 max-w-4xl font-display text-5xl leading-[0.95] text-white md:text-7xl">{title}</h1>
@@ -48,7 +48,7 @@ export function PageHero({
           </a>
         </div>
         </div>
-        <div className="anim-slide-up"><LeadForm id="hero-quote" compact /></div>
+        <div className="anim-slide-up"><LeadForm id="hero-quote" /></div>
       </div>
     </section>
   );
