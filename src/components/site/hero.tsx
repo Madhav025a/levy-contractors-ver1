@@ -6,8 +6,7 @@ import heroVideo from "@/assets/hero-video.mp4.asset.json";
 const SERVICES = [
   "Asbestos Removal",
   "Demolition",
-  "Site Assessment",
-  "Asbestos Surveys, Inspections & Testing",
+  "Site Assessment & Asbestos Surveys, Inspections & Testing",
   "Mold Remediation",
   "Other",
 ];

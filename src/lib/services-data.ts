@@ -1,7 +1,6 @@
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
-import testingImg from "@/assets/svc-testing.jpg";
 import moldImg from "@/assets/svc-mold.jpg";
 
 export type ServicePage = {
@@ -85,19 +84,22 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     slug: "site-assessment",
     number: "03",
-    title: "Site Assessment",
+    title: "Site Assessment & Asbestos Surveys, Inspections & Testing",
     tagline: "Know the risks before the work begins.",
     intro:
-      "Our site assessments identify structural, utility, fire, safety, and environmental considerations up front — so owners and contractors can budget accurately and avoid surprises once work starts.",
+      "Levy brings site assessment and asbestos surveys, inspections, and testing together in one pre-project service. We review building conditions, utilities, safety considerations, and suspect asbestos-containing materials to help commercial and industrial owners plan renovation, abatement, or demolition with a clear understanding of the work ahead.",
     image: assessmentImg,
     alt: "Construction supervisor reviewing plans on a tablet inside an industrial plant",
     scope: [
-      { title: "Engineering Survey", copy: "Review of structural conditions and building systems that affect the work." },
-      { title: "Utilities", copy: "Identification of live utilities and isolation requirements before abatement or demolition." },
-      { title: "Fire Prevention", copy: "Assessment of fire risks and controls needed during the project." },
-      { title: "Safety Risks", copy: "Documentation of site hazards and the controls required to protect crews and occupants." },
+      { title: "Site Assessment", copy: "Review structural conditions, building systems, access, and the proposed work area. The assessment identifies conditions that can affect sequencing, coordination, and the scope of a commercial or industrial project." },
+      { title: "Asbestos Surveys", copy: "Review the areas affected by planned renovation or demolition and identify suspect asbestos-containing materials. The survey establishes what needs closer inspection or sampling so environmental considerations can be included in project planning." },
+      { title: "Asbestos Inspections", copy: "Inspect accessible suspect materials and document their location, condition, and relationship to the proposed work. Inspection findings help define the sampling scope and identify areas requiring further evaluation." },
+      { title: "Sampling & Testing", copy: "Collect material samples for laboratory analysis to determine whether asbestos is present. Testing results inform decisions about handling materials and planning any necessary abatement; visual inspection alone cannot confirm asbestos content." },
+      { title: "Utilities & Fire Prevention", copy: "Identify utilities that may affect the work and discuss isolation requirements and fire risks. These findings support coordination with owners, facility managers, and the project team before site activities begin." },
+      { title: "Safety & Site Controls", copy: "Review hazards, occupant access, and the separation of work areas from active operations. Use the assessment to identify protection measures and site controls that need to be addressed in the project plan." },
+      { title: "Findings & Project Planning", copy: "Bring site observations and asbestos testing results together in a clear summary of findings and recommended next steps. Discuss how those findings affect the scope, schedule, and coordination of assessment, abatement, or demolition work." },
     ],
-    steps: ["Engineering Survey", "Utilities", "Fire Prevention", "Safety Risks", "Project Planning"],
+    steps: ["Project & Records Review", "Site Assessment & Inspection", "Survey & Material Sampling", "Testing & Findings", "Recommendations & Planning"],
     clientList: [
       { name: "Facility Management Client", sector: "Facility Management" },
       { name: "University Campus Client", sector: "Higher Education" },
@@ -111,42 +113,14 @@ export const SERVICE_PAGES: ServicePage[] = [
       { q: "When should an assessment happen?", a: "Ideally during early planning, before bids are finalized, so scope and budget are accurate." },
       { q: "What do I receive?", a: "A clear summary of findings and recommended next steps to plan the project." },
       { q: "Can the assessment lead into abatement or demolition?", a: "Yes. Many clients continue with Levy to execute the work identified." },
-    ],
-  },
-  {
-    slug: "asbestos-surveys-testing",
-    number: "04",
-    title: "Asbestos Surveys, Inspections & Testing",
-    tagline: "Know what's in the building before work begins.",
-    intro:
-      "Before renovation or demolition, Levy performs asbestos surveys, inspections, and testing for commercial and industrial properties — identifying suspect materials so owners and contractors can plan scope, budget, and compliance requirements accurately.",
-    image: testingImg,
-    alt: "Inspector in protective equipment collecting a material sample for asbestos testing",
-    scope: [
-      { title: "Asbestos Surveys", copy: "Pre-renovation and pre-demolition surveys of commercial and industrial buildings." },
-      { title: "Inspections", copy: "Systematic inspection of suspect materials throughout the facility." },
-      { title: "Sampling & Testing", copy: "Material sampling with laboratory analysis to confirm asbestos content." },
-      { title: "Findings & Next Steps", copy: "Clear reporting of results and recommended next steps for abatement or management." },
-    ],
-    steps: ["Project Review", "Site Walk & Inspection", "Sampling & Testing", "Lab Analysis", "Report & Recommendations"],
-    clientList: [
-      { name: "Commercial Property Client", sector: "Commercial" },
-      { name: "Industrial Facility Client", sector: "Industrial" },
-      { name: "General Contractor Client", sector: "Construction" },
-      { name: "Property Management Client", sector: "Property Management" },
-      { name: "University Campus Client", sector: "Higher Education" },
-      { name: "Institutional Facility Client", sector: "Institutional" },
-    ],
-    clients: ["Commercial property owners", "General contractors", "Property managers", "Industrial facilities"],
-    faqs: [
-      { q: "When is an asbestos survey required?", a: "Typically before renovation or demolition of older commercial and industrial buildings, so materials can be handled correctly." },
-      { q: "What happens if asbestos is found?", a: "We explain the findings and can plan the abatement work, keeping everything with one contractor." },
-      { q: "What areas do you serve?", a: "Tennessee, Alabama, Kentucky, and Georgia. Call to discuss projects outside the region." },
+      { q: "Are asbestos surveys, inspections, and testing part of this service?", a: "Yes. They are included within the combined assessment service. The project scope determines which areas are surveyed, which suspect materials are inspected, and what samples are needed for laboratory analysis." },
+      { q: "Can an inspection alone confirm whether a material contains asbestos?", a: "No. An inspection identifies suspect materials; material sampling and laboratory analysis are used to determine asbestos content." },
+      { q: "What happens if asbestos is found?", a: "We explain the findings and discuss the next steps for the planned work, including coordination of asbestos abatement when needed." },
     ],
   },
   {
     slug: "mold-remediation",
-    number: "05",
+    number: "04",
     title: "Mold Remediation",
     tagline: "Controlled, safe mold removal for commercial facilities.",
     intro:
@@ -178,5 +152,6 @@ export const SERVICE_PAGES: ServicePage[] = [
 ];
 
 export function getService(slug: string) {
-  return SERVICE_PAGES.find((s) => s.slug === slug);
+  const canonicalSlug = slug === "asbestos-surveys-testing" ? "site-assessment" : slug;
+  return SERVICE_PAGES.find((s) => s.slug === canonicalSlug);
 }

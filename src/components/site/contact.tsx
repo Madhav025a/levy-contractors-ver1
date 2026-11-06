@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./reveal";
 import { LeadForm } from "./hero";
 import levyLogo from "@/assets/levy-logo.png.asset.json";
+import { SERVICE_PAGES } from "@/lib/services-data";
 
 export function ContactSection() {
   return (
@@ -97,11 +98,11 @@ export function Footer() {
           <div>
             <p className="eyebrow text-white/40">Services</p>
             <ul className="mt-4 grid gap-2.5 text-sm text-white/65">
-              {[["Asbestos Removal", "asbestos-removal"], ["Demolition", "demolition"], ["Site Assessment", "site-assessment"], ["Asbestos Surveys & Testing", "asbestos-surveys-testing"], ["Mold Remediation", "mold-remediation"]].map(
-                ([item, slug]) => (
-                  <li key={item}>
-                    <a href={`/services/${slug}`} className="transition-colors hover:text-safety">
-                      {item}
+              {SERVICE_PAGES.map(
+                (service) => (
+                  <li key={service.slug}>
+                    <a href={`/services/${service.slug}`} className="transition-colors hover:text-safety">
+                      {service.title}
                     </a>
                   </li>
                 ),
