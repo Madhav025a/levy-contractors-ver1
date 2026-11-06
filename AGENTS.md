@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep service listings in the shared ServiceCards component backed by SERVICE_PAGES so homepage and services index stay consistent.
+- Resolve the former asbestos surveys URL to the combined assessment entry so existing links retain access without duplicating the service catalog.

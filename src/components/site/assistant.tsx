@@ -6,8 +6,7 @@ type Msg = { id: number; from: "bot" | "user"; text: string };
 const QUICK_ACTIONS = [
   "Asbestos Removal",
   "Demolition",
-  "Site Assessment",
-  "Asbestos Surveys & Testing",
+  "Site Assessment & Asbestos Surveys, Inspections & Testing",
   "Mold Remediation",
   "Request a Quote",
   "Talk to Our Team",
@@ -20,10 +19,8 @@ const SERVICE_NOTES: Record<string, string> = {
     "We've specialized in commercial and industrial asbestos abatement in the Nashville area since 1987, with a strong focus on safety and regulatory compliance.",
   Demolition:
     "We handle structural, selective, commercial, and industrial demolition using specialized equipment to keep projects efficient.",
-  "Site Assessment":
-    "Our assessments cover engineering surveys, utility locations, fire prevention, and safety and health risks before work begins.",
-  "Asbestos Surveys & Testing":
-    "We perform pre-renovation and pre-demolition asbestos surveys, inspections, and material testing for commercial and industrial properties.",
+  "Site Assessment & Asbestos Surveys, Inspections & Testing":
+    "Our combined assessment service covers site conditions, utilities, fire and safety considerations, plus asbestos surveys, inspections, material sampling, and testing before renovation or demolition.",
   "Mold Remediation":
     "We provide controlled mold remediation for commercial and industrial facilities, using containment and proper removal methods.",
   "Request a Quote": "Happy to get this in front of our project team.",

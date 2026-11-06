@@ -34,7 +34,8 @@ export const Route = createFileRoute("/services/$slug")({
 
 function ServiceDetail() {
   const { slug } = Route.useLoaderData();
-  const s = getService(slug)!;
+  const s = getService(slug);
+  if (!s) throw notFound();
   const others = SERVICE_PAGES.filter((o) => o.slug !== s.slug);
 
   return (
@@ -151,12 +152,12 @@ function ServiceDetail() {
                 {others.map((o) => (
                   <Link key={o.slug} to="/services/$slug" params={{ slug: o.slug }}
                     className="card-lift group flex items-center gap-5 overflow-hidden border border-border bg-card">
-                    <img src={o.image} alt={o.alt} loading="lazy" className="h-28 w-36 object-cover" />
+                    <img src={o.image} alt={o.alt} loading="lazy" className="h-40 w-24 shrink-0 object-cover sm:w-36" />
                     <div className="flex-1 pr-5">
                       <span className="font-display text-xs tracking-[0.2em] text-safety">{o.number}</span>
-                      <h3 className="font-display text-2xl text-ink">{o.title}</h3>
+                      <h3 className="font-display text-xl leading-tight text-ink">{o.title}</h3>
                     </div>
-                    <ArrowRight className="mr-5 h-5 w-5 text-ink group-hover:text-safety" aria-hidden />
+                    <ArrowRight className="mr-5 h-5 w-5 shrink-0 text-ink group-hover:text-safety" aria-hidden />
                   </Link>
                 ))}
               </div>
