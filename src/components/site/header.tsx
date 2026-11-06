@@ -55,13 +55,47 @@ export function Header() {
 
           <ul className="hidden items-center gap-7 xl:flex">
             {NAV.map((item) => (
-              <li key={item.label}>
+              <li key={item.label} className={item.label === "Services" ? "group relative" : undefined}>
                 <a
                   href={item.href}
                   className="relative py-2 text-[13px] font-semibold tracking-[0.08em] text-white/75 uppercase transition-colors hover:text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-right after:scale-x-0 after:bg-safety after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
                 >
                   {item.label}
                 </a>
+                {item.label === "Services" && (
+                  <div className="invisible absolute top-full left-1/2 w-[22rem] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                    <div className="border border-white/10 bg-ink shadow-[var(--shadow-hard)]">
+                      <span className="block h-[3px] w-full bg-safety" aria-hidden />
+                      <ul className="grid gap-px bg-white/10">
+                        {SERVICE_PAGES.map((service) => (
+                          <li key={service.slug}>
+                            <a
+                              href={`/services/${service.slug}`}
+                              className="group/item flex items-center gap-4 bg-ink px-5 py-4 transition-colors hover:bg-ink-soft"
+                            >
+                              <span className="font-display text-sm tracking-[0.15em] text-safety">
+                                {service.number}
+                              </span>
+                              <span className="flex-1 text-[12.5px] font-semibold tracking-[0.06em] text-white/85 uppercase transition-colors group-hover/item:text-white">
+                                {service.title}
+                              </span>
+                              <ArrowRight
+                                className="h-4 w-4 shrink-0 text-safety opacity-0 transition-all duration-200 group-hover/item:translate-x-1 group-hover/item:opacity-100"
+                                aria-hidden
+                              />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                      <a
+                        href="/services"
+                        className="block border-t border-white/10 px-5 py-3 text-[11px] font-bold tracking-[0.16em] text-white/60 uppercase transition-colors hover:text-safety"
+                      >
+                        View All Services
+                      </a>
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
