@@ -4,7 +4,7 @@ import { Header, MobileStickyBar } from "@/components/site/header";
 import { ContactSection, Footer } from "@/components/site/contact";
 import { Reveal } from "@/components/site/reveal";
 import { LeadForm } from "@/components/site/hero";
-import { CLIENT_LIST, getService, SERVICE_PAGES } from "@/lib/services-data";
+import { CLIENT_GROUPS, clientsForGroup, getService, SERVICE_PAGES } from "@/lib/services-data";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -118,20 +118,33 @@ function ServiceDetail() {
                 Tennessee, Alabama, Kentucky, and Georgia since 1987.
               </p>
             </Reveal>
-            <div className="mt-10 border border-border bg-card p-6 md:p-10">
-              <ul className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-                {CLIENT_LIST.map((c, i) => (
-                  <li key={c.name} className="flex items-center gap-4 bg-card p-5">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-ink font-display text-sm text-safety">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <p className="font-semibold text-ink">{c.name}</p>
-                      <p className="text-[12px] font-semibold tracking-[0.12em] text-muted-foreground uppercase">{c.sector}</p>
+            <div className="mt-10 grid gap-6">
+              {CLIENT_GROUPS.map((group, gi) => {
+                const members = clientsForGroup(group);
+                const mixed = group.sectors.length > 1;
+                return (
+                  <Reveal key={group.title} delay={gi * 60}>
+                    <div className="relative border border-border bg-card p-6 md:p-10">
+                      <span className="absolute top-0 left-0 h-[3px] w-16 bg-safety" aria-hidden />
+                      <h3 className="font-display text-2xl text-ink md:text-3xl">{group.title}</h3>
+                      <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-muted-foreground">{group.blurb}</p>
+                      <ul className="mt-7 grid gap-x-10 gap-y-3.5 md:grid-cols-2">
+                        {members.map((c) => (
+                          <li key={c.name} className="flex items-baseline gap-3">
+                            <span className="shrink-0 text-[14.5px] font-bold text-ink">{c.name}</span>
+                            <span className="min-w-6 flex-1 border-b border-dotted border-muted-foreground/40" aria-hidden />
+                            {mixed && (
+                              <span className="shrink-0 text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+                                {c.sector}
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </li>
-                ))}
-              </ul>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
