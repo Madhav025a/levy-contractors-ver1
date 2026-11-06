@@ -10,14 +10,14 @@ import property from "@/assets/ind-property.jpg";
 export const Route = createFileRoute("/projects")({
   head: () =>
     pageMeta("/projects", "Projects | Commercial & Industrial Work | Levy Industrial",
-      "Asbestos abatement, demolition, and site assessment projects for industrial, university, and commercial clients in Middle Tennessee."),
+      "Asbestos abatement, demolition, and site assessment projects for industrial, university, and commercial clients across Tennessee, Alabama, Kentucky, and Georgia."),
   component: ProjectsPage,
 });
 
 function ProjectsPage() {
   return (
     <PageShell>
-      <PageHero eyebrow="Our Work" title="Projects Across Middle Tennessee"
+      <PageHero eyebrow="Our Work" title="Projects Across The Southeast"
         copy="Industrial plants, campuses, commercial buildings, and managed properties — completed safely and properly."
         image={industrial} alt="Industrial facility abatement project" />
       <Projects />
