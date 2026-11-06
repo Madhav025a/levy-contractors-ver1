@@ -11,7 +11,7 @@ type Stat = { value?: number; suffix?: string; unit?: string; label?: string; co
 
 const STATS: Stat[] = [
   { value: 30, suffix: "+", unit: "Years", copy: "Commercial & industrial asbestos experience" },
-  { value: 1987, suffix: "", unit: "Since", copy: "Serving the Nashville area" },
+  { value: 1987, suffix: "", unit: "Since", copy: "Serving TN, AL, KY & GA" },
   { label: "Safety First", copy: "Compliance-focused operations" },
   { label: "Commercial & Industrial", copy: "Specialized project experience" },
 ];
@@ -245,13 +245,14 @@ export function Services() {
                   <h3 className="mt-1 font-display text-2xl text-ink">{service.title}</h3>
                   <span className="mt-3 block h-[3px] w-10 bg-safety transition-all duration-500 group-hover:w-20" />
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{service.copy}</p>
-                  <a
-                    href="#quote"
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
                     className="mt-5 inline-flex items-center gap-2 text-[12px] font-bold tracking-[0.1em] text-ink uppercase transition-colors hover:text-safety-deep"
                   >
                     {service.cta}
                     <ArrowRight className="h-4 w-4" aria-hidden />
-                  </a>
+                  </Link>
                 </div>
               </article>
             </Reveal>
