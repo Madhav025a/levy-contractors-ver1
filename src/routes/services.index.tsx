@@ -12,8 +12,8 @@ import safetyWide from "@/assets/safety-wide.jpg";
 
 export const Route = createFileRoute("/services/")({
   head: () =>
-    pageMeta("/services", "Services | Asbestos Removal, Demolition & Site Assessment | Levy",
-      "Commercial and industrial asbestos removal, demolition, and site assessment services in Nashville and Middle Tennessee."),
+    pageMeta("/services", "Services | Asbestos, Demolition, Mold & Assessment | Levy",
+      "Commercial and industrial asbestos abatement, surveys and testing, demolition, mold remediation, and site assessment across TN, AL, KY, and GA."),
   component: ServicesPage,
 });
 

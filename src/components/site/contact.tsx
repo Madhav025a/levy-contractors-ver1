@@ -89,14 +89,15 @@ export function Footer() {
               className="h-14 w-auto bg-white px-3 py-2"
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-              Commercial and industrial environmental construction in the Nashville area since 1987.
+              Commercial and industrial environmental construction since 1987 — serving Tennessee,
+              Alabama, Kentucky, and Georgia.
             </p>
           </div>
 
           <div>
             <p className="eyebrow text-white/40">Services</p>
             <ul className="mt-4 grid gap-2.5 text-sm text-white/65">
-              {[["Asbestos Removal", "asbestos-removal"], ["Demolition", "demolition"], ["Site Assessment", "site-assessment"]].map(
+              {[["Asbestos Removal", "asbestos-removal"], ["Demolition", "demolition"], ["Site Assessment", "site-assessment"], ["Asbestos Surveys & Testing", "asbestos-surveys-testing"], ["Mold Remediation", "mold-remediation"]].map(
                 ([item, slug]) => (
                   <li key={item}>
                     <a href={`/services/${slug}`} className="transition-colors hover:text-safety">

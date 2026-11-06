@@ -41,7 +41,7 @@ export function Industries() {
           <h2 className="mt-3 font-display text-4xl text-ink md:text-5xl">Industries We Serve</h2>
           <p className="mt-4 max-w-2xl text-[15px] text-muted-foreground">
             Levy has been selected by major industrial corporations, universities, and management
-            companies across the Nashville area.
+            companies across Tennessee, Alabama, Kentucky, and Georgia.
           </p>
         </Reveal>
 
@@ -364,26 +364,32 @@ export function ServiceArea() {
         <Reveal>
           <p className="eyebrow text-steel">Where We Work</p>
           <h2 className="mt-3 font-display text-4xl leading-[1.02] text-ink md:text-5xl">
-            Serving Nashville &amp; Middle Tennessee
+            Serving Tennessee, Alabama, Kentucky &amp; Georgia
           </h2>
           <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-            Levy Industrial Contractors is based in Nashville, Tennessee and has worked in the
-            Nashville area since 1987.
+            Levy Industrial Contractors is based in Nashville, Tennessee and serves commercial and
+            industrial clients across Tennessee, Alabama, Kentucky, and Georgia.
           </p>
-          <div className="mt-8 flex items-start gap-3 border-l-2 border-safety pl-5">
-            <MapPin className="mt-0.5 h-5 w-5 text-safety" aria-hidden />
-            <div>
-              <p className="font-display text-xl text-ink">Nashville, Tennessee</p>
-              <p className="text-sm text-muted-foreground">Primary service location</p>
-            </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {["Tennessee", "Alabama", "Kentucky", "Georgia"].map((state) => (
+              <div key={state} className="flex items-start gap-3 border-l-2 border-safety pl-5">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-safety" aria-hidden />
+                <div>
+                  <p className="font-display text-xl text-ink">{state}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {state === "Tennessee" ? "Home base — Nashville" : "Service area"}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </Reveal>
 
         <Reveal delay={120}>
           <div className="overflow-hidden border border-border">
             <iframe
-              title="Levy Industrial Contractors service area — Nashville, Tennessee"
-              src="https://www.google.com/maps?q=Nashville,+Tennessee&z=10&output=embed"
+              title="Levy Industrial Contractors service area — Tennessee, Alabama, Kentucky, Georgia"
+              src="https://www.google.com/maps?q=Nashville,+Tennessee&z=6&output=embed"
               loading="lazy"
               className="h-[420px] w-full grayscale-[0.85] contrast-110"
             />

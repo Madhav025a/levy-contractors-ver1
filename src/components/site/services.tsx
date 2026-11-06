@@ -4,12 +4,14 @@ import { CountUp, Reveal } from "./reveal";
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
+import testingImg from "@/assets/svc-testing.jpg";
+import moldImg from "@/assets/svc-mold.jpg";
 
 type Stat = { value?: number; suffix?: string; unit?: string; label?: string; copy: string };
 
 const STATS: Stat[] = [
   { value: 30, suffix: "+", unit: "Years", copy: "Commercial & industrial asbestos experience" },
-  { value: 1987, suffix: "", unit: "Since", copy: "Serving the Nashville area" },
+  { value: 1987, suffix: "", unit: "Since", copy: "Serving TN, AL, KY & GA" },
   { label: "Safety First", copy: "Compliance-focused operations" },
   { label: "Commercial & Industrial", copy: "Specialized project experience" },
 ];
@@ -74,6 +76,38 @@ const SERVICES = [
     ],
     cta: "Explore Demolition",
     wide: true,
+  },
+  {
+    number: "04",
+    title: "Asbestos Surveys, Inspections & Testing",
+    slug: "asbestos-surveys-testing",
+    image: testingImg,
+    alt: "Inspector in protective equipment collecting a material sample for asbestos testing",
+    copy: "Pre-renovation and pre-demolition asbestos surveys, inspections, and material testing for commercial and industrial properties.",
+    bullets: [
+      "Asbestos surveys",
+      "Inspections",
+      "Sampling & testing",
+      "Findings & next steps",
+    ],
+    cta: "Learn More",
+    wide: false,
+  },
+  {
+    number: "05",
+    title: "Mold Remediation",
+    slug: "mold-remediation",
+    image: moldImg,
+    alt: "Worker in protective suit treating a mold-affected wall inside a commercial building",
+    copy: "Controlled mold remediation for commercial and industrial facilities, using containment and proper removal methods.",
+    bullets: [
+      "Assessment & containment",
+      "Controlled removal",
+      "Cleaning & treatment",
+      "Disposal & closeout",
+    ],
+    cta: "Learn More",
+    wide: false,
   },
 ];
 
@@ -211,13 +245,14 @@ export function Services() {
                   <h3 className="mt-1 font-display text-2xl text-ink">{service.title}</h3>
                   <span className="mt-3 block h-[3px] w-10 bg-safety transition-all duration-500 group-hover:w-20" />
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{service.copy}</p>
-                  <a
-                    href="#quote"
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
                     className="mt-5 inline-flex items-center gap-2 text-[12px] font-bold tracking-[0.1em] text-ink uppercase transition-colors hover:text-safety-deep"
                   >
                     {service.cta}
                     <ArrowRight className="h-4 w-4" aria-hidden />
-                  </a>
+                  </Link>
                 </div>
               </article>
             </Reveal>

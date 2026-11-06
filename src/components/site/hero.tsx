@@ -7,6 +7,8 @@ const SERVICES = [
   "Asbestos Removal",
   "Demolition",
   "Site Assessment",
+  "Asbestos Surveys, Inspections & Testing",
+  "Mold Remediation",
   "Other",
 ];
 
@@ -126,7 +128,8 @@ export function Hero() {
             style={{ animationDelay: "300ms" }}
           >
             Levy Industrial Contractors provides commercial and industrial asbestos abatement,
-            demolition, and site assessment services throughout the Nashville area.
+            demolition, and site assessment services across Tennessee, Alabama, Kentucky, and
+            Georgia.
           </p>
 
           <div
