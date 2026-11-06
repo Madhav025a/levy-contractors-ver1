@@ -4,7 +4,7 @@ import { Header, MobileStickyBar } from "@/components/site/header";
 import { ContactSection, Footer } from "@/components/site/contact";
 import { Reveal } from "@/components/site/reveal";
 import { LeadForm } from "@/components/site/hero";
-import { getService, SERVICE_PAGES } from "@/lib/services-data";
+import { CLIENT_LIST, getService, SERVICE_PAGES } from "@/lib/services-data";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -112,11 +112,15 @@ function ServiceDetail() {
           <div className="mx-auto max-w-[1400px] px-5 md:px-8">
             <Reveal>
               <p className="eyebrow text-steel">Trusted By</p>
-              <h2 className="mt-3 font-display text-4xl text-ink md:text-5xl">Our {s.title} Clients</h2>
+              <h2 className="mt-3 font-display text-4xl text-ink md:text-5xl">Our Clients</h2>
+              <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+                A selection of the facilities, institutions, and organizations Levy has served across
+                Tennessee, Alabama, Kentucky, and Georgia since 1987.
+              </p>
             </Reveal>
             <div className="mt-10 border border-border bg-card p-6 md:p-10">
               <ul className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-                {s.clientList.map((c, i) => (
+                {CLIENT_LIST.map((c, i) => (
                   <li key={c.name} className="flex items-center gap-4 bg-card p-5">
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-ink font-display text-sm text-safety">
                       {String(i + 1).padStart(2, "0")}
