@@ -113,8 +113,6 @@ export const SERVICE_PAGES: ServicePage[] = [
       { q: "Can the assessment lead into abatement or demolition?", a: "Yes. Many clients continue with Levy to execute the work identified." },
     ],
   },
-];
-
   {
     slug: "asbestos-surveys-testing",
     number: "04",

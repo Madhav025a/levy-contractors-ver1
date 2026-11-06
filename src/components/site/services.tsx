@@ -4,6 +4,8 @@ import { CountUp, Reveal } from "./reveal";
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
+import testingImg from "@/assets/svc-testing.jpg";
+import moldImg from "@/assets/svc-mold.jpg";
 
 type Stat = { value?: number; suffix?: string; unit?: string; label?: string; copy: string };
 
@@ -74,6 +76,38 @@ const SERVICES = [
     ],
     cta: "Explore Demolition",
     wide: true,
+  },
+  {
+    number: "04",
+    title: "Asbestos Surveys, Inspections & Testing",
+    slug: "asbestos-surveys-testing",
+    image: testingImg,
+    alt: "Inspector in protective equipment collecting a material sample for asbestos testing",
+    copy: "Pre-renovation and pre-demolition asbestos surveys, inspections, and material testing for commercial and industrial properties.",
+    bullets: [
+      "Asbestos surveys",
+      "Inspections",
+      "Sampling & testing",
+      "Findings & next steps",
+    ],
+    cta: "Learn More",
+    wide: false,
+  },
+  {
+    number: "05",
+    title: "Mold Remediation",
+    slug: "mold-remediation",
+    image: moldImg,
+    alt: "Worker in protective suit treating a mold-affected wall inside a commercial building",
+    copy: "Controlled mold remediation for commercial and industrial facilities, using containment and proper removal methods.",
+    bullets: [
+      "Assessment & containment",
+      "Controlled removal",
+      "Cleaning & treatment",
+      "Disposal & closeout",
+    ],
+    cta: "Learn More",
+    wide: false,
   },
 ];
 
