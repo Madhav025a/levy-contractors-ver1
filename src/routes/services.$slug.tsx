@@ -45,7 +45,7 @@ function ServiceDetail() {
         <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-ink pt-44 pb-20">
           <img src={s.image} alt={s.alt} className="absolute inset-0 h-full w-full object-cover" width={1280} height={960} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
-          <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[1fr_400px]">
+          <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[1fr_480px]">
             <div>
             <Link to="/" hash="services" className="eyebrow text-white/70 hover:text-safety">
               ← All Services
@@ -60,7 +60,7 @@ function ServiceDetail() {
               </a>
             </div>
             </div>
-            <div className="anim-slide-up"><LeadForm id="hero-quote" compact /></div>
+            <div className="anim-slide-up"><LeadForm id="hero-quote" /></div>
           </div>
         </section>
 
