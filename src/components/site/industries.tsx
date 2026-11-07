@@ -173,17 +173,25 @@ export function Credentials() {
                 <img
                   key={i}
                   src={cert.url}
-                  alt={i === 0 ? "NWBOC WBE Certified" : "NWBOC WOSB Certified"}
+                  alt={
+                    i === 0
+                      ? "NWBOC Women's Business Enterprise (WBE) Certified logo"
+                      : "NWBOC Women-Owned Small Business (WOSB) Certified logo"
+                  }
                   className="h-28 w-auto rounded-sm bg-white px-4 py-3 md:h-36"
                   loading="lazy"
                 />
               ))}
             </div>
-            <div className="max-w-sm text-center sm:text-left">
-              <p className="font-display text-2xl text-white">NWBOC Certified</p>
+            <div className="max-w-md text-center sm:text-left">
+              <p className="font-display text-2xl text-white">What WBE &amp; WOSB Mean For Your Project</p>
               <p className="mt-2 text-sm leading-relaxed text-white/60">
-                National Women Business Owners Corporation certification — WBE and WOSB — supporting
-                supplier diversity requirements on commercial and industrial projects.
+                Levy is certified by the National Women Business Owners Corporation as a
+                Women&apos;s Business Enterprise (WBE) and Women-Owned Small Business (WOSB). For
+                commercial and institutional clients, hiring Levy counts toward supplier diversity
+                and small-business participation goals on public and private contracts — while
+                delivering the same experienced crews, safety record, and regulatory compliance
+                we&apos;ve brought to every project since 1987.
               </p>
             </div>
           </div>

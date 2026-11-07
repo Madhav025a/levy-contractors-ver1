@@ -114,7 +114,11 @@ export function Hero() {
           <img
             key={i}
             src={cert.url}
-            alt={i === 0 ? "NWBOC WBE Certified" : "NWBOC WOSB Certified"}
+            alt={
+              i === 0
+                ? "NWBOC Women's Business Enterprise (WBE) Certified logo"
+                : "NWBOC Women-Owned Small Business (WOSB) Certified logo"
+            }
             className="h-9 w-auto rounded-sm bg-white px-2 py-1.5 shadow-lg md:h-11"
           />
         ))}
