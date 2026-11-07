@@ -49,6 +49,16 @@ import wku03 from "@/assets/wku-03.jpg";
 import wku04 from "@/assets/wku-04.jpg";
 import wku05 from "@/assets/wku-05.jpg";
 import wku06 from "@/assets/wku-06.jpg";
+import governor01 from "@/assets/governors-mansion-01.jpg";
+import governor02 from "@/assets/governors-mansion-02.jpg";
+import governor03 from "@/assets/governors-mansion-03.jpg";
+import governor04 from "@/assets/governors-mansion-04.jpg";
+import governor05 from "@/assets/governors-mansion-05.jpg";
+import governor06 from "@/assets/governors-mansion-06.jpg";
+import governor07 from "@/assets/governors-mansion-07.jpg";
+import governor08 from "@/assets/governors-mansion-08.jpg";
+import governor09 from "@/assets/governors-mansion-09.jpg";
+import governor10 from "@/assets/governors-mansion-10.jpg";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -321,8 +331,19 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Selective Demolition", copy: "Demolished a few select areas of the mansion." },
       { title: "Protection of Existing Spaces", copy: "Protected the parts of the residence that remained." },
     ],
-    cover: selectiveImg,
-    media: [],
+    cover: governor05,
+    media: [
+      { type: "image", src: governor05, alt: "Workers on red scaffolding along the brick facade of the Tennessee Governor's Mansion.", preserveFrame: true },
+      { type: "image", src: governor04, alt: "Scaffolding and a crew member beside the mansion's arched exterior openings.", preserveFrame: true },
+      { type: "image", src: governor01, alt: "Protective plastic sheeting and equipment beside the mansion's curved interior staircase.", preserveFrame: true },
+      { type: "image", src: governor02, alt: "Compact demolition equipment working through an excavated opening beneath a supported beam.", preserveFrame: true },
+      { type: "image", src: governor03, alt: "Basement excavation with exposed ceiling framing, temporary lighting and compact equipment.", preserveFrame: true },
+      { type: "image", src: governor06, alt: "Excavated access opening with crew members and equipment at the mansion.", preserveFrame: true },
+      { type: "image", src: governor07, alt: "Stripped basement walls, temporary cables and demolition debris during selective removal.", preserveFrame: true },
+      { type: "image", src: governor08, alt: "Exposed basement wall reinforcement and overhead framing during project work.", preserveFrame: true },
+      { type: "image", src: governor09, alt: "Temporary flexible ducts beside boarded windows and exterior scaffolding.", preserveFrame: true },
+      { type: "image", src: governor10, alt: "Exterior excavation beside the mansion with a compact excavator, worker and boarded windows.", preserveFrame: true },
+    ],
   },
 ];
 
