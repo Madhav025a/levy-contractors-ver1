@@ -5,3 +5,4 @@
 - [x] Optimize and publish six South Central Bell photos with a real project cover.
 - [x] Optimize and add five Ryman Auditorium photos with a real project cover.
 - [x] Optimize and add eight Wildhorse Saloon photographs extracted from four scans, with a real project cover.
+- [ ] Optimize and add Love Circle Tower photographs from seven PDFs and update its cover.
