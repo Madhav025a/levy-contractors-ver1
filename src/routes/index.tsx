@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Commercial and industrial asbestos abatement, demolition, and site assessment since 1987 — serving Tennessee, Alabama, Kentucky, and Georgia. Call 615.227.1645.",
+          "Commercial and industrial asbestos abatement, demolition, and site assessment since 1987 — serving Tennessee, Alabama, Kentucky, and Georgia. Call +1 615-227-1645.",
       },
       { property: "og:title", content: "Levy Industrial Contractors | Nashville Since 1987" },
       { property: "og:type", content: "website" },

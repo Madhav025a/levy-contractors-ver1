@@ -16,10 +16,10 @@ export const askAdvisor = createServerFn({ method: "POST" })
       const text = response.output.flatMap((item) => item.type === "message"
         ? item.content.map((part) => part.type === "output_text" ? part.text : part.refusal)
         : []).join("\n").trim();
-      if (!text) return { text: "", error: "I couldn't complete that answer. Please call Levy at 615.227.1645." };
+      if (!text) return { text: "", error: "I couldn't complete that answer. Please call Levy at +1 615-227-1645." };
       return { text, error: null };
     } catch (error) {
       console.error("Advisor request failed", error instanceof GatewayError ? { code: error.code, ids: error.ids } : "Application error");
-      return { text: "", error: "The advisor is temporarily unavailable. Your message hasn't been sent to Levy. Please call 615.227.1645 or visit the contact page." };
+      return { text: "", error: "The advisor is temporarily unavailable. Your message hasn't been sent to Levy. Please call +1 615-227-1645 or visit the contact page." };
     }
   });
