@@ -2,6 +2,8 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./reveal";
 import { LeadForm } from "./hero";
 import levyLogo from "@/assets/levy-logo.png.asset.json";
+import certWbe from "@/assets/nwboc-wbe-certified.png.asset.json";
+import certWosb from "@/assets/nwboc-wosb-certified.png.asset.json";
 import { SERVICE_PAGES } from "@/lib/services-data";
 
 export function ContactSection() {
@@ -93,6 +95,16 @@ export function Footer() {
               Commercial and industrial environmental construction since 1987 — serving Tennessee,
               Alabama, Kentucky, and Georgia.
             </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              {[certWbe, certWosb].map((cert, i) => (
+                <img
+                  key={i}
+                  src={cert.url}
+                  alt={i === 0 ? "NWBOC WBE Certified" : "NWBOC WOSB Certified"}
+                  className="h-10 w-auto rounded-sm bg-white px-2 py-1.5"
+                />
+              ))}
+            </div>
           </div>
 
           <div>

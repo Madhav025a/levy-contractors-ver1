@@ -2,6 +2,8 @@ import { useState, type FormEvent } from "react";
 import { CheckCircle2, Phone, ShieldCheck, Building2, CalendarClock } from "lucide-react";
 import heroImage from "@/assets/hero-abatement.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import certWbe from "@/assets/nwboc-wbe-certified.png.asset.json";
+import certWosb from "@/assets/nwboc-wosb-certified.png.asset.json";
 
 const SERVICES = [
   "Asbestos Removal",
@@ -105,6 +107,17 @@ export function Hero() {
 
 
         <div className="hairline-grid absolute inset-0 opacity-20" />
+      </div>
+
+      <div className="anim-rise absolute top-24 right-5 z-10 flex gap-2 md:right-8 lg:top-28" style={{ animationDelay: "640ms" }}>
+        {[certWbe, certWosb].map((cert, i) => (
+          <img
+            key={i}
+            src={cert.url}
+            alt={i === 0 ? "NWBOC WBE Certified" : "NWBOC WOSB Certified"}
+            className="h-9 w-auto rounded-sm bg-white px-2 py-1.5 shadow-lg md:h-11"
+          />
+        ))}
       </div>
 
       <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 pt-40 pb-24 md:px-8 lg:pt-48">
