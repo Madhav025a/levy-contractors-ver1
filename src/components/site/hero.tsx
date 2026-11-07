@@ -2,8 +2,8 @@ import { useState, type FormEvent } from "react";
 import { CheckCircle2, Phone, ShieldCheck, Building2, CalendarClock } from "lucide-react";
 import heroImage from "@/assets/hero-abatement.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import certWbe from "@/assets/nwboc-wbe-certified.png.asset.json";
-import certWosb from "@/assets/nwboc-wosb-certified.png.asset.json";
+import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
+import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
 
 const SERVICES = [
   "Asbestos Removal",
