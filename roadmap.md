@@ -8,3 +8,4 @@
 - [x] Optimize and add eleven distinct Love Circle Tower photographs from seven PDFs and update its cover.
 - [x] Optimize and add six WKU Carol Knicely Building photos and update its cover.
 - [x] Optimize and add ten Governor's Mansion photos and update its cover.
+- [x] Optimize and add eight Belle Meade Church photos and update its cover.
