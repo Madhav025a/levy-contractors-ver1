@@ -9,7 +9,8 @@ import commercialImg from "@/assets/ind-commercial.jpg";
 import propertyImg from "@/assets/ind-property.jpg";
 import gcImg from "@/assets/ind-gc.jpg";
 import institutionalImg from "@/assets/ind-institutional.jpg";
-import nwbocCert from "@/assets/nwboc-certifications.png.asset.json";
+import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
+import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
 import review1 from "@/assets/review-1.jpg";
 import review2 from "@/assets/review-2.jpg";
 import review3 from "@/assets/review-3.jpg";
@@ -167,12 +168,17 @@ export function Credentials() {
 
         <Reveal>
           <div className="mt-8 flex flex-col items-center gap-8 border border-border bg-ink px-6 py-8 sm:flex-row sm:justify-center sm:gap-12">
-            <img
-              src={nwbocCert.url}
-              alt="NWBOC WBE Certified and WOSB Certified certification marks"
-              className="h-48 w-auto"
-              loading="lazy"
-            />
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              {[certWbe, certWosb].map((cert, i) => (
+                <img
+                  key={i}
+                  src={cert.url}
+                  alt={i === 0 ? "NWBOC WBE Certified" : "NWBOC WOSB Certified"}
+                  className="h-28 w-auto rounded-sm bg-white px-4 py-3 md:h-36"
+                  loading="lazy"
+                />
+              ))}
+            </div>
             <div className="max-w-sm text-center sm:text-left">
               <p className="font-display text-2xl text-white">NWBOC Certified</p>
               <p className="mt-2 text-sm leading-relaxed text-white/60">
