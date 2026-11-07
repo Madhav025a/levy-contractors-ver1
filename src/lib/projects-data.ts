@@ -12,6 +12,7 @@ import bs07 from "@/assets/bridgestone-07.jpg.asset.json";
 import bs08 from "@/assets/bridgestone-08.jpg.asset.json";
 import bs09 from "@/assets/bridgestone-09.jpg.asset.json";
 import bs10 from "@/assets/bridgestone-10.jpg.asset.json";
+import samDavisCover from "@/assets/sam-davis-cover.jpg.asset.json";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string }
@@ -223,7 +224,7 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Building Implosion", copy: "Imploded the 12-story hotel in downtown Nashville." },
       { title: "Downtown Safety Controls", copy: "Protected surrounding streets and buildings during the implosion." },
     ],
-    cover: demolitionImg,
+    cover: samDavisCover.url,
     media: [
       { type: "youtube", id: "an9ZlCYob0s", alt: "Video of the Sam Davis Hotel project in downtown Nashville." },
     ],
