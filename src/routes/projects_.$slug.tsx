@@ -5,7 +5,7 @@ import { PageHero, PageShell } from "@/components/site/page-shell";
 import { Reveal } from "@/components/site/reveal";
 import { getProject, PROJECTS } from "@/lib/projects-data";
 
-export const Route = createFileRoute("/projects/$slug")({
+export const Route = createFileRoute("/projects_/$slug")({
   loader: ({ params }) => {
     const p = getProject(params.slug);
     if (!p) throw notFound();
