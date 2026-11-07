@@ -32,6 +32,17 @@ import wildhorse05 from "@/assets/wildhorse-05.jpg";
 import wildhorse06 from "@/assets/wildhorse-06.jpg";
 import wildhorse07 from "@/assets/wildhorse-07.jpg";
 import wildhorse08 from "@/assets/wildhorse-08.jpg";
+import loveCircle01 from "@/assets/love-circle-01.jpg";
+import loveCircle02 from "@/assets/love-circle-02.jpg";
+import loveCircle03 from "@/assets/love-circle-03.jpg";
+import loveCircle04 from "@/assets/love-circle-04.jpg";
+import loveCircle05 from "@/assets/love-circle-05.jpg";
+import loveCircle06 from "@/assets/love-circle-06.jpg";
+import loveCircle07 from "@/assets/love-circle-07.jpg";
+import loveCircle08 from "@/assets/love-circle-08.jpg";
+import loveCircle09 from "@/assets/love-circle-09.jpg";
+import loveCircle10 from "@/assets/love-circle-10.jpg";
+import loveCircle11 from "@/assets/love-circle-11.jpg";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -135,8 +146,20 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Tower Removal", copy: "Removed the radio tower in a controlled, planned takedown." },
       { title: "Site Clearing", copy: "Cleared the site so it could become a new park area." },
     ],
-    cover: demolitionImg,
-    media: [],
+    cover: loveCircle11,
+    media: [
+      { type: "image", src: loveCircle01, alt: "Crane beside the red and white Love Circle radio tower, viewed between leafy trees.", preserveFrame: true },
+      { type: "image", src: loveCircle07, alt: "Distant view of the Love Circle tower and crane framed by trees.", preserveFrame: true },
+      { type: "image", src: loveCircle06, alt: "Full-height portrait view of the Love Circle tower, crane and suspended work basket.", preserveFrame: true },
+      { type: "image", src: loveCircle08, alt: "Crane and Love Circle tower beside a large tree, utility poles and nearby roof.", preserveFrame: true },
+      { type: "image", src: loveCircle05, alt: "View upward along the crane boom toward the Love Circle tower and work basket.", preserveFrame: true },
+      { type: "image", src: loveCircle02, alt: "Crew working near the top of the Love Circle tower beside a suspended basket.", preserveFrame: true },
+      { type: "image", src: loveCircle09, alt: "Worker seated near the top of the red Love Circle tower section.", preserveFrame: true },
+      { type: "image", src: loveCircle10, alt: "Workers on the red and white tower framework during Love Circle removal work.", preserveFrame: true },
+      { type: "image", src: loveCircle03, alt: "Close view of a worker at the junction of red and white Love Circle tower sections.", preserveFrame: true },
+      { type: "image", src: loveCircle04, alt: "Crane lifting an upper red tower section above the remaining white Love Circle tower.", preserveFrame: true },
+      { type: "image", src: loveCircle11, alt: "Removed red tower section suspended above the road among trees at Love Circle.", preserveFrame: true },
+    ],
   },
   {
     slug: "wku-carol-knicely-building",
