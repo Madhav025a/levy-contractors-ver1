@@ -2,6 +2,16 @@ import demolitionImg from "@/assets/svc-demolition.jpg";
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import selectiveImg from "@/assets/proj-selective.jpg";
 import industrialImg from "@/assets/proj-industrial.jpg";
+import bs01 from "@/assets/bridgestone-01.jpg.asset.json";
+import bs02 from "@/assets/bridgestone-02.jpg.asset.json";
+import bs03 from "@/assets/bridgestone-03.jpg.asset.json";
+import bs04 from "@/assets/bridgestone-04.jpg.asset.json";
+import bs05 from "@/assets/bridgestone-05.jpg.asset.json";
+import bs06 from "@/assets/bridgestone-06.jpg.asset.json";
+import bs07 from "@/assets/bridgestone-07.jpg.asset.json";
+import bs08 from "@/assets/bridgestone-08.jpg.asset.json";
+import bs09 from "@/assets/bridgestone-09.jpg.asset.json";
+import bs10 from "@/assets/bridgestone-10.jpg.asset.json";
 
 export type ProjectMedia = { type: "image" | "video"; src: string; alt: string };
 
