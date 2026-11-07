@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Menu, Phone, X } from "lucide-react";
-import levyLogo from "@/assets/levy-logo.png.asset.json";
+import levyLogo from "@/assets/levy-contractors-logo.png.asset.json";
 import { SERVICE_PAGES } from "@/lib/services-data";
 
 const NAV = [
@@ -48,7 +48,7 @@ export function Header() {
           <a href="/" className="flex items-center gap-3">
             <img
               src={levyLogo.url}
-              alt="Levy Industrial Contractors, Inc. logo"
+              alt="Levy Contractors, Inc. logo"
               className="h-10 w-auto bg-white px-2 py-1 md:h-12"
             />
           </a>
