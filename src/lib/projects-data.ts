@@ -19,6 +19,11 @@ import bell03 from "@/assets/south-central-bell-03.jpg";
 import bell04 from "@/assets/south-central-bell-04.jpg";
 import bell05 from "@/assets/south-central-bell-05.jpg";
 import bell06 from "@/assets/south-central-bell-06.jpg";
+import ryman01 from "@/assets/ryman-01.jpg";
+import ryman02 from "@/assets/ryman-02.jpg";
+import ryman03 from "@/assets/ryman-03.jpg";
+import ryman04 from "@/assets/ryman-04.jpg";
+import ryman05 from "@/assets/ryman-05.jpg";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -176,8 +181,14 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Balcony Work", copy: "Removed a section from the balcony of the historic auditorium." },
       { title: "Transite Removal", copy: "Removed transite (asbestos-cement) material from the old press box." },
     ],
-    cover: asbestosImg,
-    media: [],
+    cover: ryman01,
+    media: [
+      { type: "image", src: ryman01, alt: "Ryman Auditorium balcony seating and cleared main floor during interior project work.", preserveFrame: true },
+      { type: "image", src: ryman05, alt: "Exposed old press box framework above the Ryman Auditorium balcony.", preserveFrame: true },
+      { type: "image", src: ryman02, alt: "Crew members in protective suits working behind barrier tape inside Ryman Auditorium.", preserveFrame: true },
+      { type: "image", src: ryman03, alt: "Asbestos warning sign and red barrier tape around the Ryman Auditorium work area.", preserveFrame: true },
+      { type: "image", src: ryman04, alt: "Containment sheeting and removed framework beneath the Ryman Auditorium balcony.", preserveFrame: true },
+    ],
   },
   {
     slug: "wildhorse-saloon",
