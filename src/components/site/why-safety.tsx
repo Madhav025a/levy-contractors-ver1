@@ -162,9 +162,9 @@ export function Safety() {
         loading="lazy"
         width={1920}
         height={912}
-        className="absolute inset-0 h-full w-full object-cover opacity-35"
+        className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/55 to-ink/25" />
 
       <div className="relative mx-auto max-w-[1400px] px-5 py-24 md:px-8 md:py-32">
         <Reveal>
