@@ -13,9 +13,15 @@ import bs08 from "@/assets/bridgestone-08.jpg.asset.json";
 import bs09 from "@/assets/bridgestone-09.jpg.asset.json";
 import bs10 from "@/assets/bridgestone-10.jpg.asset.json";
 import samDavisCover from "@/assets/sam-davis-cover.jpg.asset.json";
+import bell01 from "@/assets/south-central-bell-01.jpg";
+import bell02 from "@/assets/south-central-bell-02.jpg";
+import bell03 from "@/assets/south-central-bell-03.jpg";
+import bell04 from "@/assets/south-central-bell-04.jpg";
+import bell05 from "@/assets/south-central-bell-05.jpg";
+import bell06 from "@/assets/south-central-bell-06.jpg";
 
 export type ProjectMedia =
-  | { type: "image"; src: string; alt: string }
+  | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
   | { type: "video"; src: string; alt: string }
   | { type: "youtube"; id: string; alt: string };
 
@@ -206,8 +212,15 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Whole-Structure Demolition", copy: "Demolished the entire building." },
       { title: "Debris Removal", copy: "Removed demolition debris to clear the site." },
     ],
-    cover: demolitionImg,
-    media: [],
+    cover: bell02,
+    media: [
+      { type: "image", src: bell02, alt: "Red lattice crane in front of the partially demolished South Central Bell building, with Levy equipment in the foreground.", preserveFrame: true },
+      { type: "image", src: bell06, alt: "Close view of the red crane and exposed brick structure during South Central Bell demolition.", preserveFrame: true },
+      { type: "image", src: bell05, alt: "Partially demolished brick facade with exposed floors and rubble at South Central Bell.", preserveFrame: true },
+      { type: "image", src: bell03, alt: "Crane facing the exposed South Central Bell structure from the work area.", preserveFrame: true },
+      { type: "image", src: bell04, alt: "Demolition progress showing the remaining building sections and debris piles.", preserveFrame: true },
+      { type: "image", src: bell01, alt: "Archival black-and-white view of the South Central Bell demolition site from across the street.", preserveFrame: true },
+    ],
   },
   {
     slug: "sam-davis-hotel",

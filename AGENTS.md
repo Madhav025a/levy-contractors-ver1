@@ -11,3 +11,4 @@
 
 - Keep service listings in the shared ServiceCards component backed by SERVICE_PAGES so homepage and services index stay consistent.
 - Resolve the former asbestos surveys URL to the combined assessment entry so existing links retain access without duplicating the service catalog.
+- Use the optional preserveFrame media flag for archival project scans so the gallery keeps their full composition instead of cropping to standard tiles.

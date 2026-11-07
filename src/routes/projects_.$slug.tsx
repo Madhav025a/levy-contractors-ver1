@@ -33,7 +33,8 @@ export const Route = createFileRoute("/projects_/$slug")({
 
 function ProjectDetail() {
   const { slug } = Route.useLoaderData();
-  const p = getProject(slug)!;
+  const p = getProject(slug);
+  if (!p) throw notFound();
   const others = PROJECTS.filter((o) => o.slug !== p.slug).slice(0, 3);
 
   return (
@@ -103,6 +104,7 @@ function ProjectDetail() {
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {p.media.map((m, i) => {
                 const motion = m.type !== "image";
+                const preserveFrame = m.type === "image" && m.preserveFrame;
                 const closesRow = i === p.media.length - 1 && p.media.length % 3 === 1;
                 const spanFull = motion || closesRow;
                 return (
@@ -111,7 +113,7 @@ function ProjectDetail() {
                     className={`group overflow-hidden bg-ink ${
                       spanFull
                         ? `sm:col-span-2 lg:col-span-3 ${motion ? "aspect-video" : "aspect-[16/9] lg:aspect-[21/9]"}`
-                        : "aspect-[4/3]"
+                        : preserveFrame ? "aspect-[75/52]" : "aspect-[4/3]"
                     }`}
                   >
                     {m.type === "youtube" ? (
@@ -127,7 +129,7 @@ function ProjectDetail() {
                     ) : m.type === "video" ? (
                       <video src={m.src} controls playsInline className="h-full w-full object-cover" aria-label={m.alt} />
                     ) : (
-                      <img src={m.src} alt={m.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <img src={m.src} alt={m.alt} loading="lazy" decoding="async" className={`h-full w-full ${preserveFrame ? "object-contain" : "object-cover transition-transform duration-700 motion-reduce:transition-none group-hover:scale-105"}`} />
                     )}
                   </div>
                 );
