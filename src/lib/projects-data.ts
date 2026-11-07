@@ -75,6 +75,16 @@ import joelton05 from "@/assets/joelton-05.jpg";
 import joelton06 from "@/assets/joelton-06.jpg";
 import joelton07 from "@/assets/joelton-07.jpg";
 import joelton08 from "@/assets/joelton-08.jpg";
+import howard01 from "@/assets/howard-school-01.jpg.asset.json";
+import howard02 from "@/assets/howard-school-02.jpg.asset.json";
+import howard03 from "@/assets/howard-school-03.jpg.asset.json";
+import howard04 from "@/assets/howard-school-04.jpg.asset.json";
+import howard05 from "@/assets/howard-school-05.jpg.asset.json";
+import howard06 from "@/assets/howard-school-06.jpg.asset.json";
+import howard07 from "@/assets/howard-school-07.jpg.asset.json";
+import howard08 from "@/assets/howard-school-08.jpg.asset.json";
+import howard09 from "@/assets/howard-school-09.jpg.asset.json";
+import howard10 from "@/assets/howard-school-10.jpg.asset.json";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -142,8 +152,19 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Selective Demolition", copy: "Took down the planned portions of the building once abatement was complete." },
       { title: "Haul-Off & Site Controls", copy: "Hauled off all debris and installed fencing and erosion control." },
     ],
-    cover: asbestosImg,
-    media: [],
+    cover: howard09.url,
+    media: [
+      { type: "image", src: howard03.url, alt: "Howard School entrance with its original sign above the stone columns.", preserveFrame: true },
+      { type: "image", src: howard04.url, alt: "Fenced walkway beside Howard School with construction notices and equipment in the distance.", preserveFrame: true },
+      { type: "image", src: howard05.url, alt: "Yellow excavator beside the brick school building within the work area.", preserveFrame: true },
+      { type: "image", src: howard06.url, alt: "Worker spraying water while an excavator removes a section of Howard School behind fencing.", preserveFrame: true },
+      { type: "image", src: howard01.url, alt: "Excavator beside exposed school floors and demolition rubble.", preserveFrame: true },
+      { type: "image", src: howard07.url, alt: "Two excavators working among debris beside the remaining brick school structure.", preserveFrame: true },
+      { type: "image", src: howard09.url, alt: "Elevated view of the fenced Howard School demolition site and adjacent street.", preserveFrame: true },
+      { type: "image", src: howard10.url, alt: "Exposed floors of Howard School with an excavator and rubble in the foreground.", preserveFrame: true },
+      { type: "image", src: howard02.url, alt: "Remaining school structure with exposed rooms and the cleared work area.", preserveFrame: true },
+      { type: "image", src: howard08.url, alt: "Cleared ground beside the remaining school frame following selective demolition.", preserveFrame: true },
+    ],
   },
   {
     slug: "joelton-water-tank",
