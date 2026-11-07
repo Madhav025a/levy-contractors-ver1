@@ -30,7 +30,7 @@ export function websiteKnowledge() {
       serviceArea: ["Tennessee", "Alabama", "Kentucky", "Georgia"],
       certifications: ["NWBOC Women's Business Enterprise (WBE)", "NWBOC Women-Owned Small Business (WOSB)"],
       audience: "Commercial, industrial and institutional clients, universities, government, property managers and general contractors",
-      links: { about: "/about", contact: "/contact", services: "/services", projects: "/projects", serviceArea: "/service-area", credentials: "/#credentials" },
+      links: { about: "/about", contact: "/contact", services: "/services", projects: "/projects", serviceArea: "/service-area", credentials: "/about" },
       unknown: "Pricing, availability, exact business hours, public email, insurance amounts and specific license numbers are not published. Testimonials are placeholders, not verified reviews.",
     },
     services: SERVICE_PAGES.map(({ image, alt, ...service }) => ({ ...service, path: `/services/${service.slug}` })),

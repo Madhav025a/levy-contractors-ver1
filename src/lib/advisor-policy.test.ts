@@ -3,7 +3,7 @@ import { advisorInput, safeAdvisorLink } from "./advisor-policy";
 
 describe("Advisor conversation", () => {
   test("retains every earlier turn for follow-up answers", () => {
-    const messages = [{ role: "user", content: "Tell me about Ryman" }, { role: "assistant", content: "Ryman Auditorium" }, { role: "user", content: "What services did you perform there?" }];
+    const messages: { role: "user" | "assistant"; content: string }[] = [{ role: "user", content: "Tell me about Ryman" }, { role: "assistant", content: "Ryman Auditorium" }, { role: "user", content: "What services did you perform there?" }];
     expect(advisorInput.parse({ messages }).messages).toEqual(messages);
   });
   test("visitors cannot inject system instructions through a role", () => {
