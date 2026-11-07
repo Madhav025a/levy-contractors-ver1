@@ -67,6 +67,14 @@ import belle05 from "@/assets/belle-meade-05.jpg.asset.json";
 import belle06 from "@/assets/belle-meade-06.jpg.asset.json";
 import belle07 from "@/assets/belle-meade-07.jpg.asset.json";
 import belle08 from "@/assets/belle-meade-08.jpg.asset.json";
+import joelton01 from "@/assets/joelton-01.jpg";
+import joelton02 from "@/assets/joelton-02.jpg";
+import joelton03 from "@/assets/joelton-03.jpg";
+import joelton04 from "@/assets/joelton-04.jpg";
+import joelton05 from "@/assets/joelton-05.jpg";
+import joelton06 from "@/assets/joelton-06.jpg";
+import joelton07 from "@/assets/joelton-07.jpg";
+import joelton08 from "@/assets/joelton-08.jpg";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -152,8 +160,17 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Manual Dismantlement", copy: "Took the 150,000-gallon tank apart by hand, piece by piece." },
       { title: "Component Preservation", copy: "Kept every section intact so the tank could be reassembled at another facility." },
     ],
-    cover: industrialImg,
-    media: [],
+    cover: joelton06,
+    media: [
+      { type: "image", src: joelton01, alt: "Crane rigging above the Joelton water tank before separation.", preserveFrame: true },
+      { type: "image", src: joelton02, alt: "Water tank pedestal and crane positioned alongside the spherical tank.", preserveFrame: true },
+      { type: "image", src: joelton03, alt: "Crane lifting the spherical tank section clear of its pedestal.", preserveFrame: true },
+      { type: "image", src: joelton04, alt: "Suspended tank section beside the exposed pedestal cap.", preserveFrame: true },
+      { type: "image", src: joelton05, alt: "Close view of the weathered tank surface and cutting work at its lower seam.", preserveFrame: true },
+      { type: "image", src: joelton06, alt: "Tank section suspended above the pedestal during dismantlement.", preserveFrame: true },
+      { type: "image", src: joelton07, alt: "Crane lowering the tank section beside the pedestal and nearby building.", preserveFrame: true },
+      { type: "image", src: joelton08, alt: "Tank section lowered by crane above a parked pickup truck.", preserveFrame: true },
+    ],
   },
   {
     slug: "love-circle-tower",
