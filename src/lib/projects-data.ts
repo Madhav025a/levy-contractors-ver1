@@ -24,6 +24,14 @@ import ryman02 from "@/assets/ryman-02.jpg";
 import ryman03 from "@/assets/ryman-03.jpg";
 import ryman04 from "@/assets/ryman-04.jpg";
 import ryman05 from "@/assets/ryman-05.jpg";
+import wildhorse01 from "@/assets/wildhorse-01.jpg";
+import wildhorse02 from "@/assets/wildhorse-02.jpg";
+import wildhorse03 from "@/assets/wildhorse-03.jpg";
+import wildhorse04 from "@/assets/wildhorse-04.jpg";
+import wildhorse05 from "@/assets/wildhorse-05.jpg";
+import wildhorse06 from "@/assets/wildhorse-06.jpg";
+import wildhorse07 from "@/assets/wildhorse-07.jpg";
+import wildhorse08 from "@/assets/wildhorse-08.jpg";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -205,8 +213,17 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Asbestos Transite Removal", copy: "Removed asbestos transite from the building's exterior." },
       { title: "Containment", copy: "Performed the work under containment to keep fibers controlled downtown." },
     ],
-    cover: asbestosImg,
-    media: [],
+    cover: wildhorse04,
+    media: [
+      { type: "image", src: wildhorse04, alt: "Wildhorse Saloon facade under containment, with street barriers and a yellow Levy container in front.", preserveFrame: true },
+      { type: "image", src: wildhorse02, alt: "Wide view of plastic containment covering the Wildhorse Saloon exterior beside neighboring buildings.", preserveFrame: true },
+      { type: "image", src: wildhorse03, alt: "Portrait view of exterior containment sheeting, scaffolding and sidewalk barricades at Wildhorse Saloon.", preserveFrame: true },
+      { type: "image", src: wildhorse01, alt: "Wildhorse Saloon street frontage and red scaffolding during exterior project work.", preserveFrame: true },
+      { type: "image", src: wildhorse05, alt: "Exposed facade framing behind temporary fencing and street barriers at Wildhorse Saloon.", preserveFrame: true },
+      { type: "image", src: wildhorse06, alt: "Wildhorse Saloon rooftop surface with hoses and surrounding downtown Nashville buildings.", preserveFrame: true },
+      { type: "image", src: wildhorse07, alt: "Interior view looking upward at exposed timber framing and a large dark pipe at Wildhorse Saloon.", preserveFrame: true },
+      { type: "image", src: wildhorse08, alt: "Crew members in protective clothing working on the Wildhorse Saloon rooftop with Nashville buildings behind them.", preserveFrame: true },
+    ],
   },
   {
     slug: "south-central-bell-green-hills",

@@ -4,3 +4,4 @@
 - [ ] Add photos/video per project (waiting on user)
 - [x] Optimize and publish six South Central Bell photos with a real project cover.
 - [x] Optimize and add five Ryman Auditorium photos with a real project cover.
+- [x] Optimize and add eight Wildhorse Saloon photographs extracted from four scans, with a real project cover.
