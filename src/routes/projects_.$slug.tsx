@@ -102,15 +102,29 @@ function ProjectDetail() {
           ) : (
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {p.media.map((m, i) => {
+                const motion = m.type !== "image";
                 const closesRow = i === p.media.length - 1 && p.media.length % 3 === 1;
+                const spanFull = motion || closesRow;
                 return (
                   <div
-                    key={m.src}
+                    key={m.type === "youtube" ? m.id : m.src}
                     className={`group overflow-hidden bg-ink ${
-                      closesRow ? "aspect-[16/9] sm:col-span-2 lg:col-span-3 lg:aspect-[21/9]" : "aspect-[4/3]"
+                      spanFull
+                        ? `sm:col-span-2 lg:col-span-3 ${motion ? "aspect-video" : "aspect-[16/9] lg:aspect-[21/9]"}`
+                        : "aspect-[4/3]"
                     }`}
                   >
-                    {m.type === "video" ? (
+                    {m.type === "youtube" ? (
+                      <iframe
+                        src={`https://www.youtube.com/embed/${m.id}?rel=0&modestbranding=1`}
+                        title={m.alt}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        className="h-full w-full"
+                      />
+                    ) : m.type === "video" ? (
                       <video src={m.src} controls playsInline className="h-full w-full object-cover" aria-label={m.alt} />
                     ) : (
                       <img src={m.src} alt={m.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />

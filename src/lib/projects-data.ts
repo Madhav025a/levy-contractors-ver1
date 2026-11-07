@@ -13,7 +13,10 @@ import bs08 from "@/assets/bridgestone-08.jpg.asset.json";
 import bs09 from "@/assets/bridgestone-09.jpg.asset.json";
 import bs10 from "@/assets/bridgestone-10.jpg.asset.json";
 
-export type ProjectMedia = { type: "image" | "video"; src: string; alt: string };
+export type ProjectMedia =
+  | { type: "image"; src: string; alt: string }
+  | { type: "video"; src: string; alt: string }
+  | { type: "youtube"; id: string; alt: string };
 
 export type ProjectPage = {
   slug: string;
@@ -221,7 +224,9 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Downtown Safety Controls", copy: "Protected surrounding streets and buildings during the implosion." },
     ],
     cover: demolitionImg,
-    media: [],
+    media: [
+      { type: "youtube", id: "an9ZlCYob0s", alt: "Video of the Sam Davis Hotel project in downtown Nashville." },
+    ],
   },
   {
     slug: "governors-mansion",
