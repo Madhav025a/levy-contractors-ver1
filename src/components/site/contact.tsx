@@ -24,9 +24,9 @@ export function ContactSection() {
               <a href="#quote-contact" className="btn-base btn-safety">
                 Request A Free Quote
               </a>
-              <a href="tel:6152271645" className="btn-base btn-outline-light">
+              <a href="tel:+16152271645" className="btn-base btn-outline-light">
                 <Phone className="h-4 w-4" aria-hidden />
-                Call 615.227.1645
+                Call +1 615-227-1645
               </a>
             </div>
           </Reveal>
@@ -43,10 +43,10 @@ export function ContactSection() {
                 <dt className="eyebrow text-white/40">Phone</dt>
                 <dd className="mt-2">
                   <a
-                    href="tel:6152271645"
+                    href="tel:+16152271645"
                     className="font-display text-xl text-safety hover:underline"
                   >
-                    615.227.1645
+                    +1 615-227-1645
                   </a>
                 </dd>
               </div>
@@ -148,8 +148,8 @@ export function Footer() {
             <p className="eyebrow text-white/40">Contact</p>
             <ul className="mt-4 grid gap-2.5 text-sm text-white/65">
               <li>
-                <a href="tel:6152271645" className="font-semibold text-white hover:text-safety">
-                  615.227.1645
+                <a href="tel:+16152271645" className="font-semibold text-white hover:text-safety">
+                  +1 615-227-1645
                 </a>
               </li>
               <li>P.O. Box 70039</li>

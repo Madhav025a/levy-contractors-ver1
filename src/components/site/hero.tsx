@@ -34,8 +34,8 @@ export function LeadForm({ id = "quote", compact = false }: { id?: string; compa
           <p className="mt-3 font-display text-xl text-ink">Request Received</p>
           <p className="mt-1 text-sm text-muted-foreground">
             Thank you. A Levy project manager will follow up shortly. Need to talk now? Call{" "}
-            <a href="tel:6152271645" className="font-semibold text-ink underline">
-              615.227.1645
+            <a href="tel:+16152271645" className="font-semibold text-ink underline">
+              +1 615-227-1645
             </a>
             .
           </p>
@@ -156,9 +156,9 @@ export function Hero() {
             <a href="#quote" className="btn-base btn-safety">
               Request a Free Quote
             </a>
-            <a href="tel:6152271645" className="btn-base btn-outline-light">
+            <a href="tel:+16152271645" className="btn-base btn-outline-light">
               <Phone className="h-4 w-4" aria-hidden />
-              Call 615.227.1645
+              Call +1 615-227-1645
             </a>
           </div>
 

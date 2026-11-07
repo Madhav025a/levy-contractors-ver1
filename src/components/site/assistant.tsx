@@ -43,7 +43,7 @@ export function ProjectAssistant() {
       if (result.error) { setError(result.error); setInput(question); }
       else setMessages([...history, { role: "assistant", content: result.text }]);
     } catch {
-      setError("I couldn't answer that right now. Please call 615.227.1645 or contact Levy.");
+      setError("I couldn't answer that right now. Please call +1 615-227-1645 or contact Levy.");
       setInput(question);
     } finally { setTyping(false); }
   }

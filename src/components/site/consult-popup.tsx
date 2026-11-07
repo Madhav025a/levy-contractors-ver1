@@ -45,8 +45,8 @@ export function ConsultPopup() {
           <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
             Tell us about your project and the Levy Industrial team will follow up. Prefer to talk
             now? Call{" "}
-            <a href="tel:6152271645" className="font-semibold text-ink underline">
-              615.227.1645
+            <a href="tel:+16152271645" className="font-semibold text-ink underline">
+              +1 615-227-1645
             </a>
             .
           </p>

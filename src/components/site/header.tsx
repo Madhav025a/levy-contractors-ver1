@@ -102,11 +102,11 @@ export function Header() {
 
           <div className="hidden items-center gap-5 lg:flex">
             <a
-              href="tel:6152271645"
+              href="tel:+16152271645"
               className="flex items-center gap-2 text-sm font-bold tracking-wide text-white transition-colors hover:text-safety"
             >
               <Phone className="h-4 w-4 text-safety" aria-hidden />
-              615.227.1645
+              +1 615-227-1645
             </a>
             <a href="/contact#quote-contact" className="btn-base btn-safety">
               Request a Free Quote
@@ -155,7 +155,7 @@ export function Header() {
               ))}
             </ul>
             <div className="grid grid-cols-2 gap-3">
-              <a href="tel:6152271645" className="btn-base btn-outline-light">
+              <a href="tel:+16152271645" className="btn-base btn-outline-light">
                 Call Now
               </a>
               <a href="/contact#quote-contact" className="btn-base btn-safety" onClick={() => setOpen(false)}>
@@ -173,11 +173,11 @@ export function MobileStickyBar() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-white/10 bg-ink lg:hidden">
       <a
-        href="tel:6152271645"
+        href="tel:+16152271645"
         className="flex items-center justify-center gap-2 py-3.5 text-[13px] font-bold tracking-[0.08em] text-white uppercase"
       >
         <Phone className="h-4 w-4 text-safety" aria-hidden />
-        Call 615.227.1645
+        Call +1 615-227-1645
       </a>
       <a
         href="/contact#quote-contact"

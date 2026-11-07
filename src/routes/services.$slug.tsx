@@ -55,8 +55,8 @@ function ServiceDetail() {
             <p className="mt-5 max-w-2xl text-lg text-white/80">{s.tagline}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#quote-contact" className="btn-base btn-safety">Request a Free Quote</a>
-              <a href="tel:6152271645" className="btn-base btn-outline-light">
-                <Phone className="h-4 w-4" aria-hidden /> 615.227.1645
+              <a href="tel:+16152271645" className="btn-base btn-outline-light">
+                <Phone className="h-4 w-4" aria-hidden /> +1 615-227-1645
               </a>
             </div>
             </div>

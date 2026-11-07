@@ -11,7 +11,7 @@ describe("Advisor conversation", () => {
   });
   test("allows contact and project sources, rejects unsafe links", () => {
     expect(safeAdvisorLink("/projects/ryman-auditorium")).toBe("/projects/ryman-auditorium");
-    expect(safeAdvisorLink("tel:6152271645")).toBe("tel:6152271645");
+    expect(safeAdvisorLink("tel:+16152271645")).toBe("tel:+16152271645");
     expect(safeAdvisorLink("javascript:alert(1)")).toBeUndefined();
     expect(safeAdvisorLink("//example.com")).toBeUndefined();
   });
