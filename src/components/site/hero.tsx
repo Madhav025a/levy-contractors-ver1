@@ -109,7 +109,7 @@ export function Hero() {
         <div className="hairline-grid absolute inset-0 opacity-20" />
       </div>
 
-      <div className="anim-rise absolute top-24 right-5 z-10 flex gap-2 md:right-8 lg:top-28" style={{ animationDelay: "640ms" }}>
+      <div className="anim-rise absolute top-36 right-5 z-10 flex gap-2 md:right-8 lg:top-44" style={{ animationDelay: "640ms" }}>
         {[certWbe, certWosb].map((cert, i) => (
           <img
             key={i}
