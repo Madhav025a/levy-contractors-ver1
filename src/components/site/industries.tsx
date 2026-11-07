@@ -244,7 +244,7 @@ export function Testimonials() {
                     loading="lazy"
                     width={512}
                     height={512}
-                    className="h-12 w-12 shrink-0 rounded-full object-cover object-top grayscale"
+                    className="h-12 w-12 shrink-0 rounded-full object-cover object-top"
                   />
                   <span className="text-[12px] font-semibold tracking-[0.1em] text-ink uppercase">
                     {review.name}
