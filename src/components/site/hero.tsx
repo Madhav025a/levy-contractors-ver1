@@ -132,7 +132,8 @@ export function Hero() {
             className="anim-rise mt-5 font-display text-[2.7rem] leading-[0.95] text-white sm:text-6xl lg:text-7xl"
             style={{ animationDelay: "180ms" }}
           >
-            Experienced Environmental Contractors.
+            Experienced Environmental
+            <span className="block">Contractors.</span>
             <span className="mt-2 block text-safety">Built Around Safety.</span>
           </h1>
           <p
