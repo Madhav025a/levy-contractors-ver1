@@ -59,6 +59,14 @@ import governor07 from "@/assets/governors-mansion-07.jpg";
 import governor08 from "@/assets/governors-mansion-08.jpg";
 import governor09 from "@/assets/governors-mansion-09.jpg";
 import governor10 from "@/assets/governors-mansion-10.jpg";
+import belle01 from "@/assets/belle-meade-01.jpg.asset.json";
+import belle02 from "@/assets/belle-meade-02.jpg.asset.json";
+import belle03 from "@/assets/belle-meade-03.jpg.asset.json";
+import belle04 from "@/assets/belle-meade-04.jpg.asset.json";
+import belle05 from "@/assets/belle-meade-05.jpg.asset.json";
+import belle06 from "@/assets/belle-meade-06.jpg.asset.json";
+import belle07 from "@/assets/belle-meade-07.jpg.asset.json";
+import belle08 from "@/assets/belle-meade-08.jpg.asset.json";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -217,8 +225,17 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Steeple Removal", copy: "Removed the church steeple in sections." },
       { title: "Structure Protection", copy: "Controlled every lift to keep the rest of the church undisturbed." },
     ],
-    cover: selectiveImg,
-    media: [],
+    cover: belle08.url,
+    media: [
+      { type: "image", src: belle08.url, alt: "Belle Meade Church steeple with exposed framing and a boom lift beside it.", preserveFrame: true },
+      { type: "image", src: belle01.url, alt: "Boom lift beside the church steeple and cross under a cloudy sky.", preserveFrame: true },
+      { type: "image", src: belle02.url, alt: "Elevated work platform approaching the church steeple beside surrounding trees.", preserveFrame: true },
+      { type: "image", src: belle03.url, alt: "Close view of a boom lift platform beside the steeple's upper section.", preserveFrame: true },
+      { type: "image", src: belle04.url, alt: "Full-height view of the white church tower and exposed timber framing in the steeple.", preserveFrame: true },
+      { type: "image", src: belle05.url, alt: "Exposed steeple framing above the white church tower with a lift alongside.", preserveFrame: true },
+      { type: "image", src: belle06.url, alt: "Crew member working from an elevated platform beside exposed steeple framing.", preserveFrame: true },
+      { type: "image", src: belle07.url, alt: "Steeple cross and exposed framing during sectional removal work.", preserveFrame: true },
+    ],
   },
   {
     slug: "ryman-auditorium",
