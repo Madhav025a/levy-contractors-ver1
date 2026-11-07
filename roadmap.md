@@ -10,3 +10,4 @@
 - [x] Optimize and add ten Governor's Mansion photos and update its cover.
 - [x] Optimize and add eight Belle Meade Church photos and update its cover.
 - [x] Extract, optimize and add eight Joelton Water Tank photos and update its cover.
+- [ ] Extract and optimize Howard School photographs and update its gallery and cover.
