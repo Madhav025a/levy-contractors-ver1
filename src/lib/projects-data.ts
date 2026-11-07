@@ -43,6 +43,12 @@ import loveCircle08 from "@/assets/love-circle-08.jpg";
 import loveCircle09 from "@/assets/love-circle-09.jpg";
 import loveCircle10 from "@/assets/love-circle-10.jpg";
 import loveCircle11 from "@/assets/love-circle-11.jpg";
+import wku01 from "@/assets/wku-01.jpg";
+import wku02 from "@/assets/wku-02.jpg";
+import wku03 from "@/assets/wku-03.jpg";
+import wku04 from "@/assets/wku-04.jpg";
+import wku05 from "@/assets/wku-05.jpg";
+import wku06 from "@/assets/wku-06.jpg";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -176,8 +182,15 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Façade Removal", copy: "Removed the building's façade to prepare for a new entrance." },
       { title: "Sidewalk Removal", copy: "Removed the adjacent sidewalk to open up the new entrance area." },
     ],
-    cover: selectiveImg,
-    media: [],
+    cover: wku02,
+    media: [
+      { type: "image", src: wku02, alt: "Crew members using hand tools from a green aerial lift beside exposed facade framing at WKU's Carol Knicely Building.", preserveFrame: true },
+      { type: "image", src: wku01, alt: "Aerial lift and crew above the WKU building courtyard with plastic-covered structure behind them.", preserveFrame: true },
+      { type: "image", src: wku03, alt: "Plastic sheeting and timber supports along the upper facade above the WKU conference center entrances.", preserveFrame: true },
+      { type: "image", src: wku04, alt: "Wide archival view of the Carol Knicely Building exterior and adjacent parking spaces.", preserveFrame: true },
+      { type: "image", src: wku05, alt: "Evening view of covered and exposed facade framing above the Carol Knicely Building entrances.", preserveFrame: true },
+      { type: "image", src: wku06, alt: "Exposed overhead framework and protected walkway with red barriers during WKU project work.", preserveFrame: true },
+    ],
   },
   {
     slug: "belle-meade-church",
