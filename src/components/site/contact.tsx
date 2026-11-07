@@ -2,8 +2,8 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./reveal";
 import { LeadForm } from "./hero";
 import levyLogo from "@/assets/levy-logo.png.asset.json";
-import certWbe from "@/assets/nwboc-wbe-certified.png.asset.json";
-import certWosb from "@/assets/nwboc-wosb-certified.png.asset.json";
+import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
+import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
 import { SERVICE_PAGES } from "@/lib/services-data";
 
 export function ContactSection() {
