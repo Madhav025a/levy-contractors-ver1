@@ -1,3 +1,4 @@
+import { abs } from "@/lib/site-url";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { Camera, MapPin } from "lucide-react";
 import { ProjectCard } from "@/components/site/project-card";
@@ -22,10 +23,11 @@ export const Route = createFileRoute("/projects_/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: p.summary },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/projects/${p.slug}` },
+        { property: "og:url", content: abs(`/projects/${p.slug}`) },
+        { name: "twitter:title", content: title },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: `/projects/${p.slug}` }],
+      links: [{ rel: "canonical", href: abs(`/projects/${p.slug}`) }],
     };
   },
   component: ProjectDetail,

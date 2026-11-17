@@ -6,7 +6,7 @@ export function ProjectCard({ project }: { project: ProjectPage }) {
   return (
     <Link to="/projects/$slug" params={{ slug: project.slug }} className="card-lift group flex h-full flex-col overflow-hidden border border-border bg-white">
       <div className="relative aspect-[16/11] overflow-hidden">
-        <img src={project.cover} alt={project.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-107" />
+        <img src={project.cover} alt={`${project.title} — ${project.category} project by Levy Contractors in ${project.location}`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-107" />
         <span className="absolute top-4 left-4 bg-safety px-2.5 py-1 text-[11px] font-bold tracking-[0.1em] text-accent-foreground uppercase">{project.category}</span>
       </div>
       <div className="flex flex-1 flex-col p-6">

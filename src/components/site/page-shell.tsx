@@ -4,6 +4,8 @@ import { Header, MobileStickyBar } from "./header";
 import { ContactSection, Footer } from "./contact";
 import { Reveal } from "./reveal";
 import { LeadForm } from "./hero";
+import { Breadcrumbs } from "./breadcrumbs";
+import { abs } from "@/lib/site-url";
 
 export function PageShell({ children, contact = true }: { children: ReactNode; contact?: boolean }) {
   return (
@@ -38,6 +40,7 @@ export function PageHero({
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10" />
       <div className="relative mx-auto grid w-full max-w-[1400px] grid-cols-[minmax(0,1fr)] items-center gap-10 px-5 md:px-8 lg:grid-cols-[minmax(0,1fr)_480px]">
         <div className="min-w-0">
+        <Breadcrumbs current={title} />
         <p className="eyebrow anim-rise text-safety">{eyebrow}</p>
         <h1 className="anim-rise mt-3 max-w-4xl break-words font-display text-5xl leading-[0.95] text-white md:text-7xl">{title}</h1>
         <p className="anim-rise mt-5 max-w-2xl text-lg text-white/80">{copy}</p>
@@ -109,9 +112,11 @@ export function pageMeta(path: string, title: string, description: string) {
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: path },
+      { property: "og:url", content: abs(path) },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: path }],
+    links: [{ rel: "canonical", href: abs(path) }],
   };
 }

@@ -1,9 +1,11 @@
+import { abs } from "@/lib/site-url";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Phone } from "lucide-react";
 import { Header, MobileStickyBar } from "@/components/site/header";
 import { ContactSection, Footer } from "@/components/site/contact";
 import { Reveal } from "@/components/site/reveal";
 import { LeadForm } from "@/components/site/hero";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { CLIENT_GROUPS, clientsForGroup, getService, SERVICE_PAGES } from "@/lib/services-data";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -23,10 +25,11 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: s.tagline },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/services/${s.slug}` },
+        { property: "og:url", content: abs(`/services/${s.slug}`) },
+        { name: "twitter:title", content: title },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: `/services/${s.slug}` }],
+      links: [{ rel: "canonical", href: abs(`/services/${s.slug}`) }],
     };
   },
   component: ServiceDetail,
@@ -47,9 +50,7 @@ function ServiceDetail() {
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
           <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[1fr_480px]">
             <div>
-            <Link to="/" hash="services" className="eyebrow text-white/70 hover:text-safety">
-              ← All Services
-            </Link>
+            <Breadcrumbs current={s.title} />
             <p className="mt-6 font-display text-sm tracking-[0.2em] text-safety">{s.number}</p>
             <h1 className="mt-2 font-display text-5xl leading-[0.95] text-white md:text-7xl">{s.title}</h1>
             <p className="mt-5 max-w-2xl text-lg text-white/80">{s.tagline}</p>

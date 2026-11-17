@@ -79,6 +79,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Levy Contractors, Inc." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Levy Contractors, Inc." },
+      { property: "og:locale", content: "en_US" },
+      { name: "theme-color", content: "#1a1a1a" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [

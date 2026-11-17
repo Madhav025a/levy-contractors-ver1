@@ -1,3 +1,4 @@
+import { abs } from "@/lib/site-url";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header, MobileStickyBar } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
@@ -26,13 +27,26 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:title", content: "Levy Contractors | Nashville Since 1987" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: abs("/") },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Levy Contractors | Nashville Since 1987" },
       {
         property: "og:description",
         content:
           "Nashville commercial and industrial environmental construction: asbestos abatement, demolition, and site assessment. Request a free quote.",
       },
     ],
+    links: [{ rel: "canonical", href: abs("/") }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org", "@type": "GeneralContractor",
+        name: "Levy Contractors, Inc.", url: abs("/"), telephone: "+1 615-227-1645", foundingDate: "1987",
+        address: { "@type": "PostalAddress", addressLocality: "Nashville", addressRegion: "TN", addressCountry: "US" },
+        areaServed: ["Tennessee", "Alabama", "Kentucky", "Georgia"],
+        knowsAbout: ["Asbestos abatement", "Demolition", "Site assessment", "Asbestos surveys and testing", "Mold remediation"],
+      }),
+    }],
   }),
   component: Index,
 });
