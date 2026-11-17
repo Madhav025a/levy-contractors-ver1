@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { TESTIMONIALS } from "@/lib/testimonials-data";
 import { Award, BadgeCheck, FileCheck2, MapPin, ShieldCheck, Star } from "lucide-react";
 import { Reveal } from "./reveal";
 import { ProjectCard } from "./project-card";
@@ -12,15 +13,7 @@ import institutionalImg from "@/assets/ind-institutional.jpg";
 import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
 import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
 import certTn from "@/assets/tn-diversity-business-enterprise.png.asset.json";
-import review1 from "@/assets/review-1.jpg";
-import review2 from "@/assets/review-2.jpg";
-import review3 from "@/assets/review-3.jpg";
 
-const REVIEWS = [
-  { image: review1, alt: "Headshot of a facility manager in a hard hat", name: "Facility Manager", company: "Industrial Client" },
-  { image: review2, alt: "Headshot of a construction project manager in a safety vest", name: "Project Manager", company: "General Contractor" },
-  { image: review3, alt: "Headshot of a general contractor executive", name: "Owner's Representative", company: "Commercial Property" },
-];
 
 const INDUSTRIES = [
   { title: "Industrial Facilities", image: industrialImg, alt: "Industrial plant with steel silos and piping" },
@@ -211,6 +204,90 @@ export function Credentials() {
   );
 }
 
+function TestimonialSlider() {
+  const [perView, setPerView] = useState(1);
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const maxIndex = Math.max(0, TESTIMONIALS.length - perView);
+
+  useEffect(() => {
+    const update = () =>
+      setPerView(window.matchMedia("(min-width: 1024px)").matches ? 3 : window.matchMedia("(min-width: 768px)").matches ? 2 : 1);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  useEffect(() => {
+    if (index > maxIndex) setIndex(maxIndex);
+  }, [index, maxIndex]);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = window.setInterval(() => setIndex((i) => (i >= maxIndex ? 0 : i + 1)), 5000);
+    return () => window.clearInterval(id);
+  }, [paused, maxIndex]);
+
+  return (
+    <div
+      className="mt-12"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+      aria-roledescription="carousel"
+      aria-label="Client reference letters"
+    >
+      <div className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-out"
+          style={{ transform: `translateX(-${(index * 100) / perView}%)` }}
+        >
+          {TESTIMONIALS.map((t) => (
+            <div key={t.company} className="shrink-0 px-3" style={{ width: `${100 / perView}%` }}>
+              <figure className="flex h-full flex-col border border-border bg-white p-8">
+                <div className="flex items-center gap-1 text-gold" role="img" aria-label="5 out of 5 stars">
+                  {[0, 1, 2, 3, 4].map((star) => (
+                    <Star key={star} className="h-5 w-5 fill-current" aria-hidden />
+                  ))}
+                </div>
+                <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-muted-foreground">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-4 border-t border-border pt-5">
+                  <div className="flex h-14 w-24 shrink-0 items-center justify-center">
+                    <img src={t.logo} alt={`${t.company} logo`} loading="lazy" className="max-h-14 max-w-24 object-contain" />
+                  </div>
+                  <span className="min-w-0 text-[12px] font-semibold tracking-[0.1em] text-ink uppercase">
+                    {t.name}
+                    <span className="block text-[11px] font-normal normal-case tracking-normal text-muted-foreground">
+                      {t.title}
+                    </span>
+                    <span className="block text-[11px] font-semibold normal-case tracking-normal text-safety">
+                      {t.company}
+                    </span>
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-8 flex justify-center gap-2">
+        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setIndex(i)}
+            aria-label={`Show reviews ${i + 1}`}
+            className={`h-2 rounded-full transition-all ${i === index ? "w-8 bg-safety" : "w-2 bg-input"}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Testimonials() {
   return (
     <section className="bg-concrete py-24 md:py-32">
@@ -222,39 +299,7 @@ export function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {REVIEWS.map((review, index) => (
-            <Reveal key={review.name} delay={index * 100}>
-              <figure className="h-full border border-dashed border-input bg-white p-8">
-                <div className="flex items-center gap-1 text-steel" aria-label="Rating placeholder">
-                  {[0, 1, 2, 3, 4].map((star) => (
-                    <Star key={star} className="h-4 w-4" aria-hidden />
-                  ))}
-                </div>
-                <blockquote className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
-                  Verified client review placeholder. Google review content will be displayed here
-                  once confirmed.
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-4 border-t border-border pt-4">
-                  <img
-                    src={review.image}
-                    alt={review.alt}
-                    loading="lazy"
-                    width={512}
-                    height={512}
-                    className="h-12 w-12 shrink-0 rounded-full object-cover object-top"
-                  />
-                  <span className="text-[12px] font-semibold tracking-[0.1em] text-ink uppercase">
-                    {review.name}
-                    <span className="block text-[11px] font-normal tracking-[0.08em] text-muted-foreground">
-                      {review.company}
-                    </span>
-                  </span>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+        <TestimonialSlider />
       </div>
     </section>
   );

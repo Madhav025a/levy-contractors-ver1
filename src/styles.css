@@ -46,6 +46,7 @@
   --color-concrete: var(--concrete);
   --color-safety: var(--safety);
   --color-safety-deep: var(--safety-deep);
+  --color-gold: var(--gold);
   --color-compliance: var(--compliance);
 }
 
@@ -79,6 +80,7 @@
   --steel: oklch(0.48 0.009 253);
   --concrete: oklch(0.93 0.004 250);
   --safety: oklch(0.56 0.235 29);
+  --gold: oklch(0.8 0.16 85);
   --safety-deep: oklch(0.47 0.2 29);
   --compliance: oklch(0.52 0.062 155);
 
