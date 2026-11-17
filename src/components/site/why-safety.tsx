@@ -200,7 +200,7 @@ export function Safety() {
             <p className="text-sm text-white/60">
               Have safety or compliance requirements for your site? Bring them to us early.
             </p>
-            <a href="#quote" className="btn-base btn-safety">
+            <a href="#quote-contact" className="btn-base btn-safety">
               Discuss Your Project
             </a>
           </div>

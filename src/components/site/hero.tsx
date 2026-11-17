@@ -153,7 +153,7 @@ export function Hero() {
             className="anim-rise mt-9 flex flex-wrap gap-3"
             style={{ animationDelay: "420ms" }}
           >
-            <a href="#quote" className="btn-base btn-safety">
+            <a href="#quote-contact" className="btn-base btn-safety">
               Request a Free Quote
             </a>
             <a href="tel:+16152271645" className="btn-base btn-outline-light">

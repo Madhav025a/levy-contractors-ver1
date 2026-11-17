@@ -22,7 +22,7 @@ export function ProjectAssistant() {
   const request = useServerFn(askAdvisor);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => { setMounted(true); setOpen(true); }, 2000);
+    const timer = window.setTimeout(() => setMounted(true), 0);
     return () => window.clearTimeout(timer);
   }, []);
   useEffect(() => {

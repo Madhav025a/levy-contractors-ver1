@@ -125,7 +125,7 @@ export function B2BSection() {
             The earlier we&apos;re involved, the more we can do to keep the schedule, the budget,
             and the site under control.
           </p>
-          <a href="#quote" className="btn-base btn-safety mt-8">
+          <a href="#quote-contact" className="btn-base btn-safety mt-8">
             Discuss Your Project
           </a>
         </Reveal>
