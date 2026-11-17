@@ -1,5 +1,4 @@
 import asbestosImg from "@/assets/svc-asbestos.jpg";
-import demolitionImg from "@/assets/svc-demolition.jpg";
 import assessmentImg from "@/assets/svc-assessment.jpg";
 import moldImg from "@/assets/svc-mold.jpg";
 import demolitionProjectImg from "@/assets/south-central-bell-02.jpg";
@@ -53,11 +52,8 @@ export const SERVICE_PAGES: ServicePage[] = [
     tagline: "Safe, efficient demolition for small and large-scale projects.",
     intro:
       "From selective interior removal to full structural demolition, Levy delivers controlled, efficient demolition for commercial and industrial clients — often paired with abatement so one contractor handles the full scope.",
-    image: demolitionImg,
-    cardImage: demolitionProjectImg,
-    cardAlt:
-      "Red lattice-boom crane on tracks dismantling a multi-story brick building, with a Levy debris container on site",
-    alt: "Excavator with demolition attachment taking down a concrete commercial building",
+    image: demolitionProjectImg,
+    alt: "Red lattice-boom crane on tracks dismantling a multi-story brick building, with a Levy debris container on site",
     scope: [
       { title: "Structural Demolition", copy: "Complete removal of buildings and structures with planned sequencing and site control." },
       { title: "Selective Demolition", copy: "Interior strip-outs and targeted removal ahead of renovation, preserving what stays." },
