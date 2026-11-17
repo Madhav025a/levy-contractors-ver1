@@ -270,7 +270,7 @@ export function ServiceArea() {
             Serving Tennessee, Alabama, Kentucky &amp; Georgia
           </h2>
           <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-            Levy Industrial Contractors is based in Nashville, Tennessee and serves commercial and
+            Levy Contractors is based in Nashville, Tennessee and serves commercial and
             industrial clients across Tennessee, Alabama, Kentucky, and Georgia.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -291,7 +291,7 @@ export function ServiceArea() {
         <Reveal delay={120}>
           <div className="overflow-hidden border border-border">
             <iframe
-              title="Levy Industrial Contractors service area — Tennessee, Alabama, Kentucky, Georgia"
+              title="Levy Contractors service area — Tennessee, Alabama, Kentucky, Georgia"
               src="https://www.google.com/maps?q=Nashville,+Tennessee&z=6&output=embed"
               loading="lazy"
               className="h-[420px] w-full grayscale-[0.85] contrast-110"

@@ -24,7 +24,7 @@ function copyFromSource(source: string) {
 export function websiteKnowledge() {
   return JSON.stringify({
     company: {
-      name: "Levy Industrial Contractors, Inc.", founded: 1987,
+      name: "Levy Contractors, Inc.", founded: 1987,
       base: "Nashville, Tennessee", phone: "+1 615-227-1645",
       mailingAddress: "P.O. Box 70039, Nashville, TN",
       serviceArea: ["Tennessee", "Alabama", "Kentucky", "Georgia"],

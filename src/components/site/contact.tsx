@@ -37,7 +37,7 @@ export function ContactSection() {
               <div className="bg-ink p-6">
                 <dt className="eyebrow text-white/40">Company</dt>
                 <dd className="mt-2 font-display text-xl text-white">
-                  Levy Industrial Contractors, Inc.
+                  Levy Contractors, Inc.
                 </dd>
               </div>
               <div className="bg-ink p-6">
@@ -159,7 +159,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Levy Industrial Contractors, Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Levy Contractors, Inc. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="/#top" className="hover:text-safety">
               Privacy Policy

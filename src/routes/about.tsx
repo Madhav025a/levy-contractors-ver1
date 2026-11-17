@@ -11,7 +11,7 @@ import crew from "@/assets/why-crew.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () =>
-    pageMeta("/about", "About Levy Industrial Contractors | Nashville Since 1987",
+    pageMeta("/about", "About Levy Contractors | Nashville Since 1987",
       "Family of experienced environmental construction professionals serving Nashville commercial and industrial clients since 1987."),
   component: AboutPage,
 });
@@ -23,7 +23,7 @@ function AboutPage() {
         copy="Decades of commercial and industrial experience, built on safety, quality, and doing the job right."
         image={aboutCrew} alt="Levy crew in hard hats and safety vests in front of the Nashville skyline" />
       <SplitFeature eyebrow="Our Story" title="Built on Experience, Driven by Safety"
-        copy="Since 1987, Levy Industrial Contractors, Inc. has helped industrial corporations, universities, property management companies, and general contractors across Tennessee, Alabama, Kentucky, and Georgia complete complex environmental construction projects safely and on schedule."
+        copy="Since 1987, Levy Contractors, Inc. has helped industrial corporations, universities, property management companies, and general contractors across Tennessee, Alabama, Kentucky, and Georgia complete complex environmental construction projects safely and on schedule."
         image={contactMeeting} alt="Levy project manager reviewing plans with a facility manager"
         points={["Founded 1987", "Nashville based", "Commercial & industrial", "NWBOC certified"]} />
       <WhyLevy />

@@ -141,7 +141,7 @@ export function Hero() {
             className="anim-rise mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg"
             style={{ animationDelay: "300ms" }}
           >
-            Levy Industrial Contractors provides commercial and industrial asbestos abatement,
+            Levy Contractors provides commercial and industrial asbestos abatement,
             demolition, and site assessment services across Tennessee, Alabama, Kentucky, and
             Georgia.
           </p>

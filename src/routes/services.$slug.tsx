@@ -14,8 +14,8 @@ export const Route = createFileRoute("/services/$slug")({
   },
   head: ({ loaderData }) => {
     const s = loaderData ? getService(loaderData.slug) : undefined;
-    if (!s) return { meta: [{ title: "Service Unavailable | Levy Industrial" }, { name: "robots", content: "noindex" }] };
-    const title = `${s.title} in Nashville | Levy Industrial Contractors`;
+    if (!s) return { meta: [{ title: "Service Unavailable | Levy Contractors" }, { name: "robots", content: "noindex" }] };
+    const title = `${s.title} in Nashville | Levy Contractors`;
     return {
       meta: [
         { title },

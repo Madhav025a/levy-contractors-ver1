@@ -131,7 +131,7 @@ export function getService(slug: string) {
   return SERVICE_PAGES.find((s) => s.slug === canonicalSlug);
 }
 
-// Real client list provided by Levy Industrial Contractors.
+// Real client list provided by Levy Contractors.
 export const CLIENT_LIST: { name: string; sector: string }[] = [
   { name: "Music City Center (Convention Center)", sector: "Entertainment" },
   { name: "LP Field (Nissan Stadium)", sector: "Entertainment" },

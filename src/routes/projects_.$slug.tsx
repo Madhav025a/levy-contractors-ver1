@@ -13,8 +13,8 @@ export const Route = createFileRoute("/projects_/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData ? getProject(loaderData.slug) : undefined;
-    if (!p) return { meta: [{ title: "Project Unavailable | Levy Industrial" }, { name: "robots", content: "noindex" }] };
-    const title = `${p.title}, ${p.location} | Levy Industrial Projects`;
+    if (!p) return { meta: [{ title: "Project Unavailable | Levy Contractors" }, { name: "robots", content: "noindex" }] };
+    const title = `${p.title}, ${p.location} | Levy Contractors Projects`;
     return {
       meta: [
         { title },

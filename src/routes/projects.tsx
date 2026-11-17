@@ -9,7 +9,7 @@ import property from "@/assets/ind-property.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () =>
-    pageMeta("/projects", "Projects | Commercial & Industrial Work | Levy Industrial",
+    pageMeta("/projects", "Projects | Commercial & Industrial Work | Levy Contractors",
       "Asbestos abatement, demolition, and site assessment projects for industrial, university, and commercial clients across Tennessee, Alabama, Kentucky, and Georgia."),
   component: ProjectsPage,
 });
