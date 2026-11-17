@@ -11,6 +11,7 @@ import gcImg from "@/assets/ind-gc.jpg";
 import institutionalImg from "@/assets/ind-institutional.jpg";
 import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
 import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
+import certTn from "@/assets/tn-diversity-business-enterprise.png.asset.json";
 import review1 from "@/assets/review-1.jpg";
 import review2 from "@/assets/review-2.jpg";
 import review3 from "@/assets/review-3.jpg";
@@ -162,34 +163,31 @@ export function Credentials() {
           <p className="eyebrow text-steel">Credentials</p>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
             NWBOC-certified as a Women's Business Enterprise (WBE) and Women-Owned Small Business
-            (WOSB).
+            (WOSB), and certified by the Tennessee Governor's Office of Diversity Business Enterprise.
           </p>
         </Reveal>
 
         <Reveal>
           <div className="mt-8 flex flex-col items-center gap-8 border border-border bg-ink px-6 py-8 sm:flex-row sm:justify-center sm:gap-12">
             <div className="flex flex-wrap items-center justify-center gap-6">
-              {[certWbe, certWosb].map((cert, i) => (
+              {[certWbe, certWosb, certTn].map((cert, i) => (
                 <img
                   key={i}
                   src={cert.url}
-                  alt={
-                    i === 0
-                      ? "NWBOC Women's Business Enterprise (WBE) Certified logo"
-                      : "NWBOC Women-Owned Small Business (WOSB) Certified logo"
-                  }
-                  className="h-28 w-auto rounded-sm bg-white px-4 py-3 md:h-36"
+                  alt={["NWBOC Women's Business Enterprise (WBE) Certified logo", "NWBOC Women-Owned Small Business (WOSB) Certified logo", "Tennessee Governor's Office of Diversity Business Enterprise certified seal"][i]}
+                  className={i === 2 ? "h-28 w-auto md:h-36" : "h-28 w-auto rounded-sm bg-white px-4 py-3 md:h-36"}
                   loading="lazy"
                 />
               ))}
             </div>
             <div className="max-w-md text-center sm:text-left">
-              <p className="font-display text-2xl text-white">What WBE &amp; WOSB Mean For Your Project</p>
+              <p className="font-display text-2xl text-white">What Our Certifications Mean For Your Project</p>
               <p className="mt-2 text-sm leading-relaxed text-white/60">
                 Levy is certified by the National Women Business Owners Corporation as a
-                Women&apos;s Business Enterprise (WBE) and Women-Owned Small Business (WOSB). For
+                Women&apos;s Business Enterprise (WBE) and Women-Owned Small Business (WOSB), and by the State of Tennessee Governor&apos;s Office
+                of Diversity Business Enterprise. For
                 commercial and institutional clients, hiring Levy counts toward supplier diversity
-                and small-business participation goals on public and private contracts — while
+                and small-business participation goals on public and private contracts, including Tennessee state work — while
                 delivering the same experienced crews, safety record, and regulatory compliance
                 we&apos;ve brought to every project since 1987.
               </p>

@@ -4,6 +4,7 @@ import heroImage from "@/assets/hero-abatement.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
 import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
+import certTn from "@/assets/tn-diversity-business-enterprise.png.asset.json";
 
 const SERVICES = [
   "Asbestos Removal",
@@ -110,16 +111,12 @@ export function Hero() {
       </div>
 
       <div className="anim-rise absolute top-36 right-5 z-10 flex gap-2 md:right-8 lg:top-44" style={{ animationDelay: "640ms" }}>
-        {[certWbe, certWosb].map((cert, i) => (
+        {[certWbe, certWosb, certTn].map((cert, i) => (
           <img
             key={i}
             src={cert.url}
-            alt={
-              i === 0
-                ? "NWBOC Women's Business Enterprise (WBE) Certified logo"
-                : "NWBOC Women-Owned Small Business (WOSB) Certified logo"
-            }
-            className="h-9 w-auto rounded-sm bg-white px-2 py-1.5 shadow-lg md:h-11"
+            alt={["NWBOC Women's Business Enterprise (WBE) Certified logo", "NWBOC Women-Owned Small Business (WOSB) Certified logo", "Tennessee Governor's Office of Diversity Business Enterprise certified seal"][i]}
+            className={i === 2 ? "h-9 w-auto drop-shadow-lg md:h-11" : "h-9 w-auto rounded-sm bg-white px-2 py-1.5 shadow-lg md:h-11"}
           />
         ))}
       </div>

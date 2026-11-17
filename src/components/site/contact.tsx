@@ -4,6 +4,7 @@ import { LeadForm } from "./hero";
 import levyLogo from "@/assets/levy-contractors-logo.png.asset.json";
 import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
 import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
+import certTn from "@/assets/tn-diversity-business-enterprise.png.asset.json";
 import { SERVICE_PAGES } from "@/lib/services-data";
 
 export function ContactSection() {
@@ -96,16 +97,12 @@ export function Footer() {
               Alabama, Kentucky, and Georgia.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              {[certWbe, certWosb].map((cert, i) => (
+              {[certWbe, certWosb, certTn].map((cert, i) => (
                 <img
                   key={i}
                   src={cert.url}
-                  alt={
-                    i === 0
-                      ? "NWBOC Women's Business Enterprise (WBE) Certified logo"
-                      : "NWBOC Women-Owned Small Business (WOSB) Certified logo"
-                  }
-                  className="h-10 w-auto rounded-sm bg-white px-2 py-1.5"
+                  alt={["NWBOC Women's Business Enterprise (WBE) Certified logo", "NWBOC Women-Owned Small Business (WOSB) Certified logo", "Tennessee Governor's Office of Diversity Business Enterprise certified seal"][i]}
+                  className={i === 2 ? "h-10 w-auto" : "h-10 w-auto rounded-sm bg-white px-2 py-1.5"}
                 />
               ))}
             </div>

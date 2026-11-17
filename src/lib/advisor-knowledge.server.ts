@@ -28,7 +28,7 @@ export function websiteKnowledge() {
       base: "Nashville, Tennessee", phone: "+1 615-227-1645",
       mailingAddress: "P.O. Box 70039, Nashville, TN",
       serviceArea: ["Tennessee", "Alabama", "Kentucky", "Georgia"],
-      certifications: ["NWBOC Women's Business Enterprise (WBE)", "NWBOC Women-Owned Small Business (WOSB)"],
+      certifications: ["NWBOC Women's Business Enterprise (WBE)", "NWBOC Women-Owned Small Business (WOSB)", "State of Tennessee Governor's Office of Diversity Business Enterprise (certified Diversity Business Enterprise)"],
       audience: "Commercial, industrial and institutional clients, universities, government, property managers and general contractors",
       links: { about: "/about", contact: "/contact", services: "/services", projects: "/projects", serviceArea: "/service-area", credentials: "/about" },
       unknown: "Pricing, availability, exact business hours, public email, insurance amounts and specific license numbers are not published. Testimonials are placeholders, not verified reviews.",
