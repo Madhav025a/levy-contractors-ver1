@@ -130,11 +130,11 @@ function ServiceDetail() {
                       <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-muted-foreground">{group.blurb}</p>
                       <ul className="mt-7 grid gap-x-10 gap-y-3.5 md:grid-cols-2">
                         {members.map((c) => (
-                          <li key={c.name} className="flex items-baseline gap-3">
-                            <span className="shrink-0 text-[14.5px] font-bold text-ink">{c.name}</span>
-                            <span className="min-w-6 flex-1 border-b border-dotted border-muted-foreground/40" aria-hidden />
+                          <li key={c.name} className="grid min-w-0 grid-cols-[minmax(0,auto)_minmax(1rem,1fr)] items-baseline gap-x-3 gap-y-1">
+                            <span className="min-w-0 break-words text-[14.5px] font-bold text-ink">{c.name}</span>
+                            <span className="border-b border-dotted border-muted-foreground/40" aria-hidden />
                             {mixed && (
-                              <span className="shrink-0 text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+                              <span className="col-span-2 min-w-0 break-words text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
                                 {c.sector}
                               </span>
                             )}
@@ -168,11 +168,11 @@ function ServiceDetail() {
               <div className="mt-8 grid gap-4">
                 {others.map((o) => (
                   <Link key={o.slug} to="/services/$slug" params={{ slug: o.slug }}
-                    className="card-lift group flex items-center gap-5 overflow-hidden border border-border bg-card">
+                    className="card-lift group grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 overflow-hidden border border-border bg-card sm:gap-5">
                     <img src={o.image} alt={o.alt} loading="lazy" className="h-40 w-24 shrink-0 object-cover sm:w-36" />
-                    <div className="flex-1 pr-5">
+                    <div className="min-w-0">
                       <span className="font-display text-xs tracking-[0.2em] text-safety">{o.number}</span>
-                      <h3 className="font-display text-xl leading-tight text-ink">{o.title}</h3>
+                      <h3 className="break-words font-display text-xl leading-tight text-ink">{o.title}</h3>
                     </div>
                     <ArrowRight className="mr-5 h-5 w-5 shrink-0 text-ink group-hover:text-safety" aria-hidden />
                   </Link>

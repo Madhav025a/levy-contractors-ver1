@@ -1,4 +1,6 @@
 # Tasks
+- [x] Fix client-name and industry-label overflow on service pages.
+- [x] Check all 21 pages at five mobile, tablet, and desktop widths and fix layout overflow.
 - [x] Replace scripted advisor with website-grounded AI answers, source links, conversation context, and verification.
 - [x] Merge assessment and asbestos surveys, inspections and testing into one detailed service page and consistent listings.
 - [x] Make service cards equally sized and verify desktop/mobile presentation and navigation.- [x] Project pages: list 11 projects + dedicated page each
