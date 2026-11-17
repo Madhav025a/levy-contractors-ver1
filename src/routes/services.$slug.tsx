@@ -121,7 +121,6 @@ function ServiceDetail() {
             <div className="mt-10 grid gap-6">
               {CLIENT_GROUPS.map((group, gi) => {
                 const members = clientsForGroup(group);
-                const mixed = group.sectors.length > 1;
                 return (
                   <Reveal key={group.title} delay={gi * 60}>
                     <div className="relative border border-border bg-card p-6 md:p-10">
@@ -133,11 +132,9 @@ function ServiceDetail() {
                           <li key={c.name} className="grid min-w-0 grid-cols-[minmax(0,auto)_minmax(1rem,1fr)] items-baseline gap-x-3 gap-y-1">
                             <span className="min-w-0 break-words text-[14.5px] font-bold text-ink">{c.name}</span>
                             <span className="border-b border-dotted border-muted-foreground/40" aria-hidden />
-                            {mixed && (
-                              <span className="col-span-2 min-w-0 break-words text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
-                                {c.sector}
-                              </span>
-                            )}
+                            <span className="col-span-2 min-w-0 break-words text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+                              {c.sector}
+                            </span>
                           </li>
                         ))}
                       </ul>
