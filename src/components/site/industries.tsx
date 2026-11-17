@@ -224,7 +224,7 @@ function TestimonialSlider() {
 
   useEffect(() => {
     if (paused) return;
-    const id = window.setInterval(() => setIndex((i) => (i >= maxIndex ? 0 : i + 1)), 5000);
+    const id = window.setInterval(() => setIndex((i) => (i >= maxIndex ? 0 : i + 1)), 2500);
     return () => window.clearInterval(id);
   }, [paused, maxIndex]);
 
