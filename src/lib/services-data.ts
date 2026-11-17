@@ -27,9 +27,9 @@ export const SERVICE_PAGES: ServicePage[] = [
     number: "01",
     title: "Asbestos Removal",
     tagline:
-      "Commercial and industrial asbestos abatement since 1987. Levy plans and executes every project with engineered containment, trained crews, and full regulatory compliance — protecting workers, occupants, and your operations from start to clearance.",
+      "Commercial and industrial asbestos abatement since 1979. Levy plans and executes every project with engineered containment, trained crews, and full regulatory compliance — protecting workers, occupants, and your operations from start to clearance.",
     intro:
-      "Levy has specialized in commercial and industrial asbestos abatement in the Nashville area since 1987. Every project is planned and executed with a strong focus on worker safety, occupant protection, quality, and full regulatory compliance.",
+      "Levy has specialized in commercial and industrial asbestos abatement in the Nashville area since 1979. Every project is planned and executed with a strong focus on worker safety, occupant protection, quality, and full regulatory compliance.",
     image: asbestosImg,
     alt: "Workers in protective suits sealing a containment barrier inside a commercial building",
     scope: [

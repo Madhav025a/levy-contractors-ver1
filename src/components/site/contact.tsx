@@ -93,7 +93,7 @@ export function Footer() {
               className="h-14 w-auto bg-white px-3 py-2"
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-              Commercial and industrial environmental construction since 1987 — serving Tennessee,
+              Third-generation family business in commercial and industrial environmental construction since 1979 — serving Tennessee,
               Alabama, Kentucky, and Georgia.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">

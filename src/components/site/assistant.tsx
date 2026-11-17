@@ -55,7 +55,7 @@ export function ProjectAssistant() {
         <section aria-label="Levy Project Assistant" className="anim-slide-up flex h-[min(72dvh,600px)] w-[min(92vw,400px)] flex-col border border-border bg-background shadow-[var(--shadow-hard)]">
           <div className="flex items-center gap-3 bg-ink px-4 py-3.5 text-primary-foreground">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-safety"><HardHat className="h-4.5 w-4.5 text-accent-foreground" aria-hidden /></span>
-            <div className="flex-1 leading-tight"><p className="font-display text-base">Levy Project Assistant</p><p className="mt-1 text-[11px] text-primary-foreground/60">Nashville, TN · Since 1987</p></div>
+            <div className="flex-1 leading-tight"><p className="font-display text-base">Levy Project Assistant</p><p className="mt-1 text-[11px] text-primary-foreground/60">Nashville, TN · Since 1979</p></div>
             <Button variant="ghost" size="icon" aria-label="Start new conversation" title="Start new conversation" disabled={typing} onClick={() => { setMessages([WELCOME]); setError(null); setInput(""); }}><RotateCcw /></Button>
             <Button variant="ghost" size="icon" aria-label="Close assistant" onClick={() => setOpen(false)}><X /></Button>
           </div>

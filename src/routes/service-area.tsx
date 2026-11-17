@@ -18,7 +18,7 @@ function ServiceAreaPage() {
         copy="Based in Nashville, with decades of regional experience on commercial and industrial projects across the Southeast."
         image={skyline} alt="Nashville skyline at dusk over the Cumberland River" />
       <ServiceArea />
-      <SplitFeature eyebrow="Local Since 1987" title="Close to Your Site, Familiar With Your Market"
+      <SplitFeature eyebrow="Local Since 1979" title="Close to Your Site, Familiar With Your Market"
         copy="Being based in Nashville means faster mobilization across the region, local knowledge, and long-standing relationships with the area's contractors, facilities, and institutions."
         image={aboutCrew} alt="Levy crew with the Nashville skyline behind them"
         points={["Tennessee", "Alabama", "Kentucky", "Georgia"]} />

@@ -5,7 +5,7 @@ type Stat = { value?: number; suffix?: string; unit?: string; label?: string; co
 
 const STATS: Stat[] = [
   { value: 30, suffix: "+", unit: "Years", copy: "Commercial & industrial asbestos experience" },
-  { value: 1987, suffix: "", unit: "Since", copy: "Serving TN, AL, KY & GA" },
+  { value: 1979, suffix: "", unit: "Since", copy: "Serving TN, AL, KY & GA" },
   { label: "Safety First", copy: "Compliance-focused operations" },
   { label: "Commercial & Industrial", copy: "Specialized project experience" },
 ];

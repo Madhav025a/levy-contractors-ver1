@@ -127,7 +127,7 @@ export function Hero() {
             className="eyebrow anim-rise text-safety"
             style={{ animationDelay: "80ms" }}
           >
-            Nashville, Tennessee — Est. 1987
+            Nashville, Tennessee — Est. 1979
           </p>
           <h1
             className="anim-rise mt-5 font-display text-[2.7rem] leading-[0.95] text-white sm:text-6xl lg:text-7xl"
@@ -164,7 +164,7 @@ export function Hero() {
             style={{ animationDelay: "560ms" }}
           >
             {[
-              { icon: CalendarClock, label: "Since 1987" },
+              { icon: CalendarClock, label: "Since 1979" },
               { icon: Building2, label: "Commercial & Industrial" },
               { icon: ShieldCheck, label: "Safety First" },
             ].map(({ icon: Icon, label }) => (

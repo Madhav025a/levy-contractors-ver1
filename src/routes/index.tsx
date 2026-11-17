@@ -23,13 +23,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Commercial and industrial asbestos abatement, demolition, and site assessment since 1987 — serving Tennessee, Alabama, Kentucky, and Georgia. Call +1 615-227-1645.",
+          "Third-generation family business: commercial and industrial asbestos abatement, demolition, and site assessment since 1979 — serving Tennessee, Alabama, Kentucky, and Georgia. Call +1 615-227-1645.",
       },
-      { property: "og:title", content: "Levy Contractors | Nashville Since 1987" },
+      { property: "og:title", content: "Levy Contractors | Nashville Since 1979" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: abs("/") },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Levy Contractors | Nashville Since 1987" },
+      { name: "twitter:title", content: "Levy Contractors | Nashville Since 1979" },
       {
         property: "og:description",
         content:
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
       type: "application/ld+json",
       children: JSON.stringify({
         "@context": "https://schema.org", "@type": "GeneralContractor",
-        name: "Levy Contractors, Inc.", url: abs("/"), telephone: "+1 615-227-1645", foundingDate: "1987",
+        name: "Levy Contractors, Inc.", url: abs("/"), telephone: "+1 615-227-1645", foundingDate: "1979",
         address: { "@type": "PostalAddress", addressLocality: "Nashville", addressRegion: "TN", addressCountry: "US" },
         areaServed: ["Tennessee", "Alabama", "Kentucky", "Georgia"],
         knowsAbout: ["Asbestos abatement", "Demolition", "Site assessment", "Asbestos surveys and testing", "Mold remediation"],

@@ -29,7 +29,7 @@ export function Header() {
       <div className="hidden bg-safety text-[11.5px] font-bold italic tracking-[0.16em] text-white md:block">
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-8 py-2.5 uppercase">
           <span>Commercial &amp; Industrial Environmental Construction</span>
-          <span>Serving TN • AL • KY • GA Since 1987</span>
+          <span>Serving TN • AL • KY • GA Since 1979</span>
           <span>
             Safety <span className="text-white/80">•</span> Quality{" "}
             <span className="text-white/80">•</span> Compliance

@@ -116,7 +116,7 @@ function ServiceDetail() {
               <h2 className="mt-3 font-display text-4xl text-ink md:text-5xl">Our Clients</h2>
               <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
                 A selection of the facilities, institutions, and organizations Levy has served across
-                Tennessee, Alabama, Kentucky, and Georgia since 1987.
+                Tennessee, Alabama, Kentucky, and Georgia since 1979.
               </p>
             </Reveal>
             <div className="mt-10 grid gap-6">

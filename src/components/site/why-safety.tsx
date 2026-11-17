@@ -46,7 +46,7 @@ export function WhyLevy() {
               className="w-full object-cover"
             />
             <div className="absolute -right-4 -bottom-4 hidden bg-safety px-6 py-5 md:block">
-              <p className="font-display text-3xl leading-none text-accent-foreground">1987</p>
+              <p className="font-display text-3xl leading-none text-accent-foreground">1979</p>
               <p className="mt-1 text-[11px] font-semibold tracking-[0.16em] text-accent-foreground/80 uppercase">
                 Nashville
               </p>

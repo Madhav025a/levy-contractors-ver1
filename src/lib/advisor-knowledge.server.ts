@@ -24,7 +24,8 @@ function copyFromSource(source: string) {
 export function websiteKnowledge() {
   return JSON.stringify({
     company: {
-      name: "Levy Contractors, Inc.", founded: 1987,
+      name: "Levy Contractors, Inc.", founded: 1979,
+      familyLegacy: "Third-generation family business. Founded by Bobby Young in 1979, carried forward by his daughter Kellye Bradley, and now led by the third generation, Nick Bradley. Values: integrity, quality, reliability, and commitment to customer satisfaction.",
       base: "Nashville, Tennessee", phone: "+1 615-227-1645",
       mailingAddress: "P.O. Box 70039, Nashville, TN",
       serviceArea: ["Tennessee", "Alabama", "Kentucky", "Georgia"],

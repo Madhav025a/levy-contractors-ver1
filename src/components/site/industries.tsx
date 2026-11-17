@@ -189,7 +189,7 @@ export function Credentials() {
                 commercial and institutional clients, hiring Levy counts toward supplier diversity
                 and small-business participation goals on public and private contracts, including Tennessee state work — while
                 delivering the same experienced crews, safety record, and regulatory compliance
-                we&apos;ve brought to every project since 1987.
+                we&apos;ve brought to every project since 1979.
               </p>
             </div>
           </div>
