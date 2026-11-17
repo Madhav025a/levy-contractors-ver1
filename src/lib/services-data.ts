@@ -26,7 +26,8 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: "asbestos-removal",
     number: "01",
     title: "Asbestos Removal",
-    tagline: "Commercial & industrial asbestos abatement since 1987.",
+    tagline:
+      "Commercial and industrial asbestos abatement since 1987. Levy plans and executes every project with engineered containment, trained crews, and full regulatory compliance — protecting workers, occupants, and your operations from start to clearance.",
     intro:
       "Levy has specialized in commercial and industrial asbestos abatement in the Nashville area since 1987. Every project is planned and executed with a strong focus on worker safety, occupant protection, quality, and full regulatory compliance.",
     image: asbestosImg,
@@ -49,7 +50,8 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: "demolition",
     number: "02",
     title: "Demolition",
-    tagline: "Safe, efficient demolition for small and large-scale projects.",
+    tagline:
+      "Safe, efficient demolition for small and large-scale projects. From selective interior removal to full structural takedowns, our experienced crews and specialized equipment deliver controlled results — often paired with abatement so one contractor handles the full scope.",
     intro:
       "From selective interior removal to full structural demolition, Levy delivers controlled, efficient demolition for commercial and industrial clients — often paired with abatement so one contractor handles the full scope.",
     image: demolitionProjectImg,
@@ -72,7 +74,8 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: "site-assessment",
     number: "03",
     title: "Site Assessment & Asbestos Surveys, Inspections & Testing",
-    tagline: "Know the risks before the work begins.",
+    tagline:
+      "Know the risks before the work begins. Levy combines site assessment with asbestos surveys, inspections, and testing in one pre-project service, giving owners and contractors a clear picture of building conditions before renovation, abatement, or demolition starts.",
     intro:
       "Levy brings site assessment and asbestos surveys, inspections, and testing together in one pre-project service. We review building conditions, utilities, safety considerations, and suspect asbestos-containing materials to help commercial and industrial owners plan renovation, abatement, or demolition with a clear understanding of the work ahead.",
     image: assessmentImg,
@@ -101,7 +104,8 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: "mold-remediation",
     number: "04",
     title: "Mold Remediation",
-    tagline: "Controlled, safe mold removal for commercial facilities.",
+    tagline:
+      "Controlled, safe mold removal for commercial facilities. We isolate affected areas with proper containment, remove contaminated materials, and restore a clean, healthy environment — with minimal disruption to your building's day-to-day operations.",
     intro:
       "Levy provides mold remediation for commercial and industrial properties, using containment and controlled removal methods to address affected areas and help return the space to service.",
     image: moldImg,
