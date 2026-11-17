@@ -16,8 +16,8 @@ export function ServiceCards() {
             {/* Image panel */}
             <div className="relative h-72 shrink-0 overflow-hidden">
               <img
-                src={service.image}
-                alt={service.alt}
+                src={service.cardImage ?? service.image}
+                alt={service.cardAlt ?? service.alt}
                 loading="lazy"
                 width={1280}
                 height={960}
