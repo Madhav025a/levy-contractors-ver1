@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle2, Phone, ShieldCheck, Building2, CalendarClock } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import heroImage from "@/assets/hero-abatement.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
 import certWbe from "@/assets/nwboc-wbe-certified-v2.png";
@@ -16,9 +17,36 @@ const SERVICES = [
 
 export function LeadForm({ id = "quote", compact = false }: { id?: string; compact?: boolean }) {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSending(true);
+    setError(false);
+
+    const data = new FormData(event.currentTarget);
+    const firstName = String(data.get("first_name") ?? "").trim();
+    const lastName = String(data.get("last_name") ?? "").trim();
+    const fullName =
+      String(data.get("full_name") ?? "").trim() || [firstName, lastName].filter(Boolean).join(" ");
+
+    const { error: insertError } = await supabase.from("quote_requests").insert({
+      full_name: fullName,
+      company: String(data.get("company") ?? "").trim() || null,
+      email: String(data.get("email") ?? "").trim(),
+      phone: String(data.get("phone") ?? "").trim() || null,
+      project_location: String(data.get("project_location") ?? "").trim() || null,
+      service: String(data.get("service") ?? "").trim() || null,
+      message: String(data.get("message") ?? "").trim() || null,
+      source_page: window.location.pathname,
+    });
+
+    setSending(false);
+    if (insertError) {
+      setError(true);
+      return;
+    }
     setSent(true);
   };
 
@@ -45,25 +73,25 @@ export function LeadForm({ id = "quote", compact = false }: { id?: string; compa
         <form className="mt-5 grid gap-3" onSubmit={onSubmit}>
           {compact ? (
             <>
-              <input className="field-industrial" placeholder="Full Name" required aria-label="Full Name" />
+              <input name="full_name" className="field-industrial" placeholder="Full Name" required aria-label="Full Name" />
               <div className="grid gap-3 sm:grid-cols-2">
-                <input type="email" className="field-industrial" placeholder="Email" required aria-label="Email" />
-                <input type="tel" className="field-industrial" placeholder="Phone" required aria-label="Phone" />
+                <input name="email" type="email" className="field-industrial" placeholder="Email" required aria-label="Email" />
+                <input name="phone" type="tel" className="field-industrial" placeholder="Phone" required aria-label="Phone" />
               </div>
             </>
           ) : (
             <>
               <div className="grid gap-3 sm:grid-cols-2">
-                <input className="field-industrial" placeholder="First Name" required aria-label="First Name" />
-                <input className="field-industrial" placeholder="Last Name" required aria-label="Last Name" />
+                <input name="first_name" className="field-industrial" placeholder="First Name" required aria-label="First Name" />
+                <input name="last_name" className="field-industrial" placeholder="Last Name" required aria-label="Last Name" />
               </div>
-              <input className="field-industrial" placeholder="Company" aria-label="Company" />
+              <input name="company" className="field-industrial" placeholder="Company" aria-label="Company" />
               <div className="grid gap-3 sm:grid-cols-2">
-                <input type="email" className="field-industrial" placeholder="Email" required aria-label="Email" />
-                <input type="tel" className="field-industrial" placeholder="Phone" required aria-label="Phone" />
+                <input name="email" type="email" className="field-industrial" placeholder="Email" required aria-label="Email" />
+                <input name="phone" type="tel" className="field-industrial" placeholder="Phone" required aria-label="Phone" />
               </div>
-              <input className="field-industrial" placeholder="Project Location" aria-label="Project Location" />
-              <select className="field-industrial" defaultValue="" aria-label="Service Needed" required>
+              <input name="project_location" className="field-industrial" placeholder="Project Location" aria-label="Project Location" />
+              <select name="service" className="field-industrial" defaultValue="" aria-label="Service Needed" required>
                 <option value="" disabled>
                   Service Needed
                 </option>
@@ -72,14 +100,20 @@ export function LeadForm({ id = "quote", compact = false }: { id?: string; compa
                 ))}
               </select>
               <textarea
+                name="message"
                 className="field-industrial min-h-24"
                 placeholder="Project Details"
                 aria-label="Project Details"
               />
             </>
           )}
-          <button type="submit" className="btn-base btn-safety w-full">
-            Request a Quote
+          {error && (
+            <p className="text-sm font-semibold text-safety" role="alert">
+              Something went wrong sending your request. Please try again or call +1 615-227-1645.
+            </p>
+          )}
+          <button type="submit" className="btn-base btn-safety w-full" disabled={sending}>
+            {sending ? "Sending…" : "Request a Quote"}
           </button>
         </form>
       )}
