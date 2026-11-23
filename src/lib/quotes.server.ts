@@ -21,7 +21,7 @@ export function isMysqlConfigured() {
   return Boolean(env["DB_HOST"] && env["DB_NAME"] && env["DB_USER"]);
 }
 
-async function getPool(): Promise<Pool> {
+export async function getPool(): Promise<Pool> {
   if (!poolPromise) {
     poolPromise = import("mysql2/promise").then((mysql) =>
       mysql.createPool({
@@ -43,7 +43,7 @@ async function getPool(): Promise<Pool> {
   return poolPromise;
 }
 
-async function ensureTable(pool: Pool) {
+export async function ensureTable(pool: Pool) {
   if (tableReady) return;
   await pool.query(`CREATE TABLE IF NOT EXISTS quote_requests (
     id INT AUTO_INCREMENT PRIMARY KEY,

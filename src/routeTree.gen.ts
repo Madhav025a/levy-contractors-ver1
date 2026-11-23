@@ -15,9 +15,16 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServiceAreaRouteImport } from './routes/service-area'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as AdminPanelRouteImport } from './routes/admin/_panel'
+import { Route as AdminLoginRouteImport } from './routes/admin/login'
+import { Route as AdminSetupRouteImport } from './routes/admin/setup'
 import { Route as ProjectsSlugRouteImport } from './routes/projects_.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as AdminPanelIndexRouteImport } from './routes/admin/_panel/index'
+import { Route as AdminPanelAccountRouteImport } from './routes/admin/_panel/account'
+import { Route as AdminPanelUsersRouteImport } from './routes/admin/_panel/users'
+import { Route as AdminPanelQuotesIdRouteImport } from './routes/admin/_panel/quotes.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -49,6 +56,21 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminPanelRoute = AdminPanelRouteImport.update({
+  id: '/admin/_panel',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSetupRoute = AdminSetupRouteImport.update({
+  id: '/admin/setup',
+  path: '/admin/setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   id: '/projects_/$slug',
   path: '/projects/$slug',
@@ -64,6 +86,26 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminPanelIndexRoute = AdminPanelIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminPanelRoute,
+} as any)
+const AdminPanelAccountRoute = AdminPanelAccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => AdminPanelRoute,
+} as any)
+const AdminPanelUsersRoute = AdminPanelUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AdminPanelRoute,
+} as any)
+const AdminPanelQuotesIdRoute = AdminPanelQuotesIdRouteImport.update({
+  id: '/quotes/$id',
+  path: '/quotes/$id',
+  getParentRoute: () => AdminPanelRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -72,9 +114,16 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/service-area': typeof ServiceAreaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin': typeof AdminPanelRouteWithChildren
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/setup': typeof AdminSetupRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
+  '/admin/account': typeof AdminPanelAccountRoute
+  '/admin/users': typeof AdminPanelUsersRoute
+  '/admin/': typeof AdminPanelIndexRoute
+  '/admin/quotes/$id': typeof AdminPanelQuotesIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -83,9 +132,15 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/service-area': typeof ServiceAreaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/setup': typeof AdminSetupRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services': typeof ServicesIndexRoute
+  '/admin/account': typeof AdminPanelAccountRoute
+  '/admin/users': typeof AdminPanelUsersRoute
+  '/admin': typeof AdminPanelIndexRoute
+  '/admin/quotes/$id': typeof AdminPanelQuotesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -95,9 +150,16 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/service-area': typeof ServiceAreaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/_panel': typeof AdminPanelRouteWithChildren
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/setup': typeof AdminSetupRoute
   '/projects_/$slug': typeof ProjectsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
+  '/admin/_panel/account': typeof AdminPanelAccountRoute
+  '/admin/_panel/users': typeof AdminPanelUsersRoute
+  '/admin/_panel/': typeof AdminPanelIndexRoute
+  '/admin/_panel/quotes/$id': typeof AdminPanelQuotesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -108,9 +170,16 @@ export interface FileRouteTypes {
     | '/projects'
     | '/service-area'
     | '/sitemap.xml'
+    | '/admin'
+    | '/admin/login'
+    | '/admin/setup'
     | '/projects/$slug'
     | '/services/$slug'
     | '/services/'
+    | '/admin/account'
+    | '/admin/users'
+    | '/admin/'
+    | '/admin/quotes/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -119,9 +188,15 @@ export interface FileRouteTypes {
     | '/projects'
     | '/service-area'
     | '/sitemap.xml'
+    | '/admin/login'
+    | '/admin/setup'
     | '/projects/$slug'
     | '/services/$slug'
     | '/services'
+    | '/admin/account'
+    | '/admin/users'
+    | '/admin'
+    | '/admin/quotes/$id'
   id:
     | '__root__'
     | '/'
@@ -130,9 +205,16 @@ export interface FileRouteTypes {
     | '/projects'
     | '/service-area'
     | '/sitemap.xml'
+    | '/admin/_panel'
+    | '/admin/login'
+    | '/admin/setup'
     | '/projects_/$slug'
     | '/services/$slug'
     | '/services/'
+    | '/admin/_panel/account'
+    | '/admin/_panel/users'
+    | '/admin/_panel/'
+    | '/admin/_panel/quotes/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -142,6 +224,9 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   ServiceAreaRoute: typeof ServiceAreaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  AdminPanelRoute: typeof AdminPanelRouteWithChildren
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminSetupRoute: typeof AdminSetupRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -191,6 +276,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/_panel': {
+      id: '/admin/_panel'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminPanelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/setup': {
+      id: '/admin/setup'
+      path: '/admin/setup'
+      fullPath: '/admin/setup'
+      preLoaderRoute: typeof AdminSetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects_/$slug': {
       id: '/projects_/$slug'
       path: '/projects/$slug'
@@ -212,8 +318,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/_panel/': {
+      id: '/admin/_panel/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminPanelIndexRouteImport
+      parentRoute: typeof AdminPanelRoute
+    }
+    '/admin/_panel/account': {
+      id: '/admin/_panel/account'
+      path: '/account'
+      fullPath: '/admin/account'
+      preLoaderRoute: typeof AdminPanelAccountRouteImport
+      parentRoute: typeof AdminPanelRoute
+    }
+    '/admin/_panel/users': {
+      id: '/admin/_panel/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminPanelUsersRouteImport
+      parentRoute: typeof AdminPanelRoute
+    }
+    '/admin/_panel/quotes/$id': {
+      id: '/admin/_panel/quotes/$id'
+      path: '/quotes/$id'
+      fullPath: '/admin/quotes/$id'
+      preLoaderRoute: typeof AdminPanelQuotesIdRouteImport
+      parentRoute: typeof AdminPanelRoute
+    }
   }
 }
+
+interface AdminPanelRouteChildren {
+  AdminPanelAccountRoute: typeof AdminPanelAccountRoute
+  AdminPanelUsersRoute: typeof AdminPanelUsersRoute
+  AdminPanelIndexRoute: typeof AdminPanelIndexRoute
+  AdminPanelQuotesIdRoute: typeof AdminPanelQuotesIdRoute
+}
+
+const AdminPanelRouteChildren: AdminPanelRouteChildren = {
+  AdminPanelAccountRoute: AdminPanelAccountRoute,
+  AdminPanelUsersRoute: AdminPanelUsersRoute,
+  AdminPanelIndexRoute: AdminPanelIndexRoute,
+  AdminPanelQuotesIdRoute: AdminPanelQuotesIdRoute,
+}
+
+const AdminPanelRouteWithChildren = AdminPanelRoute._addFileChildren(
+  AdminPanelRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -222,6 +374,9 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   ServiceAreaRoute: ServiceAreaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  AdminPanelRoute: AdminPanelRouteWithChildren,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminSetupRoute: AdminSetupRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,

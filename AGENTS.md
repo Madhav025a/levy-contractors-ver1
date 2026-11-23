@@ -16,3 +16,4 @@
 - Keep client names in shrinkable grid tracks with industry labels on a separate wrapping row so long names cannot push labels outside their cards.
 
 - Store all media as real files in src/assets (no Lovable Assets pointers): the site is self-hosted on GoDaddy Node.js, which cannot serve /__l5e CDN paths.
+- Admin dashboard (/admin) uses its own MySQL tables (admin_users, admin_sessions, quote_status, quote_notes) with scrypt hashes and httpOnly session cookies; every admin server function re-checks role server-side because GoDaddy hosting has no Lovable auth.
