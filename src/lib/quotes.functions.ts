@@ -31,12 +31,14 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
     }
     // Saved. Email failures are logged only; the enquiry stays saved.
     try {
-      const { isSmtpConfigured, sendQuoteNotification } = await import("./quote-email.server");
-      if (isSmtpConfigured()) {
+      const { getQuoteRecipient, sendQuoteNotification } = await import("./quote-email.server");
+      const to = getQuoteRecipient();
+      if (to) {
         let url = data.source_page;
         try { url = new URL(data.source_page || "/", getRequest().url).toString(); } catch {}
-        await sendQuoteNotification(data, url);
-      } else console.warn("Quote email skipped: SMTP not configured");
+        const { messageId } = await sendQuoteNotification(data, url, to);
+        console.log("Quote notification email sent:", messageId);
+      } else console.error("email.quote_notification.recipient_unset (set QUOTE_NOTIFY_TO)");
     } catch (err) {
       console.error("Quote notification email failed:", err instanceof Error ? err.message : "unknown error");
     }
