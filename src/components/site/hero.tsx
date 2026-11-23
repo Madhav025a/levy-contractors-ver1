@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle2, Phone, ShieldCheck, Building2, CalendarClock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { submitQuoteRequest } from "@/lib/quotes.functions";
 import heroImage from "@/assets/hero-abatement.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
 import certWbe from "@/assets/nwboc-wbe-certified-v2.png";
@@ -31,7 +32,7 @@ export function LeadForm({ id = "quote", compact = false }: { id?: string; compa
     const fullName =
       String(data.get("full_name") ?? "").trim() || [firstName, lastName].filter(Boolean).join(" ");
 
-    const { error: insertError } = await supabase.from("quote_requests").insert({
+    const payload = {
       full_name: fullName,
       company: String(data.get("company") ?? "").trim() || null,
       email: String(data.get("email") ?? "").trim(),
@@ -40,7 +41,20 @@ export function LeadForm({ id = "quote", compact = false }: { id?: string; compa
       service: String(data.get("service") ?? "").trim() || null,
       message: String(data.get("message") ?? "").trim() || null,
       source_page: window.location.pathname,
-    });
+    };
+
+    let insertError: unknown = null;
+    try {
+      const result = await submitQuoteRequest({ data: payload });
+      if (!result.ok) {
+        if (result.saved_to === "unconfigured") {
+          // GoDaddy database not available here (e.g. Lovable preview): keep the previous save.
+          insertError = (await supabase.from("quote_requests").insert(payload)).error;
+        } else insertError = true;
+      }
+    } catch (err) {
+      insertError = err;
+    }
 
     setSending(false);
     if (insertError) {
