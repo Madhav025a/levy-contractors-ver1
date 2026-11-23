@@ -1,10 +1,10 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle2, Phone, ShieldCheck, Building2, CalendarClock } from "lucide-react";
 import heroImage from "@/assets/hero-abatement.jpg";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
-import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
-import certTn from "@/assets/tn-diversity-business-enterprise.png.asset.json";
+import heroVideo from "@/assets/hero-video.mp4";
+import certWbe from "@/assets/nwboc-wbe-certified-v2.png";
+import certWosb from "@/assets/nwboc-wosb-certified-v2.png";
+import certTn from "@/assets/tn-diversity-business-enterprise.png";
 
 const SERVICES = [
   "Asbestos Removal",
@@ -92,7 +92,7 @@ export function Hero() {
     <section id="top" className="relative isolate min-h-[46rem] overflow-hidden bg-ink lg:min-h-[52rem]">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <video
-          src={heroVideo.url}
+          src={heroVideo}
           poster={heroImage}
           autoPlay
           muted
@@ -114,7 +114,7 @@ export function Hero() {
         {[certWbe, certWosb, certTn].map((cert, i) => (
           <img
             key={i}
-            src={cert.url}
+            src={cert}
             alt={["NWBOC Women's Business Enterprise (WBE) Certified logo", "NWBOC Women-Owned Small Business (WOSB) Certified logo", "Tennessee Governor's Office of Diversity Business Enterprise certified seal"][i]}
             className={i === 2 ? "h-9 w-auto drop-shadow-lg md:h-11" : "h-9 w-auto rounded-sm bg-white px-2 py-1.5 shadow-lg md:h-11"}
           />

@@ -2,17 +2,17 @@ import demolitionImg from "@/assets/svc-demolition.jpg";
 import asbestosImg from "@/assets/svc-asbestos.jpg";
 import selectiveImg from "@/assets/proj-selective.jpg";
 import industrialImg from "@/assets/proj-industrial.jpg";
-import bs01 from "@/assets/bridgestone-01.jpg.asset.json";
-import bs02 from "@/assets/bridgestone-02.jpg.asset.json";
-import bs03 from "@/assets/bridgestone-03.jpg.asset.json";
-import bs04 from "@/assets/bridgestone-04.jpg.asset.json";
-import bs05 from "@/assets/bridgestone-05.jpg.asset.json";
-import bs06 from "@/assets/bridgestone-06.jpg.asset.json";
-import bs07 from "@/assets/bridgestone-07.jpg.asset.json";
-import bs08 from "@/assets/bridgestone-08.jpg.asset.json";
-import bs09 from "@/assets/bridgestone-09.jpg.asset.json";
-import bs10 from "@/assets/bridgestone-10.jpg.asset.json";
-import samDavisCover from "@/assets/sam-davis-cover.jpg.asset.json";
+import bs01 from "@/assets/bridgestone-01.jpg";
+import bs02 from "@/assets/bridgestone-02.jpg";
+import bs03 from "@/assets/bridgestone-03.jpg";
+import bs04 from "@/assets/bridgestone-04.jpg";
+import bs05 from "@/assets/bridgestone-05.jpg";
+import bs06 from "@/assets/bridgestone-06.jpg";
+import bs07 from "@/assets/bridgestone-07.jpg";
+import bs08 from "@/assets/bridgestone-08.jpg";
+import bs09 from "@/assets/bridgestone-09.jpg";
+import bs10 from "@/assets/bridgestone-10.jpg";
+import samDavisCover from "@/assets/sam-davis-cover.jpg";
 import bell01 from "@/assets/south-central-bell-01.jpg";
 import bell02 from "@/assets/south-central-bell-02.jpg";
 import bell03 from "@/assets/south-central-bell-03.jpg";
@@ -59,14 +59,14 @@ import governor07 from "@/assets/governors-mansion-07.jpg";
 import governor08 from "@/assets/governors-mansion-08.jpg";
 import governor09 from "@/assets/governors-mansion-09.jpg";
 import governor10 from "@/assets/governors-mansion-10.jpg";
-import belle01 from "@/assets/belle-meade-01.jpg.asset.json";
-import belle02 from "@/assets/belle-meade-02.jpg.asset.json";
-import belle03 from "@/assets/belle-meade-03.jpg.asset.json";
-import belle04 from "@/assets/belle-meade-04.jpg.asset.json";
-import belle05 from "@/assets/belle-meade-05.jpg.asset.json";
-import belle06 from "@/assets/belle-meade-06.jpg.asset.json";
-import belle07 from "@/assets/belle-meade-07.jpg.asset.json";
-import belle08 from "@/assets/belle-meade-08.jpg.asset.json";
+import belle01 from "@/assets/belle-meade-01.jpg";
+import belle02 from "@/assets/belle-meade-02.jpg";
+import belle03 from "@/assets/belle-meade-03.jpg";
+import belle04 from "@/assets/belle-meade-04.jpg";
+import belle05 from "@/assets/belle-meade-05.jpg";
+import belle06 from "@/assets/belle-meade-06.jpg";
+import belle07 from "@/assets/belle-meade-07.jpg";
+import belle08 from "@/assets/belle-meade-08.jpg";
 import joelton01 from "@/assets/joelton-01.jpg";
 import joelton02 from "@/assets/joelton-02.jpg";
 import joelton03 from "@/assets/joelton-03.jpg";
@@ -75,16 +75,16 @@ import joelton05 from "@/assets/joelton-05.jpg";
 import joelton06 from "@/assets/joelton-06.jpg";
 import joelton07 from "@/assets/joelton-07.jpg";
 import joelton08 from "@/assets/joelton-08.jpg";
-import howard01 from "@/assets/howard-school-01.jpg.asset.json";
-import howard02 from "@/assets/howard-school-02.jpg.asset.json";
-import howard03 from "@/assets/howard-school-03.jpg.asset.json";
-import howard04 from "@/assets/howard-school-04.jpg.asset.json";
-import howard05 from "@/assets/howard-school-05.jpg.asset.json";
-import howard06 from "@/assets/howard-school-06.jpg.asset.json";
-import howard07 from "@/assets/howard-school-07.jpg.asset.json";
-import howard08 from "@/assets/howard-school-08.jpg.asset.json";
-import howard09 from "@/assets/howard-school-09.jpg.asset.json";
-import howard10 from "@/assets/howard-school-10.jpg.asset.json";
+import howard01 from "@/assets/howard-school-01.jpg";
+import howard02 from "@/assets/howard-school-02.jpg";
+import howard03 from "@/assets/howard-school-03.jpg";
+import howard04 from "@/assets/howard-school-04.jpg";
+import howard05 from "@/assets/howard-school-05.jpg";
+import howard06 from "@/assets/howard-school-06.jpg";
+import howard07 from "@/assets/howard-school-07.jpg";
+import howard08 from "@/assets/howard-school-08.jpg";
+import howard09 from "@/assets/howard-school-09.jpg";
+import howard10 from "@/assets/howard-school-10.jpg";
 
 export type ProjectMedia =
   | { type: "image"; src: string; alt: string; preserveFrame?: boolean }
@@ -122,18 +122,18 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Inventory Protection", copy: "Protected the plant's inventory in place so it did not have to be moved during the work." },
       { title: "Specialized Equipment", copy: "Used equipment chosen for working close to stored goods inside an active building." },
     ],
-    cover: bs02.url,
+    cover: bs02,
     media: [
-      { type: "image", src: bs02.url, alt: "Demolition excavator gripping a bent structural steel beam on the collapsed roof of the tire warehouse." },
-      { type: "image", src: bs03.url, alt: "Excavator dismantling the crushed roof section next to upright tire storage racks in the concrete yard." },
-      { type: "image", src: bs04.url, alt: "Excavator removing damaged roof panels, exposing the warehouse interior filled with rows of tire racks." },
-      { type: "image", src: bs05.url, alt: "Long-reach excavator dismantling a collapsed metal roof above tall interior storage racks stacked with tires." },
-      { type: "image", src: bs09.url, alt: "Excavator with a hydraulic demolition shear dismantling the collapsed metal roof above racks loaded with stacked tires." },
-      { type: "image", src: bs10.url, alt: "Excavator claw above tall storage racks filled with tires beneath a caved-in roof, with sheet-metal debris in the foreground." },
-      { type: "image", src: bs06.url, alt: "High-reach demolition excavator breaking the upper concrete wall above loading bays 23 and 24." },
-      { type: "image", src: bs07.url, alt: "Hydraulic shear crushing the concrete exterior wall beside a marked pedestrian doorway, with exposed rebar and rubble." },
-      { type: "image", src: bs08.url, alt: "High-reach excavator tearing down the lower concrete wall section next to loading bay 24." },
-      { type: "image", src: bs01.url, alt: "Worker in a safety vest managing hoses on the exterior lot, with scrap metal piles and the collapsed tire warehouse behind." },
+      { type: "image", src: bs02, alt: "Demolition excavator gripping a bent structural steel beam on the collapsed roof of the tire warehouse." },
+      { type: "image", src: bs03, alt: "Excavator dismantling the crushed roof section next to upright tire storage racks in the concrete yard." },
+      { type: "image", src: bs04, alt: "Excavator removing damaged roof panels, exposing the warehouse interior filled with rows of tire racks." },
+      { type: "image", src: bs05, alt: "Long-reach excavator dismantling a collapsed metal roof above tall interior storage racks stacked with tires." },
+      { type: "image", src: bs09, alt: "Excavator with a hydraulic demolition shear dismantling the collapsed metal roof above racks loaded with stacked tires." },
+      { type: "image", src: bs10, alt: "Excavator claw above tall storage racks filled with tires beneath a caved-in roof, with sheet-metal debris in the foreground." },
+      { type: "image", src: bs06, alt: "High-reach demolition excavator breaking the upper concrete wall above loading bays 23 and 24." },
+      { type: "image", src: bs07, alt: "Hydraulic shear crushing the concrete exterior wall beside a marked pedestrian doorway, with exposed rebar and rubble." },
+      { type: "image", src: bs08, alt: "High-reach excavator tearing down the lower concrete wall section next to loading bay 24." },
+      { type: "image", src: bs01, alt: "Worker in a safety vest managing hoses on the exterior lot, with scrap metal piles and the collapsed tire warehouse behind." },
     ],
   },
   {
@@ -152,18 +152,18 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Selective Demolition", copy: "Took down the planned portions of the building once abatement was complete." },
       { title: "Haul-Off & Site Controls", copy: "Hauled off all debris and installed fencing and erosion control." },
     ],
-    cover: howard09.url,
+    cover: howard09,
     media: [
-      { type: "image", src: howard03.url, alt: "Howard School entrance with its original sign above the stone columns.", preserveFrame: true },
-      { type: "image", src: howard04.url, alt: "Fenced walkway beside Howard School with construction notices and equipment in the distance.", preserveFrame: true },
-      { type: "image", src: howard05.url, alt: "Yellow excavator beside the brick school building within the work area.", preserveFrame: true },
-      { type: "image", src: howard06.url, alt: "Worker spraying water while an excavator removes a section of Howard School behind fencing.", preserveFrame: true },
-      { type: "image", src: howard01.url, alt: "Excavator beside exposed school floors and demolition rubble.", preserveFrame: true },
-      { type: "image", src: howard07.url, alt: "Two excavators working among debris beside the remaining brick school structure.", preserveFrame: true },
-      { type: "image", src: howard09.url, alt: "Elevated view of the fenced Howard School demolition site and adjacent street.", preserveFrame: true },
-      { type: "image", src: howard10.url, alt: "Exposed floors of Howard School with an excavator and rubble in the foreground.", preserveFrame: true },
-      { type: "image", src: howard02.url, alt: "Remaining school structure with exposed rooms and the cleared work area.", preserveFrame: true },
-      { type: "image", src: howard08.url, alt: "Cleared ground beside the remaining school frame following selective demolition.", preserveFrame: true },
+      { type: "image", src: howard03, alt: "Howard School entrance with its original sign above the stone columns.", preserveFrame: true },
+      { type: "image", src: howard04, alt: "Fenced walkway beside Howard School with construction notices and equipment in the distance.", preserveFrame: true },
+      { type: "image", src: howard05, alt: "Yellow excavator beside the brick school building within the work area.", preserveFrame: true },
+      { type: "image", src: howard06, alt: "Worker spraying water while an excavator removes a section of Howard School behind fencing.", preserveFrame: true },
+      { type: "image", src: howard01, alt: "Excavator beside exposed school floors and demolition rubble.", preserveFrame: true },
+      { type: "image", src: howard07, alt: "Two excavators working among debris beside the remaining brick school structure.", preserveFrame: true },
+      { type: "image", src: howard09, alt: "Elevated view of the fenced Howard School demolition site and adjacent street.", preserveFrame: true },
+      { type: "image", src: howard10, alt: "Exposed floors of Howard School with an excavator and rubble in the foreground.", preserveFrame: true },
+      { type: "image", src: howard02, alt: "Remaining school structure with exposed rooms and the cleared work area.", preserveFrame: true },
+      { type: "image", src: howard08, alt: "Cleared ground beside the remaining school frame following selective demolition.", preserveFrame: true },
     ],
   },
   {
@@ -263,16 +263,16 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Steeple Removal", copy: "Removed the church steeple in sections." },
       { title: "Structure Protection", copy: "Controlled every lift to keep the rest of the church undisturbed." },
     ],
-    cover: belle08.url,
+    cover: belle08,
     media: [
-      { type: "image", src: belle08.url, alt: "Belle Meade Church steeple with exposed framing and a boom lift beside it.", preserveFrame: true },
-      { type: "image", src: belle01.url, alt: "Boom lift beside the church steeple and cross under a cloudy sky.", preserveFrame: true },
-      { type: "image", src: belle02.url, alt: "Elevated work platform approaching the church steeple beside surrounding trees.", preserveFrame: true },
-      { type: "image", src: belle03.url, alt: "Close view of a boom lift platform beside the steeple's upper section.", preserveFrame: true },
-      { type: "image", src: belle04.url, alt: "Full-height view of the white church tower and exposed timber framing in the steeple.", preserveFrame: true },
-      { type: "image", src: belle05.url, alt: "Exposed steeple framing above the white church tower with a lift alongside.", preserveFrame: true },
-      { type: "image", src: belle06.url, alt: "Crew member working from an elevated platform beside exposed steeple framing.", preserveFrame: true },
-      { type: "image", src: belle07.url, alt: "Steeple cross and exposed framing during sectional removal work.", preserveFrame: true },
+      { type: "image", src: belle08, alt: "Belle Meade Church steeple with exposed framing and a boom lift beside it.", preserveFrame: true },
+      { type: "image", src: belle01, alt: "Boom lift beside the church steeple and cross under a cloudy sky.", preserveFrame: true },
+      { type: "image", src: belle02, alt: "Elevated work platform approaching the church steeple beside surrounding trees.", preserveFrame: true },
+      { type: "image", src: belle03, alt: "Close view of a boom lift platform beside the steeple's upper section.", preserveFrame: true },
+      { type: "image", src: belle04, alt: "Full-height view of the white church tower and exposed timber framing in the steeple.", preserveFrame: true },
+      { type: "image", src: belle05, alt: "Exposed steeple framing above the white church tower with a lift alongside.", preserveFrame: true },
+      { type: "image", src: belle06, alt: "Crew member working from an elevated platform beside exposed steeple framing.", preserveFrame: true },
+      { type: "image", src: belle07, alt: "Steeple cross and exposed framing during sectional removal work.", preserveFrame: true },
     ],
   },
   {
@@ -366,7 +366,7 @@ export const PROJECTS: ProjectPage[] = [
       { title: "Building Implosion", copy: "Imploded the 12-story hotel in downtown Nashville." },
       { title: "Downtown Safety Controls", copy: "Protected surrounding streets and buildings during the implosion." },
     ],
-    cover: samDavisCover.url,
+    cover: samDavisCover,
     media: [
       { type: "youtube", id: "an9ZlCYob0s", alt: "Video of the Sam Davis Hotel project in downtown Nashville." },
     ],

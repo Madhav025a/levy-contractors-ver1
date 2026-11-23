@@ -10,9 +10,9 @@ import commercialImg from "@/assets/ind-commercial.jpg";
 import propertyImg from "@/assets/ind-property.jpg";
 import gcImg from "@/assets/ind-gc.jpg";
 import institutionalImg from "@/assets/ind-institutional.jpg";
-import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
-import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
-import certTn from "@/assets/tn-diversity-business-enterprise.png.asset.json";
+import certWbe from "@/assets/nwboc-wbe-certified-v2.png";
+import certWosb from "@/assets/nwboc-wosb-certified-v2.png";
+import certTn from "@/assets/tn-diversity-business-enterprise.png";
 
 
 const INDUSTRIES = [
@@ -166,7 +166,7 @@ export function Credentials() {
               {[certWbe, certWosb, certTn].map((cert, i) => (
                 <img
                   key={i}
-                  src={cert.url}
+                  src={cert}
                   alt={["NWBOC Women's Business Enterprise (WBE) Certified logo", "NWBOC Women-Owned Small Business (WOSB) Certified logo", "Tennessee Governor's Office of Diversity Business Enterprise certified seal"][i]}
                   className={i === 2 ? "h-28 w-auto md:h-36" : "h-28 w-auto rounded-sm bg-white px-4 py-3 md:h-36"}
                   loading="lazy"

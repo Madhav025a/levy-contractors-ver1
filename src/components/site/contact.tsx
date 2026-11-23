@@ -1,10 +1,10 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./reveal";
 import { LeadForm } from "./hero";
-import levyLogo from "@/assets/levy-contractors-logo.png.asset.json";
-import certWbe from "@/assets/nwboc-wbe-certified-v2.png.asset.json";
-import certWosb from "@/assets/nwboc-wosb-certified-v2.png.asset.json";
-import certTn from "@/assets/tn-diversity-business-enterprise.png.asset.json";
+import levyLogo from "@/assets/levy-contractors-logo.png";
+import certWbe from "@/assets/nwboc-wbe-certified-v2.png";
+import certWosb from "@/assets/nwboc-wosb-certified-v2.png";
+import certTn from "@/assets/tn-diversity-business-enterprise.png";
 import { SERVICE_PAGES } from "@/lib/services-data";
 
 export function ContactSection() {
@@ -88,7 +88,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <img
-              src={levyLogo.url}
+              src={levyLogo}
               alt="Levy Contractors, Inc. logo"
               className="h-14 w-auto bg-white px-3 py-2"
             />
@@ -100,7 +100,7 @@ export function Footer() {
               {[certWbe, certWosb, certTn].map((cert, i) => (
                 <img
                   key={i}
-                  src={cert.url}
+                  src={cert}
                   alt={["NWBOC Women's Business Enterprise (WBE) Certified logo", "NWBOC Women-Owned Small Business (WOSB) Certified logo", "Tennessee Governor's Office of Diversity Business Enterprise certified seal"][i]}
                   className={i === 2 ? "h-10 w-auto" : "h-10 w-auto rounded-sm bg-white px-2 py-1.5"}
                 />
