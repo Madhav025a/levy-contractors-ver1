@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { getRequest } from "@tanstack/react-start/server";
 
 const opt = (max: number) =>
   z.string().trim().max(max).nullish().transform((v) => (v ? v : null));
@@ -24,9 +25,20 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
     if (!isMysqlConfigured()) return { ok: false as const, saved_to: "unconfigured" as const };
     try {
       await saveQuoteToMysql(data);
-      return { ok: true as const, saved_to: "mysql" as const };
     } catch (err) {
       console.error("Quote MySQL save failed:", err instanceof Error ? err.message : err);
       return { ok: false as const, saved_to: "error" as const };
     }
+    // Saved. Email failures are logged only; the enquiry stays saved.
+    try {
+      const { isSmtpConfigured, sendQuoteNotification } = await import("./quote-email.server");
+      if (isSmtpConfigured()) {
+        let url = data.source_page;
+        try { url = new URL(data.source_page || "/", getRequest().url).toString(); } catch {}
+        await sendQuoteNotification(data, url);
+      } else console.warn("Quote email skipped: SMTP not configured");
+    } catch (err) {
+      console.error("Quote notification email failed:", err instanceof Error ? err.message : "unknown error");
+    }
+    return { ok: true as const, saved_to: "mysql" as const };
   });
