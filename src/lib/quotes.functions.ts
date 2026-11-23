@@ -37,10 +37,10 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
         let url = data.source_page;
         try { url = new URL(data.source_page || "/", getRequest().url).toString(); } catch {}
         const { messageId } = await sendQuoteNotification(data, url, to);
-        console.log("Quote notification email sent:", messageId);
+        console.log("email.send.ok", { messageId });
       } else console.error("email.quote_notification.recipient_unset (set QUOTE_NOTIFY_TO)");
     } catch (err) {
-      console.error("Quote notification email failed:", err instanceof Error ? err.message : "unknown error");
+      console.error("email.send.failed", err);
     }
     return { ok: true as const, saved_to: "mysql" as const };
   });
