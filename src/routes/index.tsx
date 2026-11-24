@@ -13,7 +13,6 @@ import {
   Testimonials,
 } from "@/components/site/industries";
 import { ContactSection, Footer } from "@/components/site/contact";
-import { ProjectAssistant } from "@/components/site/assistant";
 import { ConsultPopup } from "@/components/site/consult-popup";
 
 export const Route = createFileRoute("/")({
@@ -72,7 +71,6 @@ function Index() {
       </main>
       <Footer />
       <MobileStickyBar />
-      <ProjectAssistant />
       <ConsultPopup />
     </div>
   );
