@@ -3,13 +3,12 @@
 import type { QuoteInput } from "./quotes.server";
 import { sendEmail } from "@/server/email";
 
-// Always notified, plus any extra addresses in QUOTE_NOTIFY_TO (comma, semicolon or space separated).
-const DEFAULT_RECIPIENTS = ["madhav@matdigital.in", "madtiw.26@gmail.com"];
+// All addresses in QUOTE_NOTIFY_TO (comma, semicolon or space separated).
 
 export function getQuoteRecipients(): string[] {
   const extra = (process.env["QUOTE_NOTIFY_TO"] || "").split(/[,;\s]+/).map((e) => e.trim()).filter((e) => e.includes("@"));
   const seen = new Set<string>();
-  return [...DEFAULT_RECIPIENTS, ...extra].filter((e) => { const k = e.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
+  return extra.filter((e) => { const k = e.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
 }
 
 const CUSTOMER_NOTE =

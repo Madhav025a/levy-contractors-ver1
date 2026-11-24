@@ -34,7 +34,11 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
     let url = data.source_page;
     try { url = new URL(data.source_page || "/", getRequest().url).toString(); } catch {}
     await Promise.allSettled([
-      email.sendQuoteNotification(data, url, email.getQuoteRecipients())
+      (async () => {
+        const to = email.getQuoteRecipients();
+        if (!to.length) throw new Error("recipient_unset (set QUOTE_NOTIFY_TO)");
+        return email.sendQuoteNotification(data, url, to);
+      })()
         .then(({ messageId }) => console.log("email.send.ok", { messageId }))
         .catch((err) => console.error("email.send.failed", err)),
       email.sendCustomerConfirmation(data)
