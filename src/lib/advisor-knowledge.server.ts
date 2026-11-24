@@ -27,7 +27,7 @@ export function websiteKnowledge() {
       name: "Levy Contractors, Inc.", founded: 1979,
       familyLegacy: "Third-generation family business. Founded by Bobby Young in 1979, carried forward by his daughter Kellye Bradley, and now led by the third generation, Nick Bradley. Values: integrity, quality, reliability, and commitment to customer satisfaction.",
       base: "Nashville, Tennessee", phone: "+1 615-227-1645",
-      mailingAddress: "P.O. Box 70039, Nashville, TN",
+      mailingAddress: "P.O. Box 168, Pleasant View, TN 37146",
       serviceArea: ["Tennessee", "Alabama", "Kentucky", "Georgia"],
       certifications: ["NWBOC Women's Business Enterprise (WBE)", "NWBOC Women-Owned Small Business (WOSB)", "State of Tennessee Governor's Office of Diversity Business Enterprise (certified Diversity Business Enterprise)"],
       audience: "Commercial, industrial and institutional clients, universities, government, property managers and general contractors",

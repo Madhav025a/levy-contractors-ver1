@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
       children: JSON.stringify({
         "@context": "https://schema.org", "@type": "GeneralContractor",
         name: "Levy Contractors, Inc.", url: abs("/"), telephone: "+1 615-227-1645", foundingDate: "1979",
-        address: { "@type": "PostalAddress", addressLocality: "Nashville", addressRegion: "TN", addressCountry: "US" },
+        address: { "@type": "PostalAddress", streetAddress: "P.O. Box 168", addressLocality: "Pleasant View", addressRegion: "TN", postalCode: "37146", addressCountry: "US" },
         areaServed: ["Tennessee", "Alabama", "Kentucky", "Georgia"],
         knowsAbout: ["Asbestos abatement", "Demolition", "Site assessment", "Asbestos surveys and testing", "Mold remediation"],
       }),

@@ -56,9 +56,9 @@ export function ContactSection() {
                 <dd className="mt-2 flex items-start gap-2 text-[15px] text-white/75">
                   <MapPin className="mt-1 h-4 w-4 shrink-0 text-safety" aria-hidden />
                   <span>
-                    P.O. Box 70039
+                    P.O. Box 168
                     <br />
-                    Nashville, TN
+                    Pleasant View, TN 37146
                   </span>
                 </dd>
               </div>
@@ -149,8 +149,8 @@ export function Footer() {
                   +1 615-227-1645
                 </a>
               </li>
-              <li>P.O. Box 70039</li>
-              <li>Nashville, TN</li>
+              <li>P.O. Box 168</li>
+              <li>Pleasant View, TN 37146</li>
             </ul>
             <a href="/contact#quote-contact" className="btn-base btn-safety mt-6 w-full">
               Request Quote
