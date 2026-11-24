@@ -30,17 +30,16 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
       return { ok: false as const, saved_to: "error" as const };
     }
     // Saved. Email failures are logged only; the enquiry stays saved.
-    try {
-      const { getQuoteRecipient, sendQuoteNotification } = await import("./quote-email.server");
-      const to = getQuoteRecipient();
-      if (to) {
-        let url = data.source_page;
-        try { url = new URL(data.source_page || "/", getRequest().url).toString(); } catch {}
-        const { messageId } = await sendQuoteNotification(data, url, to);
-        console.log("email.send.ok", { messageId });
-      } else console.error("email.quote_notification.recipient_unset (set QUOTE_NOTIFY_TO)");
-    } catch (err) {
-      console.error("email.send.failed", err);
-    }
+    const email = await import("./quote-email.server");
+    let url = data.source_page;
+    try { url = new URL(data.source_page || "/", getRequest().url).toString(); } catch {}
+    await Promise.allSettled([
+      email.sendQuoteNotification(data, url, email.getQuoteRecipients())
+        .then(({ messageId }) => console.log("email.send.ok", { messageId }))
+        .catch((err) => console.error("email.send.failed", err)),
+      email.sendCustomerConfirmation(data)
+        .then(({ messageId }) => console.log("email.confirm.ok", { messageId }))
+        .catch((err) => console.error("email.confirm.failed", err)),
+    ]);
     return { ok: true as const, saved_to: "mysql" as const };
   });

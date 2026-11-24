@@ -3,8 +3,29 @@
 import type { QuoteInput } from "./quotes.server";
 import { sendEmail } from "@/server/email";
 
-export function getQuoteRecipient() {
-  return process.env["QUOTE_NOTIFY_TO"]?.split(",")[0]?.trim() || null;
+// Always notified, plus any extra addresses in QUOTE_NOTIFY_TO (comma, semicolon or space separated).
+const DEFAULT_RECIPIENTS = ["madhav@matdigital.in", "madtiw.26@gmail.com"];
+
+export function getQuoteRecipients(): string[] {
+  const extra = (process.env["QUOTE_NOTIFY_TO"] || "").split(/[,;\s]+/).map((e) => e.trim()).filter((e) => e.includes("@"));
+  const seen = new Set<string>();
+  return [...DEFAULT_RECIPIENTS, ...extra].filter((e) => { const k = e.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
+}
+
+const CUSTOMER_NOTE =
+  "This is a no-reply email. To reply, please contact Kellye Bradley at kbradley@levycontractors.com or call +1 615-227-1645.";
+
+export async function sendCustomerConfirmation(q: QuoteInput) {
+  const first = q.full_name.split(" ")[0] || q.full_name;
+  const text = `Hi ${first},\n\nThank you for contacting Levy Contractors. We have received your enquiry${q.service ? ` about ${q.service}` : ""} and a member of our team will be in touch shortly.\n\n${CUSTOMER_NOTE}\n\nLevy Contractors, Inc.\nP.O. Box 168, Pleasant View, TN 37146`;
+  const html = `<div style="font-family:Arial;font-size:14px;color:#111"><h2 style="color:#b91c1c">We've received your enquiry</h2><p>Hi ${esc(first)},</p><p>Thank you for contacting Levy Contractors. We have received your enquiry${q.service ? ` about <strong>${esc(q.service)}</strong>` : ""} and a member of our team will be in touch shortly.</p><p style="font-size:12px;color:#6b7280;border-top:1px solid #e5e7eb;padding-top:12px;margin-top:16px">${esc(CUSTOMER_NOTE)}</p><p>Levy Contractors, Inc.<br>P.O. Box 168, Pleasant View, TN 37146</p></div>`;
+  const message = { to: q.email, replyTo: NOTIFICATION_REPLY_TO, subject: "We've received your enquiry – Levy Contractors", text, html };
+  try {
+    return await sendEmail({ ...message, from: NOTIFICATION_SENDER });
+  } catch (err) {
+    console.error(`email.confirm.sender_rejected: ${err instanceof Error ? err.message : String(err)} — retrying with default sender`);
+    return sendEmail(message);
+  }
 }
 
 const esc = (s: string) =>
@@ -18,7 +39,7 @@ const NOTIFICATION_REPLY_TO = "kbradley@levycontractors.com";
 const DISCLAIMER =
   "Please do not reply directly to this automated notification. This email address is used exclusively for automated notifications and is not monitored. For any questions or assistance, please contact Kellye Bradley at kbradley@levycontractors.com.";
 
-export async function sendQuoteNotification(q: QuoteInput, sourceUrl: string | null, to: string) {
+export async function sendQuoteNotification(q: QuoteInput, sourceUrl: string | null, to: string[]) {
   const when = new Date().toLocaleString("en-US", { timeZone: "America/Chicago", dateStyle: "full", timeStyle: "short" }) + " (Central Time)";
   const rows: [string, string | null][] = [
     ["Full name", q.full_name], ["Company", q.company], ["Email", q.email], ["Phone", q.phone],
