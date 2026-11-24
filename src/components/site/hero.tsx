@@ -16,7 +16,15 @@ const SERVICES = [
   "Other",
 ];
 
-export function LeadForm({ id = "quote", compact = false }: { id?: string; compact?: boolean }) {
+export function LeadForm({
+  id = "quote",
+  compact = false,
+  sourceLabel,
+}: {
+  id?: string;
+  compact?: boolean;
+  sourceLabel?: string;
+}) {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
@@ -40,7 +48,9 @@ export function LeadForm({ id = "quote", compact = false }: { id?: string; compa
       project_location: String(data.get("project_location") ?? "").trim() || null,
       service: String(data.get("service") ?? "").trim() || null,
       message: String(data.get("message") ?? "").trim() || null,
-      source_page: window.location.pathname,
+      source_page: sourceLabel
+        ? `${sourceLabel} — ${window.location.pathname}`
+        : window.location.pathname,
     };
 
     let insertError: unknown = null;

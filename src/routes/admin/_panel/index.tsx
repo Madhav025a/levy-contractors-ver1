@@ -61,7 +61,7 @@ function Dashboard() {
           <div className="hidden overflow-x-auto rounded-lg border border-border bg-card md:block">
             <table className="w-full text-sm">
               <thead className="bg-muted text-left text-xs uppercase tracking-wide text-muted-foreground">
-                <tr><th className="p-3">Date</th><th className="p-3">Customer</th><th className="p-3">Company</th><th className="p-3">Service</th><th className="p-3">Status</th></tr>
+                <tr><th className="p-3">Date</th><th className="p-3">Customer</th><th className="p-3">Company</th><th className="p-3">Service</th><th className="p-3">Source</th><th className="p-3">Status</th></tr>
               </thead>
               <tbody>
                 {data.quotes.map((q) => (
@@ -70,6 +70,7 @@ function Dashboard() {
                     <td className="p-3"><Link to="/admin/quotes/$id" params={{ id: String(q.id) }} className="font-semibold text-foreground hover:text-primary">{q.full_name}</Link><div className="text-xs text-muted-foreground">{q.email}</div></td>
                     <td className="p-3">{q.company ?? "—"}</td>
                     <td className="p-3">{q.service ?? "—"}</td>
+                    <td className="p-3"><SourceTag source={q.source_page} /></td>
                     <td className="p-3"><StatusBadge s={q.status} /></td>
                   </tr>
                 ))}
@@ -82,7 +83,10 @@ function Dashboard() {
                 <Link to="/admin/quotes/$id" params={{ id: String(q.id) }} className="block rounded-lg border border-border bg-card p-4">
                   <div className="flex items-start justify-between gap-2"><span className="font-semibold break-words">{q.full_name}</span><StatusBadge s={q.status} /></div>
                   <div className="mt-1 text-xs text-muted-foreground break-words">{q.company ?? q.email}</div>
-                  <div className="mt-2 text-xs text-muted-foreground">{q.service ?? "No service"} · {fmtDate(q.created_at)}</div>
+                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                    <span>{q.service ?? "No service"} · {fmtDate(q.created_at)}</span>
+                    <SourceTag source={q.source_page} />
+                  </div>
                 </Link>
               </li>
             ))}
@@ -90,6 +94,20 @@ function Dashboard() {
         </>
       )}
     </div>
+  );
+}
+
+function SourceTag({ source }: { source: string | null }) {
+  if (!source) return <span className="text-muted-foreground">—</span>;
+  const isPopup = source.startsWith("Pop-up");
+  const page = source.replace(/^Pop-up — /, "");
+  return (
+    <span className="inline-flex max-w-56 items-center gap-1.5 text-xs" title={source}>
+      {isPopup && (
+        <span className="rounded bg-primary px-1.5 py-0.5 font-semibold text-primary-foreground">Pop-up</span>
+      )}
+      <span className="truncate text-muted-foreground">{page}</span>
+    </span>
   );
 }
 
