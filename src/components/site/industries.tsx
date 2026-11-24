@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TESTIMONIALS } from "@/lib/testimonials-data";
-import { Award, BadgeCheck, FileCheck2, MapPin, ShieldCheck, Star } from "lucide-react";
+import { Award, BadgeCheck, ChevronLeft, ChevronRight, FileCheck2, MapPin, ShieldCheck, Star } from "lucide-react";
 import { Reveal } from "./reveal";
 import { ProjectCard } from "./project-card";
 import { PROJECTS, PROJECT_CATEGORIES } from "@/lib/projects-data";
@@ -228,6 +228,9 @@ function TestimonialSlider() {
     return () => window.clearInterval(id);
   }, [paused, maxIndex]);
 
+  const go = (dir: -1 | 1) =>
+    setIndex((i) => (i + dir < 0 ? maxIndex : i + dir > maxIndex ? 0 : i + dir));
+
   return (
     <div
       className="mt-12"
@@ -273,16 +276,36 @@ function TestimonialSlider() {
           ))}
         </div>
       </div>
-      <div className="mt-8 flex justify-center gap-2">
-        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            onClick={() => setIndex(i)}
-            aria-label={`Show reviews ${i + 1}`}
-            className={`h-2 rounded-full transition-all ${i === index ? "w-8 bg-safety" : "w-2 bg-input"}`}
-          />
-        ))}
+      <div className="mt-8 flex items-center justify-center gap-3 sm:gap-5">
+        <button
+          type="button"
+          onClick={() => go(-1)}
+          disabled={maxIndex === 0}
+          aria-label="Previous reviews"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-white text-ink transition-colors hover:border-safety hover:text-safety disabled:pointer-events-none disabled:opacity-40"
+        >
+          <ChevronLeft className="h-5 w-5" aria-hidden />
+        </button>
+        <div className="flex gap-2">
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setIndex(i)}
+              aria-label={`Show reviews ${i + 1}`}
+              className={`h-2 rounded-full transition-all ${i === index ? "w-8 bg-safety" : "w-2 bg-input"}`}
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={() => go(1)}
+          disabled={maxIndex === 0}
+          aria-label="Next reviews"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-white text-ink transition-colors hover:border-safety hover:text-safety disabled:pointer-events-none disabled:opacity-40"
+        >
+          <ChevronRight className="h-5 w-5" aria-hidden />
+        </button>
       </div>
     </div>
   );
