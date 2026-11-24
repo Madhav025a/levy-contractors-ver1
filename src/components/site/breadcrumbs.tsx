@@ -1,6 +1,5 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
-import { abs } from "@/lib/site-url";
 
 const LABELS: Record<string, string> = {
   about: "About", services: "Services", projects: "Projects", contact: "Contact", "service-area": "Service Area",
@@ -14,10 +13,6 @@ export function Breadcrumbs({ current }: { current: string }) {
     const to = "/" + segs.slice(0, i + 1).join("/");
     crumbs.push({ label: i === segs.length - 1 ? (LABELS[s] && segs.length === 1 ? LABELS[s] : current) : LABELS[s] ?? s, to });
   });
-  const jsonLd = {
-    "@context": "https://schema.org", "@type": "BreadcrumbList",
-    itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.label, item: abs(c.to) })),
-  };
   return (
     <nav aria-label="Breadcrumb" className="anim-rise mb-5">
       <ol className="flex flex-wrap items-center gap-1.5 text-[12px] font-semibold tracking-wide text-white/75 uppercase">
@@ -32,7 +27,6 @@ export function Breadcrumbs({ current }: { current: string }) {
           </li>
         ))}
       </ol>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </nav>
   );
 }

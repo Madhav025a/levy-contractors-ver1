@@ -5,7 +5,7 @@ import { ContactSection, Footer } from "./contact";
 import { Reveal } from "./reveal";
 import { LeadForm } from "./hero";
 import { Breadcrumbs } from "./breadcrumbs";
-import { abs } from "@/lib/site-url";
+export { pageMeta } from "@/lib/seo";
 
 export function PageShell({ children, contact = true }: { children: ReactNode; contact?: boolean }) {
   return (
@@ -20,7 +20,6 @@ export function PageShell({ children, contact = true }: { children: ReactNode; c
     </div>
   );
 }
-
 export function PageHero({
   eyebrow,
   title,
@@ -36,7 +35,7 @@ export function PageHero({
 }) {
   return (
     <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-ink pt-44 pb-20">
-      <img src={image} alt={alt} width={1600} height={1000} className="absolute inset-0 h-full w-full object-cover" />
+      <img src={image} alt={alt} width={1600} height={1000} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10" />
       <div className="relative mx-auto grid w-full max-w-[1400px] grid-cols-[minmax(0,1fr)] items-center gap-10 px-5 md:px-8 lg:grid-cols-[minmax(0,1fr)_480px]">
         <div className="min-w-0">
@@ -102,21 +101,4 @@ export function SplitFeature({
       </div>
     </section>
   );
-}
-
-export function pageMeta(path: string, title: string, description: string) {
-  return {
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: abs(path) },
-      { name: "twitter:title", content: title },
-      { name: "twitter:description", content: description },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: abs(path) }],
-  };
 }

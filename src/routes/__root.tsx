@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { abs } from "@/lib/site-url";
+import { BUSINESS_ID, SERVICE_AREAS, structuredData } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -74,6 +76,18 @@ function ErrorComponent({ error, reset }: { error: unknown; reset: () => void })
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
+    scripts: [structuredData({
+      "@context": "https://schema.org", "@graph": [
+        {
+          "@type": "GeneralContractor", "@id": BUSINESS_ID,
+          name: "Levy Contractors, Inc.", url: abs("/"), telephone: "+1 615-227-1645", foundingDate: "1979",
+          address: { "@type": "PostalAddress", postOfficeBoxNumber: "168", addressLocality: "Pleasant View", addressRegion: "TN", postalCode: "37146", addressCountry: "US" },
+          areaServed: SERVICE_AREAS,
+          knowsAbout: ["Asbestos abatement", "Demolition", "Site assessment", "Asbestos surveys and testing", "Mold remediation"],
+        },
+        { "@type": "WebSite", "@id": `${abs("/")}#website`, url: abs("/"), name: "Levy Contractors", publisher: { "@id": BUSINESS_ID }, inLanguage: "en-US" },
+      ],
+    })],
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },

@@ -6,7 +6,7 @@ import assessment from "@/assets/svc-assessment.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
-    pageMeta("/contact", "Contact Levy | Request a Free Quote | +1 615-227-1645",
+    pageMeta("/contact", "Contact Levy Contractors | Request a Free Quote",
       "Discuss your commercial or industrial abatement, demolition, or site assessment project. Call +1 615-227-1645 or request a free quote."),
   component: ContactPage,
 });

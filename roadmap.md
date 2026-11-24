@@ -1,10 +1,12 @@
 # Tasks
+- [x] Audit and verify every public page's SEO, metadata, structured data, images, and crawler responses.
+- [x] Use the owner-confirmed https://levycontractors.com origin for search links and sitemap references.
 - [x] Fix client-name and industry-label overflow on service pages.
 - [x] Check all 21 pages at five mobile, tablet, and desktop widths and fix layout overflow.
 - [x] Replace scripted advisor with website-grounded AI answers, source links, conversation context, and verification.
 - [x] Merge assessment and asbestos surveys, inspections and testing into one detailed service page and consistent listings.
 - [x] Make service cards equally sized and verify desktop/mobile presentation and navigation.- [x] Project pages: list 11 projects + dedicated page each
-- [ ] Add photos/video per project (waiting on user)
+- [x] Add owner-supplied photos/video per project.
 - [x] Optimize and publish six South Central Bell photos with a real project cover.
 - [x] Optimize and add five Ryman Auditorium photos with a real project cover.
 - [x] Optimize and add eight Wildhorse Saloon photographs extracted from four scans, with a real project cover.

@@ -14,4 +14,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://levy-contractors-ver1.lovable.app/sitemap.xml
+Sitemap: https://levycontractors.com/sitemap.xml

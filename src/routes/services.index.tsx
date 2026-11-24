@@ -6,7 +6,7 @@ import heroImg from "@/assets/hero-abatement.jpg";
 
 export const Route = createFileRoute("/services/")({
   head: () =>
-    pageMeta("/services", "Services | Asbestos, Demolition, Mold & Assessment | Levy",
+    pageMeta("/services", "Environmental Construction Services | Levy Contractors",
       "Asbestos abatement, demolition, mold remediation, and combined site assessment with asbestos surveys, inspections and testing across TN, AL, KY, and GA."),
   component: ServicesPage,
 });

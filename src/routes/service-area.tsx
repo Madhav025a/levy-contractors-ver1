@@ -7,7 +7,7 @@ import aboutCrew from "@/assets/about-crew.jpg";
 export const Route = createFileRoute("/service-area")({
   head: () =>
     pageMeta("/service-area", "Service Area | TN, AL, KY & GA | Levy Contractors",
-      "Levy serves commercial and industrial clients across Tennessee, Alabama, Kentucky, and Georgia from its Nashville home base."),
+      "Levy Contractors serves commercial and industrial projects across Tennessee, Alabama, Kentucky and Georgia. Asbestos, demolition, mold and assessment services."),
   component: ServiceAreaPage,
 });
 

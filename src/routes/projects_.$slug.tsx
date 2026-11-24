@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/site/project-card";
 import { PageHero, PageShell } from "@/components/site/page-shell";
 import { Reveal } from "@/components/site/reveal";
 import { getProject, PROJECTS } from "@/lib/projects-data";
+import { BUSINESS_ID, pageMeta, structuredData } from "@/lib/seo";
 
 export const Route = createFileRoute("/projects_/$slug")({
   loader: ({ params }) => {
@@ -15,19 +16,19 @@ export const Route = createFileRoute("/projects_/$slug")({
   head: ({ loaderData }) => {
     const p = loaderData ? getProject(loaderData.slug) : undefined;
     if (!p) return { meta: [{ title: "Project Unavailable | Levy Contractors" }, { name: "robots", content: "noindex" }] };
-    const title = `${p.title}, ${p.location} | Levy Contractors Projects`;
+    const projectName = p.title.replace("Western Kentucky University —", "WKU —");
+    const title = `${projectName} | Levy Contractors`;
+    const description = `${p.category} in ${p.location}: ${p.summary} See Levy Contractors' project scope and photos.`;
+    const head = pageMeta(`/projects/${p.slug}`, title, description);
     return {
-      meta: [
-        { title },
-        { name: "description", content: `${p.category}: ${p.summary}` },
-        { property: "og:title", content: title },
-        { property: "og:description", content: p.summary },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: abs(`/projects/${p.slug}`) },
-        { name: "twitter:title", content: title },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-      links: [{ rel: "canonical", href: abs(`/projects/${p.slug}`) }],
+      ...head,
+      scripts: [...head.scripts, structuredData({
+        "@context": "https://schema.org", "@type": "CreativeWork",
+        "@id": `${abs(`/projects/${p.slug}`)}#project`, name: p.title,
+        description: p.summary, url: abs(`/projects/${p.slug}`),
+        creator: { "@id": BUSINESS_ID }, about: p.category,
+        contentLocation: { "@type": "Place", name: p.location },
+      })],
     };
   },
   component: ProjectDetail,
@@ -41,7 +42,7 @@ function ProjectDetail() {
 
   return (
     <PageShell>
-      <PageHero eyebrow={`${p.category} — ${p.location}`} title={p.title} copy={p.summary} image={p.cover} alt={p.title} />
+      <PageHero eyebrow={`${p.category} — ${p.location}`} title={p.title} copy={p.summary} image={p.cover} alt={p.media.find((media) => media.type === "image" && media.src === p.cover)?.alt ?? `${p.category} at ${p.title} in ${p.location}`} />
 
       <section className="bg-background py-20 md:py-28">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-5 md:px-8 lg:grid-cols-[1.4fr_1fr]">

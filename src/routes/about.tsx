@@ -13,7 +13,7 @@ import crew from "@/assets/why-crew.jpg";
 export const Route = createFileRoute("/about")({
   head: () =>
     pageMeta("/about", "About Levy Contractors | Nashville Since 1979",
-      "A third-generation family business serving Nashville commercial and industrial clients since 1979."),
+      "Meet Levy Contractors, a third-generation family business since 1979. Commercial asbestos abatement and demolition across Tennessee, Alabama, Kentucky and Georgia."),
   component: AboutPage,
 });
 

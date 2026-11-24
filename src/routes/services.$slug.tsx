@@ -1,5 +1,6 @@
 import { abs } from "@/lib/site-url";
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
+import { BUSINESS_ID, pageMeta, SERVICE_AREAS, SERVICE_SEO, structuredData } from "@/lib/seo";
 import { ArrowRight, Phone } from "lucide-react";
 import { Header, MobileStickyBar } from "@/components/site/header";
 import { ContactSection, Footer } from "@/components/site/contact";
@@ -12,24 +13,24 @@ export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
     const service = getService(params.slug);
     if (!service) throw notFound();
+    if (params.slug !== service.slug) throw redirect({ to: "/services/$slug", params: { slug: service.slug }, statusCode: 301 });
     return { slug: service.slug };
   },
   head: ({ loaderData }) => {
     const s = loaderData ? getService(loaderData.slug) : undefined;
     if (!s) return { meta: [{ title: "Service Unavailable | Levy Contractors" }, { name: "robots", content: "noindex" }] };
-    const title = `${s.title} in Nashville | Levy Contractors`;
+    const seo = SERVICE_SEO[s.slug];
+    const title = seo?.title ?? `${s.title} | Levy Contractors`;
+    const description = seo?.description ?? s.intro;
+    const head = pageMeta(`/services/${s.slug}`, title, description);
     return {
-      meta: [
-        { title },
-        { name: "description", content: `${s.tagline} ${s.intro.slice(0, 110)}…` },
-        { property: "og:title", content: title },
-        { property: "og:description", content: s.tagline },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: abs(`/services/${s.slug}`) },
-        { name: "twitter:title", content: title },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-      links: [{ rel: "canonical", href: abs(`/services/${s.slug}`) }],
+      ...head,
+      scripts: [...head.scripts, structuredData({
+        "@context": "https://schema.org", "@type": "Service",
+        "@id": `${abs(`/services/${s.slug}`)}#service`,
+        name: s.title, serviceType: s.title, description, url: abs(`/services/${s.slug}`),
+        provider: { "@id": BUSINESS_ID }, areaServed: SERVICE_AREAS,
+      })],
     };
   },
   component: ServiceDetail,
@@ -46,7 +47,7 @@ function ServiceDetail() {
       <Header />
       <main>
         <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-ink pt-44 pb-20">
-          <img src={s.image} alt={s.alt} className="absolute inset-0 h-full w-full object-cover" width={1280} height={960} />
+          <img src={s.image} alt={s.alt} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" width={1280} height={960} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
           <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[1fr_480px]">
             <div>

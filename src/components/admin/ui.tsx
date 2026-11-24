@@ -55,9 +55,11 @@ export const errMsg = (e: unknown) => {
 export const adminHead = (title: string) => ({
   meta: [
     { title: `${title} · Levy Contractors Admin` },
-    { name: "description", content: "Private Levy Contractors quote management dashboard." },
+    { name: "description", content: `${title} in the private Levy Contractors quote management dashboard.` },
     { property: "og:title", content: `${title} · Levy Contractors Admin` },
-    { property: "og:description", content: "Private Levy Contractors quote management dashboard." },
+    { property: "og:description", content: `${title} in the private Levy Contractors quote management dashboard.` },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
     { name: "robots", content: "noindex, nofollow" },
   ],
 });

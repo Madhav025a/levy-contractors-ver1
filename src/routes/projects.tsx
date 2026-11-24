@@ -10,7 +10,7 @@ import property from "@/assets/ind-property.jpg";
 export const Route = createFileRoute("/projects")({
   head: () =>
     pageMeta("/projects", "Projects | Commercial & Industrial Work | Levy Contractors",
-      "Asbestos abatement, demolition, and site assessment projects for industrial, university, and commercial clients across Tennessee, Alabama, Kentucky, and Georgia."),
+      "Explore Levy Contractors' asbestos abatement, demolition and dismantlement projects for industrial plants, schools and landmarks in Tennessee and Kentucky."),
   component: ProjectsPage,
 });
 
