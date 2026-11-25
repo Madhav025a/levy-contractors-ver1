@@ -8,7 +8,7 @@ export function ConsultPopup() {
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setOpen(true), 5000);
+    const timer = window.setTimeout(() => setOpen(true), 7000);
     return () => window.clearTimeout(timer);
   }, []);
 
